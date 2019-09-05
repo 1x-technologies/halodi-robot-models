@@ -1,0 +1,1373 @@
+<?xml version="1.0"?>
+<sdf version="1.5">
+  <model name="eve_r3_upper_body">
+    <link name="pelvis">
+      <pose frame="">0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose frame="">-0.02336 -0.007712 0.420206 0 -0 0</pose>
+        <mass>10.0418</mass>
+        <inertia>
+          <ixx>0.172034</ixx>
+          <ixy>0.00142736</ixy>
+          <ixz>0.0133394</ixz>
+          <iyy>0.164389</iyy>
+          <iyz>-0.00928197</iyz>
+          <izz>0.0650147</izz>
+        </inertia>
+      </inertial>
+      <visual name="pelvis_visual">
+        <pose frame="">0 0 0 1.5708 -0 1.5708</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://eve_r3_description/meshes/torso.obj</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <link name="l_scapula">
+      <pose frame="">0.010525 0.207221 0.545525 0.253262 -0 -0.261799</pose>
+      <inertial>
+        <pose frame="">-0.000611 -0.063067 0.030325 0 -0 0</pose>
+        <mass>2.75567</mass>
+        <inertia>
+          <ixx>0.00936557</ixx>
+          <ixy>2.264e-05</ixy>
+          <ixz>7.112e-05</ixz>
+          <iyy>0.0107902</iyy>
+          <iyz>-0.0008423</iyz>
+          <izz>0.0126776</izz>
+        </inertia>
+      </inertial>
+      <visual name="l_scapula_visual">
+        <pose frame="">0 0 0 1.5708 -0 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://eve_r3_description/meshes/scapula.obj</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="j_l_shoulder_y" type="revolute">
+      <child>l_scapula</child>
+      <parent>pelvis</parent>
+      <axis>
+        <xyz>0.250562 0.935113 0.250563</xyz>
+        <limit>
+          <lower>-2.42409</lower>
+          <upper>0.98105</upper>
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name="l_shoulder">
+      <pose frame="">0.010525 0.207221 0.545525 -0 -0 -0.261799</pose>
+      <inertial>
+        <pose frame="">0 0.000706 -0.019754 0 -0 0</pose>
+        <mass>0.702657</mass>
+        <inertia>
+          <ixx>0.00115475</ixx>
+          <ixy>-3.2e-07</ixy>
+          <ixz>1.3e-07</ixz>
+          <iyy>0.00143715</iyy>
+          <iyz>-2.63e-06</iyz>
+          <izz>0.00094634</izz>
+        </inertia>
+      </inertial>
+      <visual name="l_shoulder_visual">
+        <pose frame="">0 0 0 3.14159 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://eve_r3_description/meshes/shoulder.obj</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="j_l_shoulder_x" type="revolute">
+      <child>l_shoulder</child>
+      <parent>l_scapula</parent>
+      <axis>
+        <xyz>0.965926 -0.258819 0</xyz>
+        <limit>
+          <lower>-0.0872665</lower>
+          <upper>2.0944</upper>
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name="l_upper_arm">
+      <pose frame="">0.010525 0.207221 0.545525 -0 0 -0</pose>
+      <inertial>
+        <pose frame="">-0.006258 3.5e-05 -0.171877 0 -0 0</pose>
+        <mass>2.92532</mass>
+        <inertia>
+          <ixx>0.0134165</ixx>
+          <ixy>-6.4e-07</ixy>
+          <ixz>-0.00029063</ixz>
+          <iyy>0.0128785</iyy>
+          <iyz>-3.08e-06</iyz>
+          <izz>0.00487381</izz>
+        </inertia>
+      </inertial>
+      <visual name="l_upper_arm_visual">
+        <pose frame="">0 0 0 1.5708 -0 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://eve_r3_description/meshes/upper_arm.obj</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="j_l_shoulder_z" type="revolute">
+      <child>l_upper_arm</child>
+      <parent>l_shoulder</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.46608</lower>
+          <upper>0.541053</upper>
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name="l_elbow">
+      <pose frame="">0.010525 0.207221 0.231536 -0 0 -0</pose>
+      <inertial>
+        <pose frame="">5.5e-05 0 -0.008885 0 -0 0</pose>
+        <mass>0.462616</mass>
+        <inertia>
+          <ixx>0.0008227</ixx>
+          <ixy>-0</ixy>
+          <ixz>9.6e-07</ixz>
+          <iyy>0.00036441</iyy>
+          <iyz>-0</iyz>
+          <izz>0.00061472</izz>
+        </inertia>
+      </inertial>
+      <visual name="l_elbow_visual">
+        <pose frame="">0 0 0 3.14159 3e-06 -1.5708</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://eve_r3_description/meshes/elbow.obj</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="j_l_elbow_y" type="revolute">
+      <child>l_elbow</child>
+      <parent>l_upper_arm</parent>
+      <axis>
+        <xyz>-0 1 -0</xyz>
+        <limit>
+          <lower>-2.18166</lower>
+          <upper>0</upper>
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name="l_lower_arm">
+      <pose frame="">0.010525 0.207221 0.231536 -0 0 -0</pose>
+      <inertial>
+        <pose frame="">-4.3e-05 3.1e-05 -0.13751 0 -0 0</pose>
+        <mass>1.63933</mass>
+        <inertia>
+          <ixx>0.00678741</ixx>
+          <ixy>1.11e-06</ixy>
+          <ixz>-1.253e-05</ixz>
+          <iyy>0.00706746</iyy>
+          <iyz>1.485e-05</iyz>
+          <izz>0.00183806</izz>
+        </inertia>
+      </inertial>
+      <visual name="l_lower_arm_visual">
+        <pose frame="">0 0 -0.29285 3.14159 3e-06 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://eve_r3_description/meshes/forearm.obj</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="j_l_elbow_z" type="revolute">
+      <child>l_lower_arm</child>
+      <parent>l_elbow</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>0.7854</upper>
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name="l_wrist">
+      <pose frame="">0.010525 0.207221 -0.061314 -0 0 -0</pose>
+      <inertial>
+        <pose frame="">0.002401 0.000797 -0.001254 0 -0 0</pose>
+        <mass>0.303634</mass>
+        <inertia>
+          <ixx>0.00018188</ixx>
+          <ixy>2.27e-06</ixy>
+          <ixz>-2.16e-06</ixz>
+          <iyy>0.00016139</iyy>
+          <iyz>-9.5e-07</iyz>
+          <izz>0.00027335</izz>
+        </inertia>
+      </inertial>
+      <visual name="l_wrist_visual">
+        <pose frame="">0 0 0 0 -0 1.5708</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://eve_r3_description/meshes/wrist.obj</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="j_l_wrist_y" type="revolute">
+      <child>l_wrist</child>
+      <parent>l_lower_arm</parent>
+      <axis>
+        <xyz>-0 1 -0</xyz>
+        <limit>
+          <lower>-0.785398</lower>
+          <upper>0.785398</upper>
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name="l_palm">
+      <pose frame="">0.010525 0.207221 -0.061314 -0 0 -0</pose>
+      <inertial>
+        <pose frame="">0.004683 -0.029443 -0.157198 0 -0 0</pose>
+        <mass>0.828638</mass>
+        <inertia>
+          <ixx>0.00817415</ixx>
+          <ixy>2.59325e-05</ixy>
+          <ixz>-7.62768e-05</ixz>
+          <iyy>0.00759044</iyy>
+          <iyz>-0.00150156</iyz>
+          <izz>0.00197697</izz>
+        </inertia>
+      </inertial>
+      <collision name="l_palm_fixed_joint_lump__qbhand_left_base_link_collision">
+        <pose frame="">0 0 -0.06 3.14 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/flange_iso_04.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name="l_palm_fixed_joint_lump__qbhand_left_palm_link_collision_1">
+        <pose frame="">0.0045 -0.014729 -0.203977 -1.57 -3e-06 -3.14</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/palm_pinch_l.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name="l_palm_fixed_joint_lump__qbhand_left_index_knuckle_link_collision_2">
+        <pose frame="">0.024478 -0.000692 -0.196988 -1.57159 4e-06 0.003185</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_knuckle.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name="l_palm_fixed_joint_lump__qbhand_left_index_proximal_link_collision_3">
+        <pose frame="">0.024488 -0.000709 -0.218988 3.14159 1.57079 -3.13681</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_medium.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name="l_palm_fixed_joint_lump__qbhand_left_index_middle_link_collision_4">
+        <pose frame="">0.024512 -0.000733 -0.248988 3.14159 1.57079 -3.13681</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_small.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name="l_palm_fixed_joint_lump__qbhand_left_index_distal_link_collision_5">
+        <pose frame="">0.024529 -0.000751 -0.270988 3.14159 1.57079 -3.13681</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_distal.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name="l_palm_fixed_joint_lump__qbhand_left_little_knuckle_link_collision_6">
+        <pose frame="">-0.035522 -0.000783 -0.191988 -1.57159 4e-06 0.003185</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_knuckle.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name="l_palm_fixed_joint_lump__qbhand_left_little_proximal_link_collision_7">
+        <pose frame="">-0.035512 -0.000801 -0.213988 3.14159 1.57079 -3.13681</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_small.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name="l_palm_fixed_joint_lump__qbhand_left_little_middle_link_collision_8">
+        <pose frame="">-0.035494 -0.000818 -0.235988 3.14159 1.57079 -3.13681</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_small.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name="l_palm_fixed_joint_lump__qbhand_left_little_distal_link_collision_9">
+        <pose frame="">-0.035477 -0.000836 -0.257988 3.14159 1.57079 -3.13681</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_distal.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name="l_palm_fixed_joint_lump__qbhand_left_middle_knuckle_link_collision_10">
+        <pose frame="">0.004478 -0.000729 -0.203988 -1.57159 4e-06 0.003185</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_knuckle.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name="l_palm_fixed_joint_lump__qbhand_left_middle_proximal_link_collision_11">
+        <pose frame="">0.004488 -0.000747 -0.225988 3.14159 1.57079 -3.13681</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_medium.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name="l_palm_fixed_joint_lump__qbhand_left_middle_middle_link_collision_12">
+        <pose frame="">0.004512 -0.000771 -0.255988 3.14159 1.57079 -3.13681</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_small.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name="l_palm_fixed_joint_lump__qbhand_left_middle_distal_link_collision_13">
+        <pose frame="">0.004529 -0.000788 -0.277988 3.14159 1.57079 -3.13681</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_distal.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name="l_palm_fixed_joint_lump__qbhand_left_ring_knuckle_link_collision_14">
+        <pose frame="">-0.015522 -0.000756 -0.196988 -1.57159 4e-06 0.003185</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_knuckle.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name="l_palm_fixed_joint_lump__qbhand_left_ring_proximal_link_collision_15">
+        <pose frame="">-0.015512 -0.000773 -0.218988 3.14159 1.57079 -3.13681</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_medium.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name="l_palm_fixed_joint_lump__qbhand_left_ring_middle_link_collision_16">
+        <pose frame="">-0.015488 -0.000797 -0.248988 3.14159 1.57079 -3.13681</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_small.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name="l_palm_fixed_joint_lump__qbhand_left_ring_distal_link_collision_17">
+        <pose frame="">-0.015471 -0.000814 -0.270988 3.14159 1.57079 -3.13681</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_distal.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name="l_palm_fixed_joint_lump__qbhand_left_thumb_knuckle_link_collision_18">
+        <pose frame="">0.047997 -0.012625 -0.160478 -0.001593 4e-06 0.003185</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_thumb_l.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name="l_palm_fixed_joint_lump__qbhand_left_thumb_proximal_link_collision_19">
+        <pose frame="">0.086509 -0.016499 -0.157972 1.14841 4e-06 0.003185</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_small.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name="l_palm_fixed_joint_lump__qbhand_left_thumb_distal_link_collision_20">
+        <pose frame="">0.108509 -0.016429 -0.157972 1.14841 4e-06 0.003185</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_distal.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="l_palm_visual">
+        <pose frame="">0 0 0 -1.5708 -0 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://eve_r3_description/meshes/palm.obj</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="l_palm_fixed_joint_lump__qbhand_left_base_link_visual_1">
+        <pose frame="">0 0 -0.06 3.14 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/flange_iso_04.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="l_palm_fixed_joint_lump__qbhand_left_palm_link_visual_2">
+        <pose frame="">0.0045 -0.014729 -0.203977 -1.57 -3e-06 -3.14</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/palm_pinch_l.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="l_palm_fixed_joint_lump__qbhand_left_index_knuckle_link_visual_3">
+        <pose frame="">0.024478 -0.000692 -0.196988 -1.57159 4e-06 0.003185</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_knuckle.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="l_palm_fixed_joint_lump__qbhand_left_index_proximal_link_visual_4">
+        <pose frame="">0.024488 -0.000709 -0.218988 3.14159 1.57079 -3.13681</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_medium.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="l_palm_fixed_joint_lump__qbhand_left_index_middle_link_visual_5">
+        <pose frame="">0.024512 -0.000733 -0.248988 3.14159 1.57079 -3.13681</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_small.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="l_palm_fixed_joint_lump__qbhand_left_index_distal_link_visual_6">
+        <pose frame="">0.024529 -0.000751 -0.270988 3.14159 1.57079 -3.13681</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_distal.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="l_palm_fixed_joint_lump__qbhand_left_little_knuckle_link_visual_7">
+        <pose frame="">-0.035522 -0.000783 -0.191988 -1.57159 4e-06 0.003185</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_knuckle.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="l_palm_fixed_joint_lump__qbhand_left_little_proximal_link_visual_8">
+        <pose frame="">-0.035512 -0.000801 -0.213988 3.14159 1.57079 -3.13681</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_small.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="l_palm_fixed_joint_lump__qbhand_left_little_middle_link_visual_9">
+        <pose frame="">-0.035494 -0.000818 -0.235988 3.14159 1.57079 -3.13681</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_small.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="l_palm_fixed_joint_lump__qbhand_left_little_distal_link_visual_10">
+        <pose frame="">-0.035477 -0.000836 -0.257988 3.14159 1.57079 -3.13681</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_distal.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="l_palm_fixed_joint_lump__qbhand_left_middle_knuckle_link_visual_11">
+        <pose frame="">0.004478 -0.000729 -0.203988 -1.57159 4e-06 0.003185</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_knuckle.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="l_palm_fixed_joint_lump__qbhand_left_middle_proximal_link_visual_12">
+        <pose frame="">0.004488 -0.000747 -0.225988 3.14159 1.57079 -3.13681</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_medium.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="l_palm_fixed_joint_lump__qbhand_left_middle_middle_link_visual_13">
+        <pose frame="">0.004512 -0.000771 -0.255988 3.14159 1.57079 -3.13681</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_small.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="l_palm_fixed_joint_lump__qbhand_left_middle_distal_link_visual_14">
+        <pose frame="">0.004529 -0.000788 -0.277988 3.14159 1.57079 -3.13681</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_distal.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="l_palm_fixed_joint_lump__qbhand_left_ring_knuckle_link_visual_15">
+        <pose frame="">-0.015522 -0.000756 -0.196988 -1.57159 4e-06 0.003185</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_knuckle.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="l_palm_fixed_joint_lump__qbhand_left_ring_proximal_link_visual_16">
+        <pose frame="">-0.015512 -0.000773 -0.218988 3.14159 1.57079 -3.13681</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_medium.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="l_palm_fixed_joint_lump__qbhand_left_ring_middle_link_visual_17">
+        <pose frame="">-0.015488 -0.000797 -0.248988 3.14159 1.57079 -3.13681</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_small.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="l_palm_fixed_joint_lump__qbhand_left_ring_distal_link_visual_18">
+        <pose frame="">-0.015471 -0.000814 -0.270988 3.14159 1.57079 -3.13681</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_distal.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="l_palm_fixed_joint_lump__qbhand_left_thumb_knuckle_link_visual_19">
+        <pose frame="">0.047997 -0.012625 -0.160478 -0.001593 4e-06 0.003185</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_thumb_l.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="l_palm_fixed_joint_lump__qbhand_left_thumb_proximal_link_visual_20">
+        <pose frame="">0.086509 -0.016499 -0.157972 1.14841 4e-06 0.003185</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_small.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="l_palm_fixed_joint_lump__qbhand_left_thumb_distal_link_visual_21">
+        <pose frame="">0.108509 -0.016429 -0.157972 1.14841 4e-06 0.003185</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_distal.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="j_l_wrist_x" type="revolute">
+      <child>l_palm</child>
+      <parent>l_wrist</parent>
+      <axis>
+        <xyz>1 -0 -0</xyz>
+        <limit>
+          <lower>-1.5708</lower>
+          <upper>0.523599</upper>
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name="r_scapula">
+      <pose frame="">0.010525 -0.207221 0.545525 -0.253262 -0 0.261799</pose>
+      <inertial>
+        <pose frame="">0.000611 0.063067 0.030325 0 -0 0</pose>
+        <mass>2.75567</mass>
+        <inertia>
+          <ixx>0.00936557</ixx>
+          <ixy>2.264e-05</ixy>
+          <ixz>-7.112e-05</ixz>
+          <iyy>0.0107902</iyy>
+          <iyz>0.0008423</iyz>
+          <izz>0.0126776</izz>
+        </inertia>
+      </inertial>
+      <visual name="r_scapula_visual">
+        <pose frame="">0 0 0 1.5708 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://eve_r3_description/meshes/scapula.obj</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="j_r_shoulder_y" type="revolute">
+      <child>r_scapula</child>
+      <parent>pelvis</parent>
+      <axis>
+        <xyz>-0.250562 0.935113 -0.250563</xyz>
+        <limit>
+          <lower>-2.42409</lower>
+          <upper>0.98105</upper>
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name="r_shoulder">
+      <pose frame="">0.010525 -0.207221 0.545525 0 -0 0.261799</pose>
+      <inertial>
+        <pose frame="">0 -0.000706 -0.019755 0 -0 0</pose>
+        <mass>0.702643</mass>
+        <inertia>
+          <ixx>0.00115475</ixx>
+          <ixy>-3.2e-07</ixy>
+          <ixz>-1.4e-07</ixz>
+          <iyy>0.00143713</iyy>
+          <iyz>2.63e-06</iyz>
+          <izz>0.00094633</izz>
+        </inertia>
+      </inertial>
+      <visual name="r_shoulder_visual">
+        <pose frame="">0 0 0 3.14159 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://eve_r3_description/meshes/shoulder.obj</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="j_r_shoulder_x" type="revolute">
+      <child>r_shoulder</child>
+      <parent>r_scapula</parent>
+      <axis>
+        <xyz>0.965926 0.258819 0</xyz>
+        <limit>
+          <lower>-2.0944</lower>
+          <upper>0.0872665</upper>
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name="r_upper_arm">
+      <pose frame="">0.010525 -0.207221 0.545525 0 0 0</pose>
+      <inertial>
+        <pose frame="">-0.006258 3.5e-05 -0.171877 0 -0 0</pose>
+        <mass>2.92532</mass>
+        <inertia>
+          <ixx>0.0134165</ixx>
+          <ixy>-6.4e-07</ixy>
+          <ixz>-0.00029063</ixz>
+          <iyy>0.0128785</iyy>
+          <iyz>-3.08e-06</iyz>
+          <izz>0.00487381</izz>
+        </inertia>
+      </inertial>
+      <visual name="r_upper_arm_visual">
+        <pose frame="">0 0 0 1.5708 -0 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://eve_r3_description/meshes/upper_arm.obj</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="j_r_shoulder_z" type="revolute">
+      <child>r_upper_arm</child>
+      <parent>r_shoulder</parent>
+      <axis>
+        <xyz>0 -0 1</xyz>
+        <limit>
+          <lower>-0.541053</lower>
+          <upper>1.46608</upper>
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name="r_elbow">
+      <pose frame="">0.010525 -0.207221 0.231536 0 0 0</pose>
+      <inertial>
+        <pose frame="">5.5e-05 0 -0.008885 0 -0 0</pose>
+        <mass>0.462616</mass>
+        <inertia>
+          <ixx>0.0008227</ixx>
+          <ixy>-0</ixy>
+          <ixz>9.6e-07</ixz>
+          <iyy>0.00036441</iyy>
+          <iyz>-0</iyz>
+          <izz>0.00061472</izz>
+        </inertia>
+      </inertial>
+      <visual name="r_elbow_visual">
+        <pose frame="">0 0 0 3.14159 3e-06 -1.5708</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://eve_r3_description/meshes/elbow.obj</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="j_r_elbow_y" type="revolute">
+      <child>r_elbow</child>
+      <parent>r_upper_arm</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-2.18166</lower>
+          <upper>0</upper>
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name="r_lower_arm">
+      <pose frame="">0.010525 -0.207221 0.231536 0 0 0</pose>
+      <inertial>
+        <pose frame="">-4.3e-05 3.1e-05 -0.13751 0 -0 0</pose>
+        <mass>1.63933</mass>
+        <inertia>
+          <ixx>0.00678741</ixx>
+          <ixy>1.11e-06</ixy>
+          <ixz>-1.253e-05</ixz>
+          <iyy>0.00706746</iyy>
+          <iyz>1.485e-05</iyz>
+          <izz>0.00183806</izz>
+        </inertia>
+      </inertial>
+      <visual name="r_lower_arm_visual">
+        <pose frame="">0 0 -0.29285 3.14159 3e-06 3.14159</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://eve_r3_description/meshes/forearm.obj</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="j_r_elbow_z" type="revolute">
+      <child>r_lower_arm</child>
+      <parent>r_elbow</parent>
+      <axis>
+        <xyz>0 -0 1</xyz>
+        <limit>
+          <lower>-0.7854</lower>
+          <upper>1.5708</upper>
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name="r_wrist">
+      <pose frame="">0.010525 -0.207221 -0.061314 0 0 0</pose>
+      <inertial>
+        <pose frame="">0.002401 0.000797 -0.001254 0 -0 0</pose>
+        <mass>0.303634</mass>
+        <inertia>
+          <ixx>0.00018188</ixx>
+          <ixy>2.27e-06</ixy>
+          <ixz>-2.16e-06</ixz>
+          <iyy>0.00016139</iyy>
+          <iyz>-9.5e-07</iyz>
+          <izz>0.00027335</izz>
+        </inertia>
+      </inertial>
+      <visual name="r_wrist_visual">
+        <pose frame="">0 0 0 0 -0 1.5708</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://eve_r3_description/meshes/wrist.obj</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="j_r_wrist_y" type="revolute">
+      <child>r_wrist</child>
+      <parent>r_lower_arm</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-0.785398</lower>
+          <upper>0.785398</upper>
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name="r_palm">
+      <pose frame="">0.010525 -0.207221 -0.061314 0 0 0</pose>
+      <inertial>
+        <pose frame="">0.004621 -0.015106 -0.15727 0 -0 0</pose>
+        <mass>0.828638</mass>
+        <inertia>
+          <ixx>0.00765284</ixx>
+          <ixy>-4.23348e-05</ixy>
+          <ixz>-7.99465e-05</ixz>
+          <iyy>0.0075987</iyy>
+          <iyz>-0.000769886</iyz>
+          <izz>0.00144766</izz>
+        </inertia>
+      </inertial>
+      <collision name="r_palm_fixed_joint_lump__qbhand_right_base_link_collision">
+        <pose frame="">0 0 -0.06 3.14 -0 3.14</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/flange_iso_04.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name="r_palm_fixed_joint_lump__qbhand_right_palm_link_collision_1">
+        <pose frame="">0.004523 0.014722 -0.203977 -1.57319 -0 3.14</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/palm_pinch_r.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name="r_palm_fixed_joint_lump__qbhand_right_index_knuckle_link_collision_2">
+        <pose frame="">0.024501 0.000674 -0.19701 -1.57319 -0 3.14</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_knuckle.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name="r_palm_fixed_joint_lump__qbhand_right_index_proximal_link_collision_3">
+        <pose frame="">0.024491 0.000726 -0.21901 3.14159 1.57079 0.001593</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_medium.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name="r_palm_fixed_joint_lump__qbhand_right_index_middle_link_collision_4">
+        <pose frame="">0.024467 0.000798 -0.24901 3.14159 1.57079 0.001593</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_small.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name="r_palm_fixed_joint_lump__qbhand_right_index_distal_link_collision_5">
+        <pose frame="">0.02445 0.00085 -0.27101 3.14159 1.57079 0.001593</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_distal.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name="r_palm_fixed_joint_lump__qbhand_right_little_knuckle_link_collision_6">
+        <pose frame="">-0.035499 0.000757 -0.19201 -1.57319 -0 3.14</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_knuckle.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name="r_palm_fixed_joint_lump__qbhand_right_little_proximal_link_collision_7">
+        <pose frame="">-0.035509 0.00081 -0.21401 3.14159 1.57079 0.001593</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_small.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name="r_palm_fixed_joint_lump__qbhand_right_little_middle_link_collision_8">
+        <pose frame="">-0.035527 0.000862 -0.23601 3.14159 1.57079 0.001593</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_small.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name="r_palm_fixed_joint_lump__qbhand_right_little_distal_link_collision_9">
+        <pose frame="">-0.035544 0.000915 -0.25801 3.14159 1.57079 0.001593</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_distal.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name="r_palm_fixed_joint_lump__qbhand_right_middle_knuckle_link_collision_10">
+        <pose frame="">0.004501 0.000722 -0.20401 -1.57319 -0 3.14</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_knuckle.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name="r_palm_fixed_joint_lump__qbhand_right_middle_proximal_link_collision_11">
+        <pose frame="">0.004491 0.000775 -0.22601 3.14159 1.57079 0.001593</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_medium.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name="r_palm_fixed_joint_lump__qbhand_right_middle_middle_link_collision_12">
+        <pose frame="">0.004467 0.000846 -0.25601 3.14159 1.57079 0.001593</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_small.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name="r_palm_fixed_joint_lump__qbhand_right_middle_distal_link_collision_13">
+        <pose frame="">0.00445 0.000899 -0.27801 3.14159 1.57079 0.001593</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_distal.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name="r_palm_fixed_joint_lump__qbhand_right_ring_knuckle_link_collision_14">
+        <pose frame="">-0.015499 0.000737 -0.19701 -1.57319 -0 3.14</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_knuckle.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name="r_palm_fixed_joint_lump__qbhand_right_ring_proximal_link_collision_15">
+        <pose frame="">-0.015509 0.00079 -0.21901 3.14159 1.57079 0.001593</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_medium.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name="r_palm_fixed_joint_lump__qbhand_right_ring_middle_link_collision_16">
+        <pose frame="">-0.015533 0.000862 -0.24901 3.14159 1.57079 0.001593</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_small.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name="r_palm_fixed_joint_lump__qbhand_right_ring_distal_link_collision_17">
+        <pose frame="">-0.01555 0.000914 -0.27101 3.14159 1.57079 0.001593</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_distal.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name="r_palm_fixed_joint_lump__qbhand_right_thumb_knuckle_link_collision_18">
+        <pose frame="">0.048026 0.016549 -0.160472 -3.13841 -4e-06 -0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_thumb_r.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name="r_palm_fixed_joint_lump__qbhand_right_thumb_proximal_link_collision_19">
+        <pose frame="">0.086526 0.020541 -0.157959 1.99478 -4e-06 -0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_small.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <collision name="r_palm_fixed_joint_lump__qbhand_right_thumb_distal_link_collision_20">
+        <pose frame="">0.108526 0.020541 -0.157959 1.99478 -4e-06 -0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_distal.stl</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name="r_palm_visual">
+        <pose frame="">0 0 0 -1.5708 0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://eve_r3_description/meshes/palm.obj</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="r_palm_fixed_joint_lump__qbhand_right_base_link_visual_1">
+        <pose frame="">0 0 -0.06 3.14 -0 3.14</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/flange_iso_04.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="r_palm_fixed_joint_lump__qbhand_right_palm_link_visual_2">
+        <pose frame="">0.004523 0.014722 -0.203977 -1.57319 -0 3.14</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/palm_pinch_r.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="r_palm_fixed_joint_lump__qbhand_right_index_knuckle_link_visual_3">
+        <pose frame="">0.024501 0.000674 -0.19701 -1.57319 -0 3.14</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_knuckle.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="r_palm_fixed_joint_lump__qbhand_right_index_proximal_link_visual_4">
+        <pose frame="">0.024491 0.000726 -0.21901 3.14159 1.57079 0.001593</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_medium.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="r_palm_fixed_joint_lump__qbhand_right_index_middle_link_visual_5">
+        <pose frame="">0.024467 0.000798 -0.24901 3.14159 1.57079 0.001593</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_small.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="r_palm_fixed_joint_lump__qbhand_right_index_distal_link_visual_6">
+        <pose frame="">0.02445 0.00085 -0.27101 3.14159 1.57079 0.001593</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_distal.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="r_palm_fixed_joint_lump__qbhand_right_little_knuckle_link_visual_7">
+        <pose frame="">-0.035499 0.000757 -0.19201 -1.57319 -0 3.14</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_knuckle.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="r_palm_fixed_joint_lump__qbhand_right_little_proximal_link_visual_8">
+        <pose frame="">-0.035509 0.00081 -0.21401 3.14159 1.57079 0.001593</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_small.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="r_palm_fixed_joint_lump__qbhand_right_little_middle_link_visual_9">
+        <pose frame="">-0.035527 0.000862 -0.23601 3.14159 1.57079 0.001593</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_small.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="r_palm_fixed_joint_lump__qbhand_right_little_distal_link_visual_10">
+        <pose frame="">-0.035544 0.000915 -0.25801 3.14159 1.57079 0.001593</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_distal.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="r_palm_fixed_joint_lump__qbhand_right_middle_knuckle_link_visual_11">
+        <pose frame="">0.004501 0.000722 -0.20401 -1.57319 -0 3.14</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_knuckle.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="r_palm_fixed_joint_lump__qbhand_right_middle_proximal_link_visual_12">
+        <pose frame="">0.004491 0.000775 -0.22601 3.14159 1.57079 0.001593</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_medium.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="r_palm_fixed_joint_lump__qbhand_right_middle_middle_link_visual_13">
+        <pose frame="">0.004467 0.000846 -0.25601 3.14159 1.57079 0.001593</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_small.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="r_palm_fixed_joint_lump__qbhand_right_middle_distal_link_visual_14">
+        <pose frame="">0.00445 0.000899 -0.27801 3.14159 1.57079 0.001593</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_distal.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="r_palm_fixed_joint_lump__qbhand_right_ring_knuckle_link_visual_15">
+        <pose frame="">-0.015499 0.000737 -0.19701 -1.57319 -0 3.14</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_knuckle.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="r_palm_fixed_joint_lump__qbhand_right_ring_proximal_link_visual_16">
+        <pose frame="">-0.015509 0.00079 -0.21901 3.14159 1.57079 0.001593</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_medium.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="r_palm_fixed_joint_lump__qbhand_right_ring_middle_link_visual_17">
+        <pose frame="">-0.015533 0.000862 -0.24901 3.14159 1.57079 0.001593</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_small.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="r_palm_fixed_joint_lump__qbhand_right_ring_distal_link_visual_18">
+        <pose frame="">-0.01555 0.000914 -0.27101 3.14159 1.57079 0.001593</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_distal.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="r_palm_fixed_joint_lump__qbhand_right_thumb_knuckle_link_visual_19">
+        <pose frame="">0.048026 0.016549 -0.160472 -3.13841 -4e-06 -0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_thumb_r.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="r_palm_fixed_joint_lump__qbhand_right_thumb_proximal_link_visual_20">
+        <pose frame="">0.086526 0.020541 -0.157959 1.99478 -4e-06 -0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_small.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="r_palm_fixed_joint_lump__qbhand_right_thumb_distal_link_visual_21">
+        <pose frame="">0.108526 0.020541 -0.157959 1.99478 -4e-06 -0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.001 0.001 0.001</scale>
+            <uri>model://qb_hand_description/meshes/ph_distal.stl</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name="j_r_wrist_x" type="revolute">
+      <child>r_palm</child>
+      <parent>r_wrist</parent>
+      <axis>
+        <xyz>1 0 -0</xyz>
+        <limit>
+          <lower>-0.523599</lower>
+          <upper>1.5708</upper>
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+  </model>
+</sdf>

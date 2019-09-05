@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<robot xmlns:ns2="http://www.ros.org" name="eve_r3_head">   
+    <joint name="j_neck_y" type="revolute">
+        <origin xyz="-0.004458 0.0 0.680766" rpy="0.0 0.0 0.0"/>
+        <parent link="pelvis"/>
+        <child link="head"/>
+        <axis xyz="0.0 1 0.0"/>
+        <limit lower="-0.0872664626" upper="0.698132" effort="-1.0" velocity="-1.0"/>
+    </joint>
+    <link name="head">
+        <inertial>
+            <origin xyz="0.01272383 -0.00326913 0.07053205" rpy="0.0 0.0 0.0"/>
+            <mass value="2.355"/>
+            <inertia ixx="0.01719944" ixy="-8.079E-5" ixz="-0.0013284" iyy="0.0196904" iyz="2.3833E-4" izz="0.0077437"/>
+        </inertial>
+        <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="1.5707963 0.0 1.5707963"/>
+            <geometry>
+                <mesh filename="package://eve_r3_description/meshes/head.obj" scale="1 1 1"/>
+            </geometry>
+        </visual>
+    </link>
+    <gazebo reference="head">
+	    <sensor name="realsense" type="camera">
+	      <camera>
+	        <image>
+	          <width>640</width>
+	          <height>480</height>
+	          <format>R8G8B8</format>
+	        </image>
+	        <horizontal_fov>1.487021</horizontal_fov>
+	        <clip>
+	          <near>0.2</near>
+	          <far>10</far>
+	        </clip>
+	      </camera>
+	      <update_rate>6</update_rate>
+	      <pose frame="">0.116669 0 0.17015 0 0.174533 0</pose>
+	    </sensor>
+  </gazebo>
+</robot>

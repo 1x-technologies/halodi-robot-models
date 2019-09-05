@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<robot xmlns:ns2="http://www.ros.org" xmlns:xi="http://www.w3.org/2003/XInclude" name="eve_r3">
+
+	<xi:include href="eve_r3_leg.in.urdf" xpointer="xpointer(//robot/*)"/>
+    <xi:include href="eve_r3_right_arm.in.urdf" xpointer="xpointer(//robot/*)"/>
+    <xi:include href="eve_r3_left_arm.in.urdf" xpointer="xpointer(//robot/*)"/>
+	<xi:include href="eve_r3_head.in.urdf" xpointer="xpointer(//robot/*)"/>
+    
+</robot>

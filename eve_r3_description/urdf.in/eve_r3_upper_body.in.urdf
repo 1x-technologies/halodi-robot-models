@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<robot xmlns:ns2="http://www.ros.org" xmlns:xi="http://www.w3.org/2003/XInclude" name="eve_r3_upper_body">
+    <link name="pelvis">
+        <inertial>
+            <origin xyz="-0.02336008 -0.00771192 0.42020601" rpy="0.0 0.0 0.0"/>
+            <mass value="10.04177517"/>
+            <inertia ixx="0.17203363" ixy="0.00142736" ixz="0.01333944" iyy="0.16438898" iyz="-0.00928197" izz="0.06501466"/>
+        </inertial>
+        <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="1.5707963 0.0 1.5707963"/>
+            <geometry>
+                <mesh filename="package://eve_r3_description/meshes/torso.obj" scale="1 1 1"/>
+            </geometry>
+        </visual>
+    </link>	
+    <xi:include href="eve_r3_right_arm.in.urdf" xpointer="xpointer(//robot/*)"/>
+    <xi:include href="eve_r3_left_arm.in.urdf" xpointer="xpointer(//robot/*)"/>
+</robot>

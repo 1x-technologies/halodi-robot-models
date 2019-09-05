@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<robot xmlns:ns2="http://www.ros.org" name="eve_r3_leg">   
+    <link name="pelvis">
+        <inertial>
+            <origin xyz="-0.01035145 -0.00576441 0.41289202" rpy="0.0 0.0 0.0"/>
+            <mass value="10.11628645"/>
+            <inertia ixx="0.16934147" ixy="1.49E-4" ixz="0.00652485" iyy="0.1566806" iyz="-0.00748297" izz="0.05486492"/>
+        </inertial>
+        <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="1.5707963 0.0 1.5707963"/>
+            <geometry>
+                <mesh filename="package://eve_r3_description/meshes/torso.obj" scale="1 1 1"/>
+            </geometry>
+        </visual>
+    </link>
+    <joint name="j_hip_z" type="revolute">
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <parent link="pelvis"/>
+        <child link="abdomen"/>
+        <axis xyz="0.0 0.0 1.0"/>
+        <limit lower="-1.0472" upper="1.0472" effort="-1.0" velocity="-1.0"/>
+    </joint>
+    <link name="abdomen">
+        <inertial>
+            <origin xyz="-0.05558735 0.00156974 0.13110756" rpy="0.0 0.0 0.0"/>
+            <mass value="3.4381772"/>
+            <inertia ixx="0.05607222" ixy="7.0118E-4" ixz="-0.01468099" iyy="0.05435718" iyz="-0.00188443" izz="0.02016737"/>
+        </inertial>
+        <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="1.5707963 0.0 1.5707963"/>
+            <geometry>
+                <mesh filename="package://eve_r3_description/meshes/abdomen.obj" scale="1 1 1"/>
+            </geometry>
+        </visual>
+    </link>
+    <joint name="j_hip_x" type="revolute">
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <parent link="abdomen"/>
+        <child link="hip_x_link"/>
+        <axis xyz="1.0 0.0 0.0"/>
+        <limit lower="-0.523599" upper="0.523599" effort="-1.0" velocity="-1.0"/>
+    </joint>
+    <link name="hip_x_link">
+        <inertial>
+            <origin xyz="-0.013462 -0.001267 -7.7E-5" rpy="0.0 0.0 0.0"/>
+            <mass value="2.868669"/>
+            <inertia ixx="0.013678" ixy="5.6E-5" ixz="-7.6E-4" iyy="0.014884" iyz="1.4E-5" izz="0.016484"/>
+        </inertial>
+        <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="1.5707963 0.0 1.5707963"/>
+            <geometry>
+                <mesh filename="package://eve_r3_description/meshes/hip.obj" scale="1 1 1"/>
+            </geometry>
+        </visual>
+    </link>
+    <joint name="j_hip_y" type="revolute">
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <parent link="hip_x_link"/>
+        <child link="thigh"/>
+        <axis xyz="0.0 1.0 0.0"/>
+        <limit lower="-1.57" upper="0.174533" effort="-1.0" velocity="-1.0"/>
+    </joint>
+    <link name="thigh">
+        <inertial>
+            <origin xyz="0.048668 0.002117 -0.216367" rpy="0.0 0.0 0.0"/>
+            <mass value="12.846698"/>
+            <inertia ixx="0.172201" ixy="-0.001348" ixz="0.012646" iyy="0.155119" iyz="-6.0E-4" izz="0.076153"/>
+        </inertial>
+        <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="1.5707963 0.0 1.5707963"/>
+            <geometry>
+                <mesh filename="package://eve_r3_description/meshes/thigh.obj" scale="1 1 1"/>
+            </geometry>
+        </visual>
+    </link>
+    <joint name="j_knee_y" type="revolute">
+        <origin xyz="0.0 0.0 -0.4" rpy="0.0 0.0 0.0"/>
+        <parent link="thigh"/>
+        <child link="shin"/>
+        <axis xyz="0.0 1.0 0.0"/>
+        <limit lower="0.0" upper="2.583" effort="-1.0" velocity="-1.0"/>
+    </joint>
+    <link name="shin">
+        <inertial>
+            <origin xyz="0.019484 6.7E-5 -0.167324" rpy="0.0 0.0 0.0"/>
+            <mass value="10.894892"/>
+            <inertia ixx="0.191988" ixy="-2.08E-4" ixz="0.005202" iyy="0.176793" iyz="-3.45E-4" izz="0.049718"/>
+        </inertial>
+        <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="1.5707963 0.0 1.5707963"/>
+            <geometry>
+                <mesh filename="package://eve_r3_description/meshes/shin.obj" scale="1 1 1"/>
+            </geometry>
+        </visual>
+    </link>
+    <joint name="j_ankle_y" type="revolute">
+        <origin xyz="0.0 0.0 -0.38" rpy="0.0 0.0 0.0"/>
+        <parent link="shin"/>
+        <child link="ankle_y_link"/>
+        <axis xyz="0.0 1.0 0.0"/>
+        <limit lower="-1.57" upper="0.174533" effort="-1.0" velocity="-1.0"/>
+    </joint>
+    <link name="ankle_y_link">
+        <inertial>
+            <origin xyz="-0.017821 0.001497 -6.49E-4" rpy="0.0 0.0 0.0"/>
+            <mass value="2.656189"/>
+            <inertia ixx="0.010249" ixy="-8.2E-5" ixz="2.65E-4" iyy="0.009117" iyz="9.0E-6" izz="0.013843"/>
+        </inertial>
+        <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="1.5707963 0.0 1.5707963"/>
+            <geometry>
+                <mesh filename="package://eve_r3_description/meshes/ankle.obj" scale="1 1 1"/>
+            </geometry>
+        </visual>
+    </link>
+    <joint name="j_ankle_x" type="revolute">
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <parent link="ankle_y_link"/>
+        <child link="base"/>
+        <axis xyz="1.0 0.0 0.0"/>
+        <limit lower="-0.523599" upper="0.523599" effort="-1.0" velocity="-1.0"/>
+    </joint>
+    <link name="base">
+        <inertial>
+            <origin xyz="0.021997 0.006327 -0.006204" rpy="0.0 0.0 0.0"/>
+            <mass value="13.647499"/>
+            <inertia ixx="0.461101" ixy="-0.004042" ixz="-0.020010" iyy="0.246583" iyz="-0.000110" izz="0.679520"/>
+        </inertial>
+        <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="1.5707963 0.0 1.5707963"/>
+            <geometry>
+                <mesh filename="package://eve_r3_description/meshes/base.obj" scale="1 1 1"/>
+            </geometry>
+        </visual>
+    </link>
+    <joint name="j_l_wheel_y" type="continuous">
+        <origin xyz="0.142 0.26983 0.019" rpy="0.0 0.0 0.0"/>
+        <parent link="base"/>
+        <child link="l_wheel"/>
+        <axis xyz="0.0 1.0 0.0"/>
+        <limit lower="-1.0E16" upper="1.0E16" effort="-1.0" velocity="-1.0"/>
+    </joint>
+    <link name="l_wheel">
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <mass value="1.52693"/>
+            <inertia ixx="0.007129" ixy="-0.0" ixz="-0.0" iyy="0.013685" iyz="-0.0" izz="0.007131"/>
+        </inertial>
+        <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="1.5707963 0.0 -1.5707963"/>
+            <geometry>
+                <mesh filename="package://eve_r3_description/meshes/wheel.obj" scale="1 1 1"/>
+            </geometry>
+        </visual>
+    </link>
+    <joint name="j_r_wheel_y" type="continuous">
+        <origin xyz="0.142 -0.26983 0.019" rpy="0.0 0.0 0.0"/>
+        <parent link="base"/>
+        <child link="r_wheel"/>
+        <axis xyz="0.0 1.0 0.0"/>
+        <limit lower="-1.0E16" upper="1.0E16" effort="-1.0" velocity="-1.0"/>
+    </joint>
+    <link name="r_wheel">
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <mass value="1.52693"/>
+            <inertia ixx="0.007129" ixy="-0.0" ixz="-0.0" iyy="0.013685" iyz="-0.0" izz="0.007131"/>
+        </inertial>
+        <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="1.5707963 0.0 1.5707963"/>
+            <geometry>
+                <mesh filename="package://eve_r3_description/meshes/wheel.obj" scale="1 1 1"/>
+            </geometry>
+        </visual>
+    </link>
+    <gazebo reference="pelvis">
+        <sensor name="imu_sensor" type="imu">
+            <always_on>1</always_on>
+            <update_rate>1000</update_rate>
+            <imu>
+                <noise>
+                    <type>gaussian</type>
+                    <rate>
+                        <mean>0</mean>
+                        <stddev>0.0002</stddev>
+                        <bias_mean>7.5e-06</bias_mean>
+                        <bias_stddev>8e-07</bias_stddev>
+	            </rate>
+                    <accel>
+                        <mean>0</mean>
+                        <stddev>0.017</stddev>
+                        <bias_mean>0.1</bias_mean>
+                        <bias_stddev>0.001</bias_stddev>
+	            </accel>
+	          </noise>
+	        </imu>
+            <pose frame="">0.0 0.0 0.142 0 0.0 0</pose>
+	      </sensor>
+    </gazebo>
+</robot>

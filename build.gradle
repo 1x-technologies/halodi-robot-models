@@ -1,0 +1,106 @@
+buildscript {
+   repositories {
+      mavenCentral()
+      mavenLocal()
+      jcenter()
+   }
+   
+   dependencies {
+      classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.+'
+   }
+   
+
+}
+
+apply plugin: 'java'
+apply plugin: 'com.jfrog.bintray'
+apply plugin: 'maven'
+apply plugin: 'maven-publish'
+
+
+def vcsurl = 'https://github.com/halodi/halodi-robot-models'
+group = "com.halodi"
+version = "0.1.0"
+
+def excludedFiles = [ '**/build', '**/cmake', '**/CMakeLists.txt', '**/package.xml', '**/model.config', '**/urdf.in', 'unity' ]
+
+
+
+sourceSets {
+    main {
+        java {
+            srcDirs = []
+        }
+        resources {
+            srcDirs = []
+        }
+   }
+}
+
+jar {
+    
+    file(".").eachFile(groovy.io.FileType.DIRECTORIES) {
+    
+        def packageFile = new File(it, "package.xml");
+        if(packageFile.exists()) {
+        
+            def targetPackage = 'com/halodi/models/' + it.name;
+            def sourceFolder = file(it);
+            into targetPackage, {
+                from sourceFolder
+                exclude excludedFiles
+            }
+        }   
+    }
+}
+
+
+
+
+// Create the pom configuration:
+def pomConfig = {
+    licenses {
+        license {
+            name "The Apache Software License, Version 2.0"
+            url "http://www.apache.org/licenses/LICENSE-2.0.txt"
+            distribution "repo"
+        }
+    }
+    developers {
+        developer {
+            name "Jesper Smith"
+            email "jesper@halodi.com"
+        }
+    }
+    
+    scm {
+       url vcsurl
+    }
+}
+
+// Create the publication with the pom configuration:
+publishing {
+    publications {
+        JavaPublication(MavenPublication) {
+            from components.java
+            groupId group
+            artifactId project.name
+            version version
+        }
+    }
+}
+
+
+
+bintray {   
+    user = project.hasProperty('bintrayUsername') ? project.property('bintrayUsername') : System.getenv('BINTRAY_USER')
+    key = project.hasProperty('bintrayApiKey') ? project.property('bintrayApiKey') : System.getenv('BINTRAY_API_KEY')
+    pkg {
+        repo = 'maven-release'
+        name = project.name
+        userOrg = 'halodirobotics'
+        licenses = ['Apache-2.0']
+        vcsUrl = vcsurl
+    }
+    publications = ['JavaPublication'] 
+}

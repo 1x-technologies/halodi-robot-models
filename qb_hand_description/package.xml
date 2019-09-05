@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>qb_hand_description</name>
+  <version>2.1.2</version>
+  <description>
+    This package contains the ROS description for qbrobotics® qbhand device.
+  </description>
+  <author>qbrobotics®</author>
+  <maintainer email="jesper@halodi.com">Jesper Smith</maintainer>
+  <license>BSD 3-Clause</license>
+
+  <url type="bugtracker">https://bitbucket.org/qbrobotics/qbhand-ros/issues</url>
+  <url type="repository">https://bitbucket.org/qbrobotics/qbhand-ros</url>
+  <url type="website">http://wiki.ros.org/qb_hand_description</url>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <depend>urdf</depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+    <architecture_independent/>
+  </export>
+</package>

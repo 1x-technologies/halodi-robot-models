@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>eve_r3_description</name>
+  <version>3.1.0</version>
+  <description>Eve model description.</description>
+  <maintainer email="jesper@halodi.com">Jesper Smith</maintainer>
+  <license>Apache License 2.0</license>
+
+  <author email="jesper@halodi.com">Jesper Smith</author>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <buildtool_depend>gazebo</buildtool_depend>
+  <depend>qb_hand_description</depend>
+  
+  <export>
+    <architecture_independent/>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
