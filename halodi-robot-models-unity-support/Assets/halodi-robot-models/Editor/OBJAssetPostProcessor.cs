@@ -1,5 +1,5 @@
 ﻿/*
-© Halodi Robotics AS, 2019
+Copyright 2019 Halodi Robotics AS
 Author: Jesper Smith (jesper@halodi.com)
 
 Licensed under the Apache License, Version 2.0 (the "License");
