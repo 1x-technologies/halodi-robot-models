@@ -1,3 +1,14 @@
 {
-    "name": "com.halodi.halodi-robot-models.Editor.Tests"
+    "name": "com.halodi.halodi-robot-models.Editor.Tests",
+    "references": [
+        "com.halodi.halodi-robot-models.Editor",
+        "com.halodi.halodi-robot-models.Runtime"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ]
 }

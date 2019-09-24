@@ -1,5 +1,5 @@
 {
-   "scopedRegistries": [
+  "scopedRegistries": [
     {
       "name": "Halodi",
       "url": "http://loki:4873",
@@ -9,7 +9,7 @@
     }
   ],
   "dependencies": {
-    "com.halodi.halodi-unity-package-creator": "0.0.8",
+    "com.halodi.halodi-unity-package-creator": "0.0.13",
     "com.unity.collab-proxy": "1.2.16",
     "com.unity.ext.nunit": "1.0.0",
     "com.unity.ide.rider": "1.0.8",
@@ -50,6 +50,5 @@
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
     "com.unity.modules.xr": "1.0.0"
-
   }
 }

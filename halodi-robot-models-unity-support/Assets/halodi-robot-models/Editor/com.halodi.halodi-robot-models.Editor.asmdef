@@ -1,3 +1,16 @@
 {
-    "name": "com.halodi.halodi-robot-models.Editor"
+    "name": "com.halodi.halodi-robot-models.Editor",
+    "references": [
+        "com.halodi.halodi-robot-models.Runtime"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": []
 }

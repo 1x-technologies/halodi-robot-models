@@ -1,3 +1,11 @@
 {
-    "name": "com.halodi.halodi-robot-models.Runtime.Tests"
+    "name": "com.halodi.halodi-robot-models.Runtime.Tests",
+    "references": [
+        "com.halodi.halodi-robot-models.Runtime"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ]
 }
