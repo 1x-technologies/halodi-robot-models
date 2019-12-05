@@ -66,23 +66,24 @@ namespace Halodi.RobotModels
         private static string RelativeToAssetDatabase(string path)
         {
             #if UNITY_EDITOR_WIN
-                        AssetDatabaseRoot.Replace("\\", "/"); // Unity uses forward slashes, but DirectoryInfo under windows returns backslashes in paths
+                string AssetDatabaseRootUniversal = AssetDatabaseRoot.Replace("\\", "/"); // Unity uses forward slashes, but DirectoryInfo under windows returns backslashes in paths
+            #else
+                string AssetDatabaseRootUniversal = AssetDatabaseRoot;
             #endif
-
-            if (path.StartsWith(AssetDatabaseRoot))
+            if (path.StartsWith(AssetDatabaseRootUniversal))
             {
-                if(AssetDatabaseRoot.EndsWith(Path.DirectorySeparatorChar.ToString()))
+                if(AssetDatabaseRootUniversal.EndsWith(Path.DirectorySeparatorChar.ToString()))
                 {
-                    return path.Substring(AssetDatabaseRoot.Length);
+                    return path.Substring(AssetDatabaseRootUniversal.Length);
                 }
                 else
                 {
-                    return path.Substring(AssetDatabaseRoot.Length + 1);
+                    return path.Substring(AssetDatabaseRootUniversal.Length + 1);
                 }
             }
             else
             {
-                throw new Exception(AssetDatabaseRoot + " | Not an asset database path: " + path);
+                throw new Exception(AssetDatabaseRootUniversal + " | Not an asset database path: " + path);
             }
         }
 
