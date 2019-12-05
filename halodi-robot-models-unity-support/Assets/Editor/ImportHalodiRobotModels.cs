@@ -30,7 +30,7 @@ namespace Halodi.RobotModels
         internal static readonly string TargetDirectory = Path.Combine(new string[] {Application.dataPath, "halodi-robot-models", "Runtime", "halodi", "models"});
 
         internal static readonly string AssetDatabaseRoot = new DirectoryInfo(Application.dataPath).Parent.FullName;
-
+        
         internal static readonly string[] IgnoredFiles = { "build", "cmake", "CMakeLists.txt", "package.xml", "model.config", "urdf.in", "urdf", "sdf" };
 
         internal static readonly string InputURDFExtension = ".in.urdf";
@@ -65,7 +65,11 @@ namespace Halodi.RobotModels
 
         private static string RelativeToAssetDatabase(string path)
         {
-            if(path.StartsWith(AssetDatabaseRoot))
+            #if UNITY_EDITOR_WIN
+                        AssetDatabaseRoot.Replace("\\", "/"); // Unity uses forward slashes, but DirectoryInfo under windows returns backslashes in paths
+            #endif
+
+            if (path.StartsWith(AssetDatabaseRoot))
             {
                 if(AssetDatabaseRoot.EndsWith(Path.DirectorySeparatorChar.ToString()))
                 {
@@ -78,7 +82,7 @@ namespace Halodi.RobotModels
             }
             else
             {
-                throw new Exception("Not an asset database path: " + path);
+                throw new Exception(AssetDatabaseRoot + " | Not an asset database path: " + path);
             }
         }
 
@@ -188,5 +192,7 @@ namespace Halodi.RobotModels
 
             return TargetFile;
         }
+
+
     }
 }

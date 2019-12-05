@@ -1,0 +1,136 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-6255066789097901558
+MonoBehaviour:
+  m_ObjectHideFlags: 11
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da692e001514ec24dbc4cca1949ff7e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  version: 0
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: eve_r3_base
+  m_Shader: {fileID: -6465566751694194690, guid: 87436ad2a45eb3e428bf958676d1d56c,
+    type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 2000
+  stringTagMap:
+    MotionVector: User
+  disabledShaderPasses:
+  - MOTIONVECTORS
+  - TransparentBackface
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - Texture2D_4E517C48:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_656774C9:
+        m_Texture: {fileID: 2800000, guid: 2092fca6e5bcb2248b19605aef046433, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_E05EEF1C:
+        m_Texture: {fileID: 2800000, guid: 067d2ee2856f8414d8f7a69c0b9433d4, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_FDC1E77D:
+        m_Texture: {fileID: 2800000, guid: ae8d17af15282f4e68ae6f6cdbb45957, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Boolean_2814989F: 0
+    - Boolean_3F66A327: 0
+    - Boolean_482E1D86: 0
+    - Boolean_4C7B20A: 0
+    - Boolean_9F1019DA: 0
+    - Boolean_EF000620: 0
+    - Vector1_119143D2: 1.5
+    - Vector1_15438012: 1
+    - Vector1_1D8D785D: 40
+    - Vector1_21FB8653: 0.422
+    - Vector1_28A4F64B: 0.623
+    - Vector1_29BD72BC: 0.861
+    - Vector1_313DBB3E: 0.147
+    - Vector1_43BD45E9: 0.988
+    - Vector1_45D338B5: 0.04
+    - Vector1_4AE3E1F0: 1.434
+    - Vector1_51BFAB67: 0.1
+    - Vector1_61061061: 1
+    - Vector1_6425FF61: 0.662
+    - Vector1_6BCE60FC: 1
+    - Vector1_6C350992: 0.2
+    - Vector1_6FCAC0C9: 0.5
+    - Vector1_72842E1: 0.929
+    - Vector1_7758120E: 0
+    - Vector1_7A2C6C92: 0.2
+    - Vector1_9DBC950B: 1.4
+    - Vector1_A734DB5E: 0.939
+    - Vector1_AD42CE85: 1
+    - Vector1_C268948A: 0.491
+    - Vector1_C369732E: 0
+    - Vector1_C6D0D245: 0.1
+    - Vector1_C8DFA234: 0
+    - Vector1_CD89F0D7: 1.87
+    - Vector1_D39D96A0: 1
+    - Vector1_D5AEB380: 0.2
+    - Vector1_E67F6BBE: 2.146
+    - Vector1_E982CACC: 0.833
+    - _AlphaCutoff: 0.5
+    - _AlphaCutoffEnable: 0
+    - _AlphaDstBlend: 0
+    - _AlphaSrcBlend: 1
+    - _BlendMode: 0
+    - _CullMode: 2
+    - _CullModeForward: 2
+    - _DoubleSidedEnable: 0
+    - _DoubleSidedNormalMode: 2
+    - _DstBlend: 0
+    - _ReceivesSSR: 1
+    - _RequireSplitLighting: 0
+    - _SrcBlend: 1
+    - _StencilRef: 2
+    - _StencilRefDepth: 0
+    - _StencilRefDistortionVec: 64
+    - _StencilRefGBuffer: 2
+    - _StencilRefMV: 128
+    - _StencilWriteMask: 3
+    - _StencilWriteMaskDepth: 48
+    - _StencilWriteMaskDistortionVec: 64
+    - _StencilWriteMaskGBuffer: 51
+    - _StencilWriteMaskMV: 176
+    - _SurfaceType: 0
+    - _TransparentBackfaceEnable: 0
+    - _TransparentCullMode: 2
+    - _TransparentSortPriority: 0
+    - _UseShadowThreshold: 0
+    - _ZTestDepthEqualForOpaque: 3
+    - _ZTestGBuffer: 4
+    - _ZTestTransparent: 4
+    - _ZWrite: 1
+    m_Colors:
+    - Color_99F597ED: {r: 1, g: 1, b: 1, a: 0}
+    - Color_A30A8956: {r: 0, g: 0, b: 0, a: 0}
+    - Color_A657990C: {r: 1, g: 1, b: 1, a: 0}
+    - Color_D878EAF0: {r: 0.9529412, g: 0.9529412, b: 0.9529412, a: 1}
+    - Color_F2B3CDFA: {r: 1, g: 1, b: 1, a: 0}
+    - Vector2_7327A961: {r: 10, g: 10, b: 0, a: 0}
+    - Vector2_851C5463: {r: 3, g: 3, b: 0, a: 0}
+    - Vector2_B4DA74FE: {r: 0, g: 0, b: 0, a: 0}
+    - Vector2_B6D56CAB: {r: 0, g: 0, b: 0, a: 0}
+    - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
+    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}

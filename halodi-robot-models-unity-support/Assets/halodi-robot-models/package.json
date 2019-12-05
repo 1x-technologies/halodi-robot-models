@@ -1,16 +1,16 @@
 {
    "name" : "com.halodi.halodi-robot-models",
-   "version" : "0.1.2",
+   "version" : "0.1.3",
    "displayName" : "Halodi Robot Models",
    "description" : "Unity version of Halodi robot models",
-   "unity" : "2019.2",
+   "unity" : "2019.3",
    "repository" : {
       "type" : "git",
       "url" : "https://github.com/Halodi/halodi-robot-models"
    },
    "license" : "Apache-2.0",
    "author" : {
-      "name" : "Jesper Smith",
+      "name" : "Jesper Smith & Daniel Ervik-Bornich",
       "email" : "jesper@halodi.com",
       "url" : "http://www.halodi.com"
    },
