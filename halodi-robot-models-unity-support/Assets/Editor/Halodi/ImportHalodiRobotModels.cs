@@ -111,38 +111,86 @@ namespace Halodi.RobotModels
 
             string PrefabName = robot.name;
             string PrefabAsset = Path.Combine(AssetTarget, PrefabName + ".prefab");
-            
-            // Search through all children of robot, attach materials to them and add the head faceplate
+
+
+            // Search through all children of robot, attach materials to them, add mesh colliders and add the head faceplate
+                // Prefabs
+                Material defaultMaterial = Resources.Load("Materials/" + robot.name + "/Default", typeof(Material)) as Material;
+                GameObject facePlatePrefab = Resources.Load("Models/" + robot.name + "/head_faceplate", typeof(GameObject)) as GameObject;
+                GameObject rightHandPrefab = Resources.Load("Models/" + robot.name + "/r_hand_collider", typeof(GameObject)) as GameObject;
+                GameObject leftHandPrefab = Resources.Load("Models/" + robot.name + "/l_hand_collider", typeof(GameObject)) as GameObject;
             Transform[] allRobotTransforms = robot.gameObject.GetComponentsInChildren<Transform>();
             foreach (Transform childTransform in allRobotTransforms)
             {
-                // Add HDRP Materials to Child objects which need Materials
+                GameObject childTransformGO = childTransform.gameObject;
+
+                // Search and destroy all imported URDF colliders as they are unoptimized for Unity
+                if (childTransform.GetComponent("Collider") as Collider != null)
+                {
+                    GameObject.DestroyImmediate(childTransformGO.GetComponent<Collider>());
+                }
+
+                // Add HDRP Material to Child object if it needs a Material
                 if (childTransform.GetComponent("MeshRenderer") as MeshRenderer != null)
                 {
-                    Material defaultMaterial = Resources.Load("Materials/" + robot.name + "/Default", typeof(Material)) as Material;
-                    Material customMaterial = Resources.Load("Materials/" + robot.name + "/" + childTransform.name, typeof(Material)) as Material;
-
-                    //If there exists a custom Material apply it, otherwise apply the Default Material in Resources Material Folder
-                    if (customMaterial)
-                    {
-                        childTransform.gameObject.GetComponentInChildren<MeshRenderer>().material = customMaterial;
-                    }
-                    else
-                    {
-                        childTransform.gameObject.GetComponentInChildren<MeshRenderer>().material = defaultMaterial;
-                    }
+                    
+                //If there exists a custom Material apply it, otherwise apply the Default Material in Resources Material Folder
+                Material customMaterial = Resources.Load("Materials/" + robot.name + "/" + childTransform.name, typeof(Material)) as Material;
+                if (customMaterial)
+                {
+                    childTransformGO.GetComponentInChildren<MeshRenderer>().material = customMaterial;
                 }
-                
+                else
+                {
+                    childTransformGO.GetComponentInChildren<MeshRenderer>().material = defaultMaterial;
+                }
+                    
+                // Add Mesh Collider
+                MeshCollider meshCollider_;
+                if(childTransform.name.Contains("flange_iso_04_0") && childTransformGO.GetComponent<MeshFilter>() != null && rightHandPrefab && leftHandPrefab) // Hands
+                {
+                    GameObject handPrefab;
+                    // Add Hand Collider Mesh
+                    if(childTransform.parent.transform.localScale.x < 0f)
+                        handPrefab = rightHandPrefab;
+                    else
+                        handPrefab = leftHandPrefab;
+
+                    GameObject newHandGO = GameObject.Instantiate(handPrefab) as GameObject;
+                    newHandGO.transform.SetParent(childTransform, false);
+                    newHandGO.transform.localPosition = new Vector3(-14.4f, 143.7f, -3.7f);
+                    newHandGO.transform.localRotation = Quaternion.Euler(new Vector3(90f, 0f, -90f));
+                    // Add meshcollider
+                    meshCollider_ = newHandGO.transform.GetChild(0).gameObject.AddComponent<MeshCollider>();
+                    // Hide Hand Collider Mesh
+                    newHandGO.transform.GetChild(0).gameObject.GetComponent<MeshRenderer>().enabled = false;
+                }
+                else if (childTransformGO.GetComponent<MeshRenderer>().sharedMaterial == defaultMaterial) // finds hand parts etc based on material
+                {
+                    meshCollider_ = null;
+                }
+                else if (childTransformGO.GetComponent<MeshFilter>() != null)
+                {
+                    meshCollider_ = childTransformGO.AddComponent<MeshCollider>();
+                }
+                else
+                {
+                    meshCollider_ = null;
+                }
+
+                if(meshCollider_ != null)
+                    meshCollider_.convex = true;
+                }
+
                 // Add Faceplate to head
                 if (childTransform.name == "head" && childTransform.GetComponent("HingeJoint") as HingeJoint != null)
                 {
-                    GameObject facePlatePrefab = Resources.Load("Models/" + robot.name + "/head_faceplate", typeof(GameObject)) as GameObject;
                     GameObject newFacePlateGO = GameObject.Instantiate(facePlatePrefab) as GameObject;
                     newFacePlateGO.transform.SetParent(childTransform, false);
                     newFacePlateGO.transform.localRotation = Quaternion.identity;
                 }
             }
-            
+
             bool success;
             PrefabUtility.SaveAsPrefabAsset(robot.gameObject, PrefabAsset, out success);
             
