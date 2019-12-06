@@ -39,7 +39,6 @@ namespace Halodi.RobotModels
                 return;
         }
         
-
         public void OnPostprocessModel(GameObject gameObject)
         {
             if (!isObj)
@@ -49,38 +48,16 @@ namespace Halodi.RobotModels
             gameObject.transform.SetPositionAndRotation(
                 getPositionFix(gameObject.transform.position),
                 Quaternion.Euler(getRotationFix()) * gameObject.transform.rotation);
-
-            setupHDPRMaterial(gameObject);
-
-            addFaceplate(gameObject);
         }
 
         public Vector3 getPositionFix(Vector3 position)
         {
             return new Vector3(-position.z, position.y, -position.x);
         }
-
         
         private static Vector3 getRotationFix()
         {
             return new Vector3(-90, 90, 0);
-        }
-
-        private void setupHDPRMaterial(GameObject gameObject)
-        {
-            gameObject.GetComponentInChildren<MeshRenderer>().material = Resources.Load("Materials/eve_r3/" + gameObject.name, typeof(Material)) as Material;  // Attach custom HDRP materials to models based on name
-            return;
-        }
-
-        private void addFaceplate(GameObject gameObject)
-        {
-            if(gameObject.name == "head")
-            {
-                GameObject facePlatePrefab = Resources.Load("Models/eve_r3/head_faceplate", typeof(GameObject)) as GameObject;
-                GameObject newFacePlateGO = GameObject.Instantiate(facePlatePrefab) as GameObject;
-                newFacePlateGO.transform.SetParent(gameObject.transform, true);
-            }
-            return;
         }
     }
 }
