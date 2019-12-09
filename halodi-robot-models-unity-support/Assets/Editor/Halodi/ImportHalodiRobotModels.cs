@@ -151,7 +151,7 @@ namespace Halodi.RobotModels
                 {
                     GameObject handPrefab;
                     // Add Hand Collider Mesh
-                    if(childTransform.parent.transform.localScale.x < 0f)
+                    if(childTransform.parent.transform.localPosition.x < 0f)
                         handPrefab = rightHandPrefab;
                     else
                         handPrefab = leftHandPrefab;
