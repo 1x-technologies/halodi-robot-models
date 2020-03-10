@@ -1,33 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<!--
-Copyright 2019 Halodi Robotics AS
-Author: Jesper Smith (jesper@halodi.com)
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-<http://www.apache.org/licenses/LICENSE-2.0>.
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
--->
-<robot xmlns:ns2="http://www.ros.org" name="eve_r3_left_arm" xmlns:xi="http://www.w3.org/2003/XInclude">
+<robot xmlns:ns2="http://www.ros.org" name="eve_r3_left_arm">
     <joint name="j_l_shoulder_y" type="revolute">
         <origin xyz="0.010525 0.207221 0.545525" rpy="0.253261563 0.0 -0.261799"/>
-        <parent link="pelvis"/>
+        <parent link="l_shoulder"/>
         <child link="l_scapula"/>
         <axis xyz="0.0 1.0 0.0"/>
         <limit lower="-2.4240878" upper="0.981049573" effort="-1.0" velocity="-1.0"/>
     </joint>
     <link name="l_scapula">
         <inertial>
-            <origin xyz="-6.1099E-4 -0.06306661 0.03032448" rpy="0.0 0.0 0.0"/>
-            <mass value="2.75566786"/>
-            <inertia ixx="0.00936557" ixy="2.264E-5" ixz="7.112E-5" iyy="0.01079015" iyz="-8.423E-4" izz="0.01267759"/>
+            <origin xyz="5.1063E-4 -0.06534731 0.02796782" rpy="0.0 0.0 0.0"/>
+            <mass value="3.00902868"/>
+            <inertia ixx="0.01028211" ixy="-4.893E-5" ixz="-7.063E-5" iyy="0.01156515" iyz="-0.00119105" izz="0.01333081"/>
         </inertial>
         <visual>
             <origin xyz="0.0 0.0 0.0" rpy="1.5707963 0.0 3.14159"/>
@@ -45,9 +29,9 @@ limitations under the License.
     </joint>
     <link name="l_shoulder">
         <inertial>
-            <origin xyz="0.0 7.0624E-4 -0.01975437" rpy="0.0 0.0 0.0"/>
-            <mass value="0.70265653"/>
-            <inertia ixx="0.00115475" ixy="-3.2E-7" ixz="1.3E-7" iyy="0.00143715" iyz="-2.63E-6" izz="9.4634E-4"/>
+            <origin xyz="-1.673E-5 1.9377E-4 -0.01871047" rpy="0.0 0.0 0.0"/>
+            <mass value="0.62091759"/>
+            <inertia ixx="9.7077E-4" ixy="3.76E-6" ixz="-1.39E-6" iyy="0.00133514" iyz="5.96E-6" izz="7.8248E-4"/>
         </inertial>
         <visual>
             <origin xyz="0.0 0.0 0.0" rpy="3.14159 0.0 0.0"/>
@@ -65,9 +49,9 @@ limitations under the License.
     </joint>
     <link name="l_upper_arm">
         <inertial>
-            <origin xyz="-0.0062579 3.507E-5 -0.17187666" rpy="0.0 0.0 0.0"/>
-            <mass value="2.92531724"/>
-            <inertia ixx="0.01341653" ixy="-6.4E-7" ixz="-2.9063E-4" iyy="0.01287847" iyz="-3.08E-6" izz="0.00487381"/>
+            <origin xyz="-0.00698778 1.1145E-4 -0.11499125" rpy="0.0 0.0 0.0"/>
+            <mass value="3.32260186"/>
+            <inertia ixx="0.01596325" ixy="8.08E-6" ixz="-5.5061E-4" iyy="0.01552407" iyz="4.445E-5" izz="0.00620843"/>
         </inertial>
         <visual>
             <origin xyz="0.0 0.0 0.0" rpy="1.5707963 0.0 3.14159"/>
@@ -85,9 +69,9 @@ limitations under the License.
     </joint>
     <link name="l_elbow">
         <inertial>
-            <origin xyz="5.494E-5 0.0 -0.00888504" rpy="0.0 0.0 0.0"/>
-            <mass value="0.46261553"/>
-            <inertia ixx="8.227E-4" ixy="-0.0" ixz="9.6E-7" iyy="3.6441E-4" iyz="-0.0" izz="6.1472E-4"/>
+            <origin xyz="6.509E-5 2.07E-6 -0.00890634" rpy="0.0 0.0 0.0"/>
+            <mass value="0.46228452"/>
+            <inertia ixx="8.234E-4" ixy="-1.0E-8" ixz="1.04E-6" iyy="3.6507E-4" iyz="-3.0E-8" izz="6.1458E-4"/>
         </inertial>
         <visual>
             <origin xyz="0.0 0.0 0.0" rpy="0.0 3.14159 1.5707963"/>
@@ -105,9 +89,9 @@ limitations under the License.
     </joint>
     <link name="l_lower_arm">
         <inertial>
-            <origin xyz="-4.326E-5 3.091E-5 -0.13751046" rpy="0.0 0.0 0.0"/>
-            <mass value="1.63933464"/>
-            <inertia ixx="0.00678741" ixy="1.11E-6" ixz="-1.253E-5" iyy="0.00706746" iyz="1.485E-5" izz="0.00183806"/>
+            <origin xyz="5.231E-5 -6.031E-5 -0.14272377" rpy="0.0 0.0 0.0"/>
+            <mass value="1.72646966"/>
+            <inertia ixx="0.00752577" ixy="3.09E-6" ixz="-3.88E-6" iyy="0.0078581" iyz="-4.25E-6" izz="0.00189705"/>
         </inertial>
         <visual>
             <origin xyz="0.0 0.0 -0.29285" rpy="0.0 3.14159 0.0"/>
@@ -125,9 +109,9 @@ limitations under the License.
     </joint>
     <link name="l_wrist">
         <inertial>
-            <origin xyz="0.00240142 7.9666E-4 -0.00125392" rpy="0.0 0.0 0.0"/>
-            <mass value="0.30363399"/>
-            <inertia ixx="1.8188E-4" ixy="2.27E-6" ixz="-2.16E-6" iyy="1.6139E-4" iyz="-9.5E-7" izz="2.7335E-4"/>
+            <origin xyz="-1.859E-4 -5.5E-5 -0.001294" rpy="0.0 0.0 0.0"/>
+            <mass value="0.3582051"/>
+            <inertia ixx="2.896E-4" ixy="2.1E-6" ixz="1.1E-6" iyy="2.335E-4" iyz="3.0E-7" izz="3.221E-4"/>
         </inertial>
         <visual>
             <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 1.5708"/>
@@ -145,9 +129,9 @@ limitations under the License.
     </joint>
     <link name="l_palm">
         <inertial>
-            <origin xyz="0.00618476 -0.00346679 -0.01888817" rpy="0.0 0.0 0.0"/>
-            <mass value="0.1486378"/>
-            <inertia ixx="1.177E-4" ixy="-2.72E-6" ixz="-1.656E-5" iyy="2.8407E-4" iyz="-5.49E-6" izz="2.1805E-4"/>
+            <origin xyz="-0.0038054 0.002091 -0.03373019" rpy="0.0 0.0 0.0"/>
+            <mass value="0.22529206"/>
+            <inertia ixx="2.4167E-4" ixy="-5.6E-7" ixz="3.083E-5" iyy="4.0895E-4" iyz="-3.58E-6" izz="2.7633E-4"/>
         </inertial>
         <visual>
             <origin xyz="0.0 0.0 0.0" rpy="-1.5707963 0.0 3.14159"/>
@@ -156,7 +140,4 @@ limitations under the License.
             </geometry>
         </visual>
     </link>
-    
-    <xi:include href="qbhand.left.in.urdf" xpointer="xpointer(//robot/*)"/>
-    
 </robot>

@@ -1,33 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<!--
-Copyright 2019 Halodi Robotics AS
-Author: Jesper Smith (jesper@halodi.com)
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-<http://www.apache.org/licenses/LICENSE-2.0>.
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
--->
-<robot xmlns:ns2="http://www.ros.org" name="eve_r3_head">   
+<robot xmlns:ns2="http://www.ros.org" name="eve_r3_head">
     <joint name="j_neck_y" type="revolute">
         <origin xyz="-0.004458 0.0 0.680766" rpy="0.0 0.0 0.0"/>
-        <parent link="pelvis"/>
+        <parent link="Root_1"/>
         <child link="head"/>
-        <axis xyz="0.0 1 0.0"/>
+        <axis xyz="0.0 1.0 0.0"/>
         <limit lower="-0.0872664626" upper="0.698132" effort="-1.0" velocity="-1.0"/>
     </joint>
     <link name="head">
         <inertial>
-            <origin xyz="0.01272383 -0.00326913 0.07053205" rpy="0.0 0.0 0.0"/>
-            <mass value="2.355"/>
-            <inertia ixx="0.01719944" ixy="-8.079E-5" ixz="-0.0013284" iyy="0.0196904" iyz="2.3833E-4" izz="0.0077437"/>
+            <origin xyz="0.02785419 -0.00406286 0.10870548" rpy="0.0 0.0 0.0"/>
+            <mass value="1.45569784"/>
+            <inertia ixx="0.00946644" ixy="-1.8919E-4" ixz="-0.00165312" iyy="0.01133976" iyz="1.2182E-4" izz="0.00442166"/>
         </inertial>
         <visual>
             <origin xyz="0.0 0.0 0.0" rpy="1.5707963 0.0 1.5707963"/>
@@ -36,22 +20,35 @@ limitations under the License.
             </geometry>
         </visual>
     </link>
+    <link name="Root_1">
+        <inertial>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <mass value="0.0"/>
+            <inertia ixx="0.0" ixy="-0.0" ixz="-0.0" iyy="0.0" iyz="-0.0" izz="0.0"/>
+        </inertial>
+        <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            <geometry>
+                <mesh filename="package://" scale="1 1 1"/>
+            </geometry>
+        </visual>
+    </link>
     <gazebo reference="head">
-	    <sensor name="realsense" type="camera">
-	      <camera>
-	        <image>
-	          <width>640</width>
-	          <height>480</height>
-	          <format>R8G8B8</format>
+        <sensor name="realsense" type="camera">
+            <camera>
+                <image>
+                    <width>640</width>
+                    <height>480</height>
+                    <format>R8G8B8</format>
 	        </image>
-	        <horizontal_fov>1.487021</horizontal_fov>
-	        <clip>
-	          <near>0.2</near>
-	          <far>10</far>
+                <horizontal_fov>1.487021</horizontal_fov>
+                <clip>
+                    <near>0.2</near>
+                    <far>10</far>
 	        </clip>
 	      </camera>
-	      <update_rate>6</update_rate>
-	      <pose frame="">0.116669 0 0.17015 0 0.174533 0</pose>
+            <update_rate>6</update_rate>
+            <pose frame="">0.116669 0 0.17015 0 0.174533 0</pose>
 	    </sensor>
-  </gazebo>
+    </gazebo>
 </robot>
