@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <robot xmlns:ns2="http://www.ros.org" name="eve_r3_head">
     <joint name="j_neck_y" type="revolute">
-        <origin xyz="-0.004458 0.0 0.680766" rpy="0.0 0.0 0.0"/>
+        <origin xyz="0.00646 0.00085 0.67201" rpy="0.0 0.0 0.0"/>
         <parent link="pelvis"/>
         <child link="head"/>
         <axis xyz="0.0 1.0 0.0"/>
@@ -9,9 +9,9 @@
     </joint>
     <link name="head">
         <inertial>
-            <origin xyz="0.02785419 -0.00406286 0.10870548" rpy="0.0 0.0 0.0"/>
-            <mass value="1.45569784"/>
-            <inertia ixx="0.00946644" ixy="-1.8919E-4" ixz="-0.00165312" iyy="0.01133976" iyz="1.2182E-4" izz="0.00442166"/>
+            <origin xyz="0.02485953 -0.00373226 0.11157957" rpy="0.0 0.0 0.0"/>
+            <mass value="1.84975554"/>
+            <inertia ixx="0.01343625" ixy="-1.5664E-4" ixz="-0.00146014" iyy="0.01517256" iyz="1.7375E-4" izz="0.00763704"/>
         </inertial>
         <visual>
             <origin xyz="0.0 0.0 0.0" rpy="1.5707963 0.0 1.5707963"/>

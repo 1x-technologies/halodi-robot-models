@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <robot xmlns:ns2="http://www.ros.org" name="eve_r3_right_arm">
     <joint name="j_r_shoulder_y" type="revolute">
-        <origin xyz="0.010525 -0.207221 0.545525" rpy="-0.253261563 0.0 0.261799"/>
+        <origin xyz="0.01041 -0.20675 0.54735" rpy="-0.261799 0.0 0.261799"/>
         <parent link="pelvis"/>
         <child link="r_scapula"/>
         <axis xyz="0.0 1.0 0.0"/>
@@ -21,7 +21,7 @@
         </visual>
     </link>
     <joint name="j_r_shoulder_x" type="revolute">
-        <origin xyz="0.0 0.0 0.0" rpy="0.253261563 0.0 0.0"/>
+        <origin xyz="0.0 0.0 0.0" rpy="0.261799 0.0 0.0"/>
         <parent link="r_scapula"/>
         <child link="r_shoulder"/>
         <axis xyz="1.0 0.0 0.0"/>
@@ -61,7 +61,7 @@
         </visual>
     </link>
     <joint name="j_r_elbow_y" type="revolute">
-        <origin xyz="0.0 0.0 -0.313989" rpy="0.0 0.0 0.0"/>
+        <origin xyz="0.0 0.0 -0.3141" rpy="0.0 0.0 0.0"/>
         <parent link="r_upper_arm"/>
         <child link="r_elbow"/>
         <axis xyz="0.0 1.0 0.0"/>
