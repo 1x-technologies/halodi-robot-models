@@ -194,7 +194,7 @@
 	            </accel>
 	          </noise>
 	        </imu>
-            <pose frame="">0.0 0.0 0.142 0 0.0 0</pose>
+            <pose frame="">0.057 0.0 0.39790 0 0.0 0</pose>
 	      </sensor>
     </gazebo>
 </robot>

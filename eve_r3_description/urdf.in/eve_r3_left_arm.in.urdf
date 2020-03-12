@@ -2,7 +2,7 @@
 <robot xmlns:ns2="http://www.ros.org" name="eve_r3_left_arm">
     <joint name="j_l_shoulder_y" type="revolute">
         <origin xyz="0.010525 0.207221 0.545525" rpy="0.253261563 0.0 -0.261799"/>
-        <parent link="l_shoulder"/>
+        <parent link="pelvis"/>
         <child link="l_scapula"/>
         <axis xyz="0.0 1.0 0.0"/>
         <limit lower="-2.4240878" upper="0.981049573" effort="-1.0" velocity="-1.0"/>
