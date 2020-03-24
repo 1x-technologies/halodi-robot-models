@@ -15,10 +15,12 @@
   <url type="website">http://wiki.ros.org/qb_hand_description</url>
 
   <buildtool_depend>ament_cmake</buildtool_depend>
+  <buildtool_depend>gazebo_ros</buildtool_depend>
   <depend>urdf</depend>
 
   <export>
     <build_type>ament_cmake</build_type>
     <architecture_independent/>
+    <gazebo_ros gazebo_model_path="${prefix}/models"/>
   </export>
 </package>
