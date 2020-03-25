@@ -281,6 +281,17 @@
             <radius>0.1524</radius>
           </sphere>
         </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0</mu>
+              <mu2>0</mu2>
+            </ode>
+          </friction>
+        </surface>
       </collision>
       <visual name="base_visual">
         <pose frame="">0 0 0 1.5708 -0 1.5708</pose>
@@ -290,7 +301,10 @@
             <uri>model://eve_r3_description/meshes/base.obj</uri>
           </mesh>
         </geometry>
+        
       </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
     </link>
     <joint name="j_ankle_x" type="revolute">
       <child>base</child>

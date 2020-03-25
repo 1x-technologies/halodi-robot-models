@@ -232,6 +232,10 @@ limitations under the License.
       <pose frame="">0.057 0.0 0.39790 0 0.0 0</pose>
     </sensor>
   </gazebo>
+  <gazebo reference="base">
+    <mu1>0.0</mu1>
+    <mu2>0.0</mu2>
+  </gazebo>
 
 
   <joint name="j_r_shoulder_y" type="revolute">
