@@ -149,6 +149,12 @@ limitations under the License.
         <mesh filename="package://eve_r3_description/meshes/base.obj" scale="1 1 1"/>
       </geometry>
     </visual>
+    <collision>
+      <origin xyz="-0.284 0.0 0.019000" rpy="0.0 0.0 0.0"/>
+      <geometry>
+        <sphere radius="0.1524"/>
+      </geometry>
+    </collision>
   </link>
   <joint name="j_l_wheel_y" type="continuous">
     <origin xyz="0.142 0.26983 0.019" rpy="0.0 0.0 0.0"/>
@@ -169,6 +175,12 @@ limitations under the License.
         <mesh filename="package://eve_r3_description/meshes/wheel.obj" scale="1 1 1"/>
       </geometry>
     </visual>
+    <collision>
+      <origin xyz="0.0 0.0 0.0" rpy="1.5707963 0.0 0.0"/>
+      <geometry>
+        <cylinder length="0.03" radius="0.1524"/>
+      </geometry>
+    </collision>
   </link>
   <joint name="j_r_wheel_y" type="continuous">
     <origin xyz="0.142 -0.26983 0.019" rpy="0.0 0.0 0.0"/>
@@ -189,6 +201,12 @@ limitations under the License.
         <mesh filename="package://eve_r3_description/meshes/wheel.obj" scale="1 1 1"/>
       </geometry>
     </visual>
+    <collision>
+      <origin xyz="0.0 0.0 0.0" rpy="1.5707963 0.0 0.0"/>
+      <geometry>
+        <cylinder length="0.03" radius="0.1524"/>
+      </geometry>
+    </collision>
   </link>
   <gazebo reference="pelvis">
     <sensor name="imu_sensor" type="imu">
