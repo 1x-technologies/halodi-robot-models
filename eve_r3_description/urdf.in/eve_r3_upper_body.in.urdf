@@ -16,6 +16,26 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 <robot xmlns:ns2="http://www.ros.org" xmlns:xi="http://www.w3.org/2003/XInclude" name="eve_r3_upper_body">
+    <link name="abdomen">
+        <inertial>
+            <origin xyz="-0.05558735 0.00156974 0.13110756" rpy="0.0 0.0 0.0"/>
+            <mass value="3.4381772"/>
+            <inertia ixx="0.05607222" ixy="7.0118E-4" ixz="-0.01468099" iyy="0.05435718" iyz="-0.00188443" izz="0.02016737"/>
+        </inertial>
+        <visual>
+            <origin xyz="0.0 0.0 0.0" rpy="1.5707963 0.0 1.5707963"/>
+            <geometry>
+                <mesh filename="package://eve_r3_description/meshes/abdomen.obj" scale="1 1 1"/>
+            </geometry>
+        </visual>
+    </link>
+    <joint name="j_hip_z" type="revolute">
+        <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+        <parent link="abdomen"/>
+        <child link="pelvis"/>
+        <axis xyz="0.0 0.0 1.0"/>
+        <limit lower="-1.0472" upper="1.0472" effort="-1.0" velocity="-1.0"/>
+    </joint>
     <link name="pelvis">
         <inertial>
             <origin xyz="-0.02336008 -0.00771192 0.42020601" rpy="0.0 0.0 0.0"/>
@@ -31,4 +51,5 @@ limitations under the License.
     </link>	
     <xi:include href="eve_r3_right_arm.in.urdf" xpointer="xpointer(//robot/*)"/>
     <xi:include href="eve_r3_left_arm.in.urdf" xpointer="xpointer(//robot/*)"/>
+    <xi:include href="eve_r3_head.in.urdf" xpointer="xpointer(//robot/*)"/>
 </robot>

@@ -1,6 +1,30 @@
 <?xml version="1.0"?>
 <sdf version="1.5">
   <model name="eve_r3_upper_body">
+    <link name="abdomen">
+      <pose frame="">0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose frame="">-0.055587 0.00157 0.131108 0 -0 0</pose>
+        <mass>3.43818</mass>
+        <inertia>
+          <ixx>0.0560722</ixx>
+          <ixy>0.00070118</ixy>
+          <ixz>-0.014681</ixz>
+          <iyy>0.0543572</iyy>
+          <iyz>-0.00188443</iyz>
+          <izz>0.0201674</izz>
+        </inertia>
+      </inertial>
+      <visual name="abdomen_visual">
+        <pose frame="">0 0 0 1.5708 -0 1.5708</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://eve_r3_description/meshes/abdomen.obj</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
     <link name="pelvis">
       <pose frame="">0 0 0 0 -0 0</pose>
       <inertial>
@@ -25,6 +49,24 @@
         </geometry>
       </visual>
     </link>
+    <joint name="j_hip_z" type="revolute">
+      <child>pelvis</child>
+      <parent>abdomen</parent>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1.0472</lower>
+          <upper>1.0472</upper>
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
     <link name="l_scapula">
       <pose frame="">0.010525 0.207221 0.545525 0.253262 -0 -0.261799</pose>
       <inertial>
@@ -687,6 +729,67 @@
         <limit>
           <lower>-1.5708</lower>
           <upper>0.523599</upper>
+          <effort>-1</effort>
+          <velocity>-1</velocity>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <use_parent_model_frame>1</use_parent_model_frame>
+      </axis>
+    </joint>
+    <link name="head">
+      <pose frame="">-0.004458 0 0.680766 0 -0 0</pose>
+      <inertial>
+        <pose frame="">0.012724 -0.003269 0.070532 0 -0 0</pose>
+        <mass>2.355</mass>
+        <inertia>
+          <ixx>0.0171994</ixx>
+          <ixy>-8.079e-05</ixy>
+          <ixz>-0.0013284</ixz>
+          <iyy>0.0196904</iyy>
+          <iyz>0.00023833</iyz>
+          <izz>0.0077437</izz>
+        </inertia>
+      </inertial>
+      <visual name="head_visual">
+        <pose frame="">0 0 0 1.5708 -0 1.5708</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://eve_r3_description/meshes/head.obj</uri>
+          </mesh>
+        </geometry>
+        
+      </visual>
+      <gravity>1</gravity>
+      <velocity_decay/>
+      <sensor name="realsense" type="camera">
+        <camera name="__default__">
+          <image>
+            <width>640</width>
+            <height>480</height>
+            <format>R8G8B8</format>
+          </image>
+          <horizontal_fov>1.48702</horizontal_fov>
+          <clip>
+            <near>0.2</near>
+            <far>10</far>
+          </clip>
+        </camera>
+        <update_rate>6</update_rate>
+        <pose frame="">0.116669 0 0.17015 0 0.174533 0</pose>
+      </sensor>
+    </link>
+    <joint name="j_neck_y" type="revolute">
+      <child>head</child>
+      <parent>pelvis</parent>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>-0.0872665</lower>
+          <upper>0.698132</upper>
           <effort>-1</effort>
           <velocity>-1</velocity>
         </limit>
