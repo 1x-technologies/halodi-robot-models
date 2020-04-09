@@ -50,8 +50,6 @@ limitations under the License.
         </visual>
     </link>	
     <xi:include href="eve_r3_right_arm.in.urdf" xpointer="xpointer(//robot/*)"/>
-    <xi:include href="qbhand.right.in.urdf" xpointer="xpointer(//robot/*)"/>
     <xi:include href="eve_r3_left_arm.in.urdf" xpointer="xpointer(//robot/*)"/>
-    <xi:include href="qbhand.left.in.urdf" xpointer="xpointer(//robot/*)"/>
     <xi:include href="eve_r3_head.in.urdf" xpointer="xpointer(//robot/*)"/>
 </robot>

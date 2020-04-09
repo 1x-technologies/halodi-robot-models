@@ -190,6 +190,8 @@ limitations under the License.
       </geometry>
     </visual>
   </link>
+
+
   <material name="qbhand_right/optional">
     <color rgba="0.0 0.5 0.8 1.0"/>
   </material>
@@ -1196,6 +1198,8 @@ limitations under the License.
       </geometry>
     </visual>
   </link>
+
+
   <material name="qbhand_left/optional">
     <color rgba="0.0 0.5 0.8 1.0"/>
   </material>

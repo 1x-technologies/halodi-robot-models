@@ -15,7 +15,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-<robot xmlns:ns2="http://www.ros.org" name="eve_r3_left_arm" xmlns:xi="http://www.w3.org/2003/XInclude">
+<robot xmlns:ns2="http://www.ros.org" name="eve_r3_left_arm">
     <joint name="j_l_shoulder_y" type="revolute">
         <origin xyz="0.010525 0.207221 0.545525" rpy="0.253261563 0.0 -0.261799"/>
         <parent link="pelvis"/>
@@ -157,6 +157,5 @@ limitations under the License.
         </visual>
     </link>
     
-    <xi:include href="qbhand.left.in.urdf" xpointer="xpointer(//robot/*)"/>
     
 </robot>
