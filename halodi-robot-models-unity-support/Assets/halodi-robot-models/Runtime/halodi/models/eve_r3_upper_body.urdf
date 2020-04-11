@@ -16,6 +16,26 @@ See the License for the specific language governing permissions and
 limitations under the License.
 -->
 <robot xmlns:ns2="http://www.ros.org" xmlns:xi="http://www.w3.org/2003/XInclude" name="eve_r3_upper_body">
+  <link name="abdomen">
+    <inertial>
+      <origin xyz="-0.05558735 0.00156974 0.13110756" rpy="0.0 0.0 0.0"/>
+      <mass value="3.4381772"/>
+      <inertia ixx="0.05607222" ixy="7.0118E-4" ixz="-0.01468099" iyy="0.05435718" iyz="-0.00188443" izz="0.02016737"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="1.5707963 0.0 1.5707963"/>
+      <geometry>
+        <mesh filename="package://eve_r3_description/meshes/abdomen.obj" scale="1 1 1"/>
+      </geometry>
+    </visual>
+  </link>
+  <joint name="j_hip_z" type="revolute">
+    <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    <parent link="abdomen"/>
+    <child link="pelvis"/>
+    <axis xyz="0.0 0.0 1.0"/>
+    <limit lower="-1.0472" upper="1.0472" effort="-1.0" velocity="-1.0"/>
+  </joint>
   <link name="pelvis">
     <inertial>
       <origin xyz="-0.02336008 -0.00771192 0.42020601" rpy="0.0 0.0 0.0"/>
@@ -170,6 +190,8 @@ limitations under the License.
       </geometry>
     </visual>
   </link>
+
+
   <material name="qbhand_right/optional">
     <color rgba="0.0 0.5 0.8 1.0"/>
   </material>
@@ -1176,6 +1198,8 @@ limitations under the License.
       </geometry>
     </visual>
   </link>
+
+
   <material name="qbhand_left/optional">
     <color rgba="0.0 0.5 0.8 1.0"/>
   </material>
@@ -2040,5 +2064,45 @@ limitations under the License.
       </geometry>
     </collision>
   </link>
+
+
+  <joint name="j_neck_y" type="revolute">
+    <origin xyz="-0.004458 0.0 0.680766" rpy="0.0 0.0 0.0"/>
+    <parent link="pelvis"/>
+    <child link="head"/>
+    <axis xyz="0.0 1 0.0"/>
+    <limit lower="-0.0872664626" upper="0.698132" effort="-1.0" velocity="-1.0"/>
+  </joint>
+  <link name="head">
+    <inertial>
+      <origin xyz="0.01272383 -0.00326913 0.07053205" rpy="0.0 0.0 0.0"/>
+      <mass value="2.355"/>
+      <inertia ixx="0.01719944" ixy="-8.079E-5" ixz="-0.0013284" iyy="0.0196904" iyz="2.3833E-4" izz="0.0077437"/>
+    </inertial>
+    <visual>
+      <origin xyz="0.0 0.0 0.0" rpy="1.5707963 0.0 1.5707963"/>
+      <geometry>
+        <mesh filename="package://eve_r3_description/meshes/head.obj" scale="1 1 1"/>
+      </geometry>
+    </visual>
+  </link>
+  <gazebo reference="head">
+    <sensor name="realsense" type="camera">
+      <camera>
+        <image>
+          <width>640</width>
+          <height>480</height>
+          <format>R8G8B8</format>
+        </image>
+        <horizontal_fov>1.487021</horizontal_fov>
+        <clip>
+          <near>0.2</near>
+          <far>10</far>
+        </clip>
+      </camera>
+      <update_rate>6</update_rate>
+      <pose frame="">0.116669 0 0.17015 0 0.174533 0</pose>
+    </sensor>
+  </gazebo>
 
 </robot>

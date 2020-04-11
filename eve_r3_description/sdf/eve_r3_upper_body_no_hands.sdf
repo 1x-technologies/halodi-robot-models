@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <sdf version="1.5">
-  <model name="eve_r3_upper_body">
+  <model name="eve_r3_upper_body_no_hands">
     <link name="abdomen">
       <pose frame="">0 0 0 0 -0 0</pose>
       <inertial>

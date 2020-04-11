@@ -90,6 +90,8 @@ namespace Halodi.RobotModels
 
         private static void LoadURDF(string URDF)
         {
+            Debug.Log(URDF);
+
             UrdfRobotExtensions.Create(URDF);
             UrdfRobot robot = Selection.activeGameObject.GetComponent<UrdfRobot>();
             if(robot == null)

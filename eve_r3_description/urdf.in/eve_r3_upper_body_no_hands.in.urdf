@@ -15,7 +15,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-<robot xmlns:ns2="http://www.ros.org" xmlns:xi="http://www.w3.org/2003/XInclude" name="eve_r3_upper_body">
+<robot xmlns:ns2="http://www.ros.org" xmlns:xi="http://www.w3.org/2003/XInclude" name="eve_r3_upper_body_no_hands">
     <link name="abdomen">
         <inertial>
             <origin xyz="-0.05558735 0.00156974 0.13110756" rpy="0.0 0.0 0.0"/>
