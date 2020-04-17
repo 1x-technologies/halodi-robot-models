@@ -11,10 +11,12 @@
 
   <buildtool_depend>ament_cmake</buildtool_depend>
   <buildtool_depend>gazebo</buildtool_depend>
+  <buildtool_depend>gazebo_ros</buildtool_depend>
   <depend>qb_hand_description</depend>
   
   <export>
     <architecture_independent/>
     <build_type>ament_cmake</build_type>
+      <gazebo_ros gazebo_model_path="${prefix}/models"/>
   </export>
 </package>

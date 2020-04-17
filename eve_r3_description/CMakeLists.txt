@@ -67,12 +67,19 @@ endfunction(CONVERT_URDF)
 CONVERT_URDF("eve_r3")
 CONVERT_URDF("eve_r3_upper_body")
 
-install(DIRECTORY meshes urdf sdf
-  DESTINATION share/${PROJECT_NAME}
-)
 
 
 if(ament_cmake_FOUND)
+
+    # Copy all model files to correct path setup for ROS
+    install(DIRECTORY meshes urdf sdf 
+    DESTINATION share/${PROJECT_NAME}/models/${PROJECT_NAME}
+    )
+    install(FILES model.config
+    DESTINATION share/${PROJECT_NAME}/models/${PROJECT_NAME}
+    )
+
+
     ament_export_dependencies(urdf)
     ament_package()
 endif()
