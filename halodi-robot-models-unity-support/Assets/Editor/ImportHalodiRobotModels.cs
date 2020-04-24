@@ -20,6 +20,8 @@ using System.IO;
 using System;
 using RosSharp.Urdf.Editor;
 using RosSharp.Urdf;
+using UnityEditor.SceneManagement;
+using UnityEngine.SceneManagement;
 
 namespace Halodi.RobotModels
 {
@@ -74,19 +76,30 @@ namespace Halodi.RobotModels
             }
             finally
             {
+
                 // Cleanup and move assets back to package
                 MoveAssetToPackageDirectory();
             }
 
         }
 
+        private static void MoveDirectory(string source, string target)
+        {
+            Directory.Move(source, target);
+            
+            string metaFileSource = source.TrimEnd(new[] {'/', '\\'}) + ".meta";
+            string metaFileTarget = target.TrimEnd(new[] {'/', '\\'}) + ".meta";
+
+            if(File.Exists(metaFileSource))
+            {
+                File.Delete(metaFileTarget);
+                File.Move(metaFileSource, metaFileTarget);
+            }
+        }
+
         private static void MovePackageToAssetDirectory()
         {
-            string TargetInAssetDatabase = RelativeToAssetDatabase(TargetDirectory);
-            string PackageInAssetDatabase = RelativeToAssetDatabase(PackageDirectory);
-
-
-            if(AssetDatabase.IsValidFolder(TargetInAssetDatabase))
+            if(Directory.Exists(TargetDirectory))
             {
                 throw new IOException(TargetDirectory + " already exists. This probably means a previous import has failed. Revert the changes in your git repository, remove this directory and try again.");
             }
@@ -95,38 +108,25 @@ namespace Halodi.RobotModels
 
             // Create parent of temp directory
             string parent = Path.Combine(TargetDirectory, "..");
-            string gitkeep = Path.Combine(parent, ".gitkeep");
-            if(!File.Exists(gitkeep))
+            if(!Directory.Exists(parent))
             {
                 Directory.CreateDirectory(parent);
-                File.WriteAllText(gitkeep, "This file makes sure this directory gets checked into git to avoid dangling meta files. Do not remove.");
             }
             
 
-            AssetDatabase.Refresh(ImportAssetOptions.ForceSynchronousImport);
 
 
-            if(AssetDatabase.IsValidFolder(PackageInAssetDatabase))
+            if(Directory.Exists(PackageDirectory))
             {
-                Debug.Log("[Pre-import] Moving " + PackageInAssetDatabase + " to " + TargetInAssetDatabase);
-
-                string err = AssetDatabase.ValidateMoveAsset(PackageInAssetDatabase, TargetInAssetDatabase);
-                if(String.IsNullOrEmpty(err))
-                {
-                    AssetDatabase.MoveAsset(PackageInAssetDatabase, TargetInAssetDatabase);
-                }
-                else
-                {
-                    throw new IOException(err);
-                }
-
-
+                Debug.Log("[Pre-import] Moving " + PackageDirectory + " to " + TargetDirectory);
+                MoveDirectory(PackageDirectory, TargetDirectory);
             }
             else
             {
                 Directory.CreateDirectory(TargetDirectory);
-                AssetDatabase.Refresh(ImportAssetOptions.ForceSynchronousImport);
             }
+
+            AssetDatabase.Refresh(ImportAssetOptions.ForceSynchronousImport);
         }
 
         private static void MoveAssetToPackageDirectory()
@@ -136,23 +136,14 @@ namespace Halodi.RobotModels
             AssetDatabase.Refresh(ImportAssetOptions.ForceSynchronousImport);
 
 
-            string TargetInAssetDatabase = RelativeToAssetDatabase(TargetDirectory);
-            string PackageInAssetDatabase = RelativeToAssetDatabase(PackageDirectory);
-
-
-            if(AssetDatabase.IsValidFolder(TargetInAssetDatabase))
+            if(Directory.Exists(TargetDirectory))
             {
-                string err = AssetDatabase.ValidateMoveAsset(TargetInAssetDatabase, PackageInAssetDatabase);
-                if(String.IsNullOrEmpty(err))
-                {
-                    Debug.Log("[Post-import] Moving " + TargetInAssetDatabase + " to " + PackageInAssetDatabase);
-                    AssetDatabase.MoveAsset(TargetInAssetDatabase, PackageInAssetDatabase);
-                }
-                else
-                {
-                    throw new IOException(err);
-                }
+                Debug.Log("[Post-import] Moving " + TargetDirectory + " to " + PackageDirectory);
+
+                MoveDirectory(TargetDirectory, PackageDirectory);
             }
+
+            AssetDatabase.Refresh(ImportAssetOptions.ForceSynchronousImport);
 
         }
 
@@ -183,49 +174,50 @@ namespace Halodi.RobotModels
 
         private static void LoadURDF(string URDF)
         {
+
+
+            // Create a new scene to keep things clean
+            Debug.Log("[Import] Creating new scene for "+ URDF);
+            Scene tempScene = EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Additive);
+
             try
             {
                 UrdfRobotExtensions.Create(URDF);
+             
+                UrdfRobot robot = Selection.activeGameObject.GetComponent<UrdfRobot>();
+                if(robot == null)
+                {
+                    throw new Exception("Cannot instantiate URDF");
+                }
+                robot.SetRigidbodiesIsKinematic(true);
+                robot.SetUseUrdfInertiaData(true);
+                robot.SetRigidbodiesUseGravity(false);
+
+                string AssetTarget = RelativeToAssetDatabase(TargetDirectory);
+
+                string PrefabName = robot.name;
+                string PrefabAsset = Path.Combine(AssetTarget, PrefabName + ".prefab");
+
+                
+
+                bool success;
+                PrefabUtility.SaveAsPrefabAsset(robot.gameObject, PrefabAsset, out success);
+                
+                if(!success)
+                {
+                    throw new Exception("Cannot create prefab of " + URDF);
+                }
             }
-            catch
+            catch 
             {
                 Debug.LogWarning("Cannot import " + URDF + ". Skipping");
-
-                if(Selection.activeGameObject != null)
-                {
-                    if(Selection.activeGameObject.GetComponent<UrdfRobot>() != null)
-                    {
-                        GameObject.DestroyImmediate(Selection.activeGameObject);
-                    }
-                }
-
-                return;
             }
-            UrdfRobot robot = Selection.activeGameObject.GetComponent<UrdfRobot>();
-            if(robot == null)
+            finally
             {
-                throw new Exception("Cannot instantiate URDF");
-            }
-            robot.SetRigidbodiesIsKinematic(true);
-            robot.SetUseUrdfInertiaData(true);
-            robot.SetRigidbodiesUseGravity(false);
-
-            string AssetTarget = RelativeToAssetDatabase(TargetDirectory);
-
-            string PrefabName = robot.name;
-            string PrefabAsset = Path.Combine(AssetTarget, PrefabName + ".prefab");
-
-            
-
-            bool success;
-            PrefabUtility.SaveAsPrefabAsset(robot.gameObject, PrefabAsset, out success);
-            
-            if(!success)
-            {
-                throw new Exception("Cannot create prefab of " + URDF);
+                Debug.Log("[Import] Closing scene for " + URDF);
+                EditorSceneManager.CloseScene(tempScene, true);
             }
 
-             GameObject.DestroyImmediate(robot.gameObject);
         }
 
 

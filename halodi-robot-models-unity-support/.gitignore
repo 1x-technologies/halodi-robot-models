@@ -6,7 +6,7 @@
 [Ll]ogs/
 Assets/AssetStoreTools*
 Assets/Temp
-!Assets/Temp/.gitkeep
+Assets/Temp.meta
 
 # Visual Studio cache directory
 .vs/
