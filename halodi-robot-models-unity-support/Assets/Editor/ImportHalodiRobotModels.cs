@@ -27,11 +27,14 @@ namespace Halodi.RobotModels
     {
 
         internal static readonly string PackageXML = "package.xml";
-        internal static readonly string TargetDirectory = Path.Combine(new string[] {Application.dataPath, "halodi-robot-models", "Runtime", "halodi", "models"});
+
+
+        internal static readonly string PackageDirectory = Path.Combine(new String[] {Application.dataPath, "..", "Packages", "halodi-robot-models", "Runtime", "halodi", "models"});
+        internal static readonly string TargetDirectory = Path.Combine(new string[] {Application.dataPath, "Temp", "models"});
 
         internal static readonly string AssetDatabaseRoot = new DirectoryInfo(Application.dataPath).Parent.FullName;
 
-        internal static readonly string[] IgnoredFiles = { "build", "cmake", "CMakeLists.txt", "package.xml", "model.config", "urdf.in", "urdf", "sdf" };
+        internal static readonly string[] IgnoredFiles = { "build", "cmake", "CMakeLists.txt", "package.xml", "model.config", "dummy.urdf", "urdf.in", "urdf", "sdf" };
 
         internal static readonly string InputURDFExtension = ".in.urdf";
 
@@ -39,28 +42,76 @@ namespace Halodi.RobotModels
         [MenuItem("Halodi/Update Halodi Robot Models")] //creates a new menu tab
         internal static void EditPackageConfiguration()
         {
-            string MainProjectPath = new DirectoryInfo(Application.dataPath).Parent.Parent.FullName;
+            // The URDF importer assumes everythings lives in Assets. Move existing to Assets to maintain GUID's first.
+            MovePackageToAssetDirectory();
+            
 
-            string[] directories = Directory.GetDirectories(MainProjectPath);
-            foreach(string directory in directories)
+            try
             {
-                string PackageDescription = Path.Combine(directory, PackageXML);
+                string MainProjectPath = new DirectoryInfo(Application.dataPath).Parent.Parent.FullName;
 
-                if(File.Exists(PackageDescription))
+                string[] directories = Directory.GetDirectories(MainProjectPath);
+                foreach(string directory in directories)
                 {
-                    ImportModel(directory);
-                }
-            };
+                    string PackageDescription = Path.Combine(directory, PackageXML);
 
-            foreach(string file in Directory.GetFiles(TargetDirectory))
+                    if(File.Exists(PackageDescription))
+                    {
+                        ImportModel(directory);
+                    }
+                };
+
+                foreach(string file in Directory.GetFiles(TargetDirectory))
+                {
+                    FileInfo info = new FileInfo(file);
+                    if(Path.GetExtension(file).ToLowerInvariant().Equals(".urdf"))
+                    {
+                            LoadURDF(file);                   
+                    }
+                }
+
+            }
+            finally
             {
-                FileInfo info = new FileInfo(file);
-                if(Path.GetExtension(file).ToLowerInvariant().Equals(".urdf"))
-                {
-                        LoadURDF(file);                   
-                }
+
             }
 
+        }
+
+        private static void MovePackageToAssetDirectory()
+        {
+            if(Directory.Exists(TargetDirectory))
+            {
+                throw new IOException(TargetDirectory + " already exists. This probably means a previous import has failed. Revert the changes in your git repository, remove this directory and try again.");
+            }
+
+            // Create parent of temp directory
+            Directory.CreateDirectory(Path.Combine(TargetDirectory, ".."));
+
+
+            if(Directory.Exists(PackageDirectory))
+            {
+                Debug.Log("[Pre-import] Moving " + PackageDirectory + " to " + TargetDirectory);
+                Directory.Move(PackageDirectory, TargetDirectory);
+            }
+            else
+            {
+                Directory.CreateDirectory(TargetDirectory);
+            }
+
+            AssetDatabase.Refresh();
+        }
+
+        private static void MoveAssetToPackageDirectory()
+        {
+            // Make sure parent exists
+            Directory.CreateDirectory(Path.Combine(PackageDirectory, ".."));
+
+            if(Directory.Exists(TargetDirectory))
+            {
+                Debug.Log("[Post-import] Moving " + TargetDirectory + " to " + PackageDirectory);
+                Directory.Move(TargetDirectory, PackageDirectory);
+            }
         }
 
         private static string RelativeToAssetDatabase(string path)
