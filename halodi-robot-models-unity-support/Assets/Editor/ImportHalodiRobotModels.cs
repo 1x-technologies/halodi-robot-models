@@ -30,7 +30,8 @@ namespace Halodi.RobotModels
 
 
         internal static readonly string PackageDirectory = Path.Combine(new String[] {Application.dataPath, "..", "Packages", "halodi-robot-models", "Runtime", "halodi", "models"});
-        internal static readonly string TargetDirectory = Path.Combine(new string[] {Application.dataPath, "Temp", "models"});
+
+        internal static readonly string TargetDirectory = Path.Combine(new string[] {Application.dataPath, "Temp", "models"});  
 
         internal static readonly string AssetDatabaseRoot = new DirectoryInfo(Application.dataPath).Parent.FullName;
 
@@ -73,45 +74,86 @@ namespace Halodi.RobotModels
             }
             finally
             {
-
+                // Cleanup and move assets back to package
+                MoveAssetToPackageDirectory();
             }
 
         }
 
         private static void MovePackageToAssetDirectory()
         {
-            if(Directory.Exists(TargetDirectory))
+            string TargetInAssetDatabase = RelativeToAssetDatabase(TargetDirectory);
+            string PackageInAssetDatabase = RelativeToAssetDatabase(PackageDirectory);
+
+
+            if(AssetDatabase.IsValidFolder(TargetInAssetDatabase))
             {
                 throw new IOException(TargetDirectory + " already exists. This probably means a previous import has failed. Revert the changes in your git repository, remove this directory and try again.");
             }
 
+            
+
             // Create parent of temp directory
-            Directory.CreateDirectory(Path.Combine(TargetDirectory, ".."));
-
-
-            if(Directory.Exists(PackageDirectory))
+            string parent = Path.Combine(TargetDirectory, "..");
+            string gitkeep = Path.Combine(parent, ".gitkeep");
+            if(!File.Exists(gitkeep))
             {
-                Debug.Log("[Pre-import] Moving " + PackageDirectory + " to " + TargetDirectory);
-                Directory.Move(PackageDirectory, TargetDirectory);
+                Directory.CreateDirectory(parent);
+                File.WriteAllText(gitkeep, "This file makes sure this directory gets checked into git to avoid dangling meta files. Do not remove.");
+            }
+            
+
+            AssetDatabase.Refresh(ImportAssetOptions.ForceSynchronousImport);
+
+
+            if(AssetDatabase.IsValidFolder(PackageInAssetDatabase))
+            {
+                Debug.Log("[Pre-import] Moving " + PackageInAssetDatabase + " to " + TargetInAssetDatabase);
+
+                string err = AssetDatabase.ValidateMoveAsset(PackageInAssetDatabase, TargetInAssetDatabase);
+                if(String.IsNullOrEmpty(err))
+                {
+                    AssetDatabase.MoveAsset(PackageInAssetDatabase, TargetInAssetDatabase);
+                }
+                else
+                {
+                    throw new IOException(err);
+                }
+
+
             }
             else
             {
                 Directory.CreateDirectory(TargetDirectory);
+                AssetDatabase.Refresh(ImportAssetOptions.ForceSynchronousImport);
             }
-
-            AssetDatabase.Refresh();
         }
 
         private static void MoveAssetToPackageDirectory()
         {
             // Make sure parent exists
             Directory.CreateDirectory(Path.Combine(PackageDirectory, ".."));
+            AssetDatabase.Refresh(ImportAssetOptions.ForceSynchronousImport);
 
-            if(Directory.Exists(TargetDirectory))
+
+            string TargetInAssetDatabase = RelativeToAssetDatabase(TargetDirectory);
+            string PackageInAssetDatabase = RelativeToAssetDatabase(PackageDirectory);
+
+
+            if(AssetDatabase.IsValidFolder(TargetInAssetDatabase))
             {
-                Debug.Log("[Post-import] Moving " + TargetDirectory + " to " + PackageDirectory);
-                Directory.Move(TargetDirectory, PackageDirectory);
+                string err = AssetDatabase.ValidateMoveAsset(TargetInAssetDatabase, PackageInAssetDatabase);
+                if(String.IsNullOrEmpty(err))
+                {
+                    Debug.Log("[Post-import] Moving " + TargetInAssetDatabase + " to " + PackageInAssetDatabase);
+                    AssetDatabase.MoveAsset(TargetInAssetDatabase, PackageInAssetDatabase);
+                }
+                else
+                {
+                    throw new IOException(err);
+                }
             }
+
         }
 
         private static string RelativeToAssetDatabase(string path)
