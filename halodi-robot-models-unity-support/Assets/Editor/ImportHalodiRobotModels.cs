@@ -90,7 +90,24 @@ namespace Halodi.RobotModels
 
         private static void LoadURDF(string URDF)
         {
-            UrdfRobotExtensions.Create(URDF);
+            try
+            {
+                UrdfRobotExtensions.Create(URDF);
+            }
+            catch
+            {
+                Debug.LogWarning("Cannot import " + URDF + ". Skipping");
+
+                if(Selection.activeGameObject != null)
+                {
+                    if(Selection.activeGameObject.GetComponent<UrdfRobot>() != null)
+                    {
+                        GameObject.DestroyImmediate(Selection.activeGameObject);
+                    }
+                }
+
+                return;
+            }
             UrdfRobot robot = Selection.activeGameObject.GetComponent<UrdfRobot>();
             if(robot == null)
             {
