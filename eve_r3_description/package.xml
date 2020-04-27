@@ -13,6 +13,7 @@
   <buildtool_depend>gazebo</buildtool_depend>
   <buildtool_depend>gazebo_ros</buildtool_depend>
   <depend>qb_hand_description</depend>
+  <depend>robotiq_2f_85_gripper_visualization</depend>
   
   <export>
     <architecture_independent/>

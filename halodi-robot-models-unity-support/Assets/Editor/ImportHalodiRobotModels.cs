@@ -20,6 +20,8 @@ using System.IO;
 using System;
 using RosSharp.Urdf.Editor;
 using RosSharp.Urdf;
+using UnityEditor.SceneManagement;
+using UnityEngine.SceneManagement;
 
 namespace Halodi.RobotModels
 {
@@ -27,11 +29,15 @@ namespace Halodi.RobotModels
     {
 
         internal static readonly string PackageXML = "package.xml";
-        internal static readonly string TargetDirectory = Path.Combine(new string[] {Application.dataPath, "halodi-robot-models", "Runtime", "halodi", "models"});
+
+
+        internal static readonly string PackageDirectory = Path.Combine(new String[] {Application.dataPath, "..", "Packages", "halodi-robot-models", "Runtime", "halodi", "models"});
+
+        internal static readonly string TargetDirectory = Path.Combine(new string[] {Application.dataPath, "Temp", "models"});  
 
         internal static readonly string AssetDatabaseRoot = new DirectoryInfo(Application.dataPath).Parent.FullName;
 
-        internal static readonly string[] IgnoredFiles = { "build", "cmake", "CMakeLists.txt", "package.xml", "model.config", "urdf.in", "urdf", "sdf" };
+        internal static readonly string[] IgnoredFiles = { "build", "cmake", "CMakeLists.txt", "package.xml", "model.config", "dummy.urdf", "urdf.in", "urdf", "sdf" };
 
         internal static readonly string InputURDFExtension = ".in.urdf";
 
@@ -39,27 +45,105 @@ namespace Halodi.RobotModels
         [MenuItem("Halodi/Update Halodi Robot Models")] //creates a new menu tab
         internal static void EditPackageConfiguration()
         {
-            string MainProjectPath = new DirectoryInfo(Application.dataPath).Parent.Parent.FullName;
+            // The URDF importer assumes everythings lives in Assets. Move existing to Assets to maintain GUID's first.
+            MovePackageToAssetDirectory();
+            
 
-            string[] directories = Directory.GetDirectories(MainProjectPath);
-            foreach(string directory in directories)
+            try
             {
-                string PackageDescription = Path.Combine(directory, PackageXML);
+                string MainProjectPath = new DirectoryInfo(Application.dataPath).Parent.Parent.FullName;
 
-                if(File.Exists(PackageDescription))
+                string[] directories = Directory.GetDirectories(MainProjectPath);
+                foreach(string directory in directories)
                 {
-                    ImportModel(directory);
-                }
-            };
+                    string PackageDescription = Path.Combine(directory, PackageXML);
 
-            foreach(string file in Directory.GetFiles(TargetDirectory))
-            {
-                FileInfo info = new FileInfo(file);
-                if(Path.GetExtension(file).ToLowerInvariant().Equals(".urdf"))
+                    if(File.Exists(PackageDescription))
+                    {
+                        ImportModel(directory);
+                    }
+                };
+
+                foreach(string file in Directory.GetFiles(TargetDirectory))
                 {
-                        LoadURDF(file);                   
+                    FileInfo info = new FileInfo(file);
+                    if(Path.GetExtension(file).ToLowerInvariant().Equals(".urdf"))
+                    {
+                            LoadURDF(file);                   
+                    }
                 }
+
             }
+            finally
+            {
+
+                // Cleanup and move assets back to package
+                MoveAssetToPackageDirectory();
+            }
+
+        }
+
+        private static void MoveDirectory(string source, string target)
+        {
+            Directory.Move(source, target);
+            
+            string metaFileSource = source.TrimEnd(new[] {'/', '\\'}) + ".meta";
+            string metaFileTarget = target.TrimEnd(new[] {'/', '\\'}) + ".meta";
+
+            if(File.Exists(metaFileSource))
+            {
+                File.Delete(metaFileTarget);
+                File.Move(metaFileSource, metaFileTarget);
+            }
+        }
+
+        private static void MovePackageToAssetDirectory()
+        {
+            if(Directory.Exists(TargetDirectory))
+            {
+                throw new IOException(TargetDirectory + " already exists. This probably means a previous import has failed. Revert the changes in your git repository, remove this directory and try again.");
+            }
+
+            
+
+            // Create parent of temp directory
+            string parent = Path.Combine(TargetDirectory, "..");
+            if(!Directory.Exists(parent))
+            {
+                Directory.CreateDirectory(parent);
+            }
+            
+
+
+
+            if(Directory.Exists(PackageDirectory))
+            {
+                Debug.Log("[Pre-import] Moving " + PackageDirectory + " to " + TargetDirectory);
+                MoveDirectory(PackageDirectory, TargetDirectory);
+            }
+            else
+            {
+                Directory.CreateDirectory(TargetDirectory);
+            }
+
+            AssetDatabase.Refresh(ImportAssetOptions.ForceSynchronousImport);
+        }
+
+        private static void MoveAssetToPackageDirectory()
+        {
+            // Make sure parent exists
+            Directory.CreateDirectory(Path.Combine(PackageDirectory, ".."));
+            AssetDatabase.Refresh(ImportAssetOptions.ForceSynchronousImport);
+
+
+            if(Directory.Exists(TargetDirectory))
+            {
+                Debug.Log("[Post-import] Moving " + TargetDirectory + " to " + PackageDirectory);
+
+                MoveDirectory(TargetDirectory, PackageDirectory);
+            }
+
+            AssetDatabase.Refresh(ImportAssetOptions.ForceSynchronousImport);
 
         }
 
@@ -90,32 +174,50 @@ namespace Halodi.RobotModels
 
         private static void LoadURDF(string URDF)
         {
-            UrdfRobotExtensions.Create(URDF);
-            UrdfRobot robot = Selection.activeGameObject.GetComponent<UrdfRobot>();
-            if(robot == null)
+
+
+            // Create a new scene to keep things clean
+            Debug.Log("[Import] Creating new scene for "+ URDF);
+            Scene tempScene = EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Additive);
+
+            try
             {
-                throw new Exception("Cannot instantiate URDF");
+                UrdfRobotExtensions.Create(URDF);
+             
+                UrdfRobot robot = Selection.activeGameObject.GetComponent<UrdfRobot>();
+                if(robot == null)
+                {
+                    throw new Exception("Cannot instantiate URDF");
+                }
+                robot.SetRigidbodiesIsKinematic(true);
+                robot.SetUseUrdfInertiaData(true);
+                robot.SetRigidbodiesUseGravity(false);
+
+                string AssetTarget = RelativeToAssetDatabase(TargetDirectory);
+
+                string PrefabName = robot.name;
+                string PrefabAsset = Path.Combine(AssetTarget, PrefabName + ".prefab");
+
+                
+
+                bool success;
+                PrefabUtility.SaveAsPrefabAsset(robot.gameObject, PrefabAsset, out success);
+                
+                if(!success)
+                {
+                    throw new Exception("Cannot create prefab of " + URDF);
+                }
             }
-            robot.SetRigidbodiesIsKinematic(true);
-            robot.SetUseUrdfInertiaData(true);
-            robot.SetRigidbodiesUseGravity(false);
-
-            string AssetTarget = RelativeToAssetDatabase(TargetDirectory);
-
-            string PrefabName = robot.name;
-            string PrefabAsset = Path.Combine(AssetTarget, PrefabName + ".prefab");
-
-            
-
-            bool success;
-            PrefabUtility.SaveAsPrefabAsset(robot.gameObject, PrefabAsset, out success);
-            
-            if(!success)
+            catch 
             {
-                throw new Exception("Cannot create prefab of " + URDF);
+                Debug.LogWarning("Cannot import " + URDF + ". Skipping");
+            }
+            finally
+            {
+                Debug.Log("[Import] Closing scene for " + URDF);
+                EditorSceneManager.CloseScene(tempScene, true);
             }
 
-             GameObject.DestroyImmediate(robot.gameObject);
         }
 
 

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+
+<package format="3">
+  <name>robotiq_2f_85_gripper_visualization</name>
+  <version>1.0.0</version>
+  <description>Robotiq ARG 2-Finger 85mm model C3 description package. This package is adapted from https://github.com/ros-industrial/robotiq.</description>
+  <license>BSD</license>
+  <url type="website">http://github.com/halodi/halodi-robot-models</url>
+  <author>Ros Industrial/Robotiq</author>
+  <maintainer email="jesper@halodi.com">Jesper Smith</maintainer>
+  <license>BSD 2-Clause</license>
+
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <buildtool_depend>gazebo_ros</buildtool_depend>
+  <depend>urdf</depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+    <architecture_independent/>
+    <gazebo_ros gazebo_model_path="${prefix}/models"/>
+  </export>
+
+</package>

@@ -66,6 +66,8 @@ endfunction(CONVERT_URDF)
 
 CONVERT_URDF("eve_r3")
 CONVERT_URDF("eve_r3_upper_body")
+CONVERT_URDF("eve_r3_robotiq_2f_85")
+CONVERT_URDF("eve_r3_robotiq_hand-e")
 
 
 
