@@ -15,13 +15,13 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 -->
-<robot xmlns:ns2="http://www.ros.org" xmlns:xi="http://www.w3.org/2003/XInclude" name="eve_r3_robotiq_2f_85">
+<robot xmlns:ns2="http://www.ros.org" xmlns:xi="http://www.w3.org/2003/XInclude" name="eve_r3_robotiq_hand-e">
 
 	<xi:include href="eve_r3_leg.in.urdf" xpointer="xpointer(//robot/*)"/>
     <xi:include href="eve_r3_right_arm.in.urdf" xpointer="xpointer(//robot/*)"/>
-    <xi:include href="robotiq_2f_85.right.in.urdf" xpointer="xpointer(//robot/*)"/>
+    <xi:include href="robotiq_hand-e.right.in.urdf" xpointer="xpointer(//robot/*)"/>
     <xi:include href="eve_r3_left_arm.in.urdf" xpointer="xpointer(//robot/*)"/>
-    <xi:include href="robotiq_2f_85.left.in.urdf" xpointer="xpointer(//robot/*)"/>
+    <xi:include href="robotiq_hand-e.left.in.urdf" xpointer="xpointer(//robot/*)"/>
 	<xi:include href="eve_r3_head.in.urdf" xpointer="xpointer(//robot/*)"/>
     
 </robot>

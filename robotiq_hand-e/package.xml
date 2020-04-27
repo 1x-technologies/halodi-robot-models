@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+
+<package format="3">
+  <name>robotiq_hand-e</name>
+  <version>1.0.0</version>
+  <description>Robotiq Hand-E robot model.</description>
+  <license>Apache 2.0</license>
+  <url type="website">http://github.com/halodi/halodi-robot-models</url>
+  <author email="jesper@halodi.com">Jesper Smith</author>
+  <maintainer email="jesper@halodi.com">Jesper Smith</maintainer>
+  <license>Apache 2.0</license>
+
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <buildtool_depend>gazebo_ros</buildtool_depend>
+  <depend>urdf</depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+    <architecture_independent/>
+    <gazebo_ros gazebo_model_path="${prefix}/models"/>
+  </export>
+
+</package>
