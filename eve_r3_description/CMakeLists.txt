@@ -70,7 +70,6 @@ CONVERT_URDF("eve_r3_robotiq_2f_85")
 CONVERT_URDF("eve_r3_robotiq_hand-e")
 
 
-
 if(ament_cmake_FOUND)
 
     # Copy all model files to correct path setup for ROS
