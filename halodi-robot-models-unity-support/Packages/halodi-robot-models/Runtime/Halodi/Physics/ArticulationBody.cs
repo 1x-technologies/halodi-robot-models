@@ -10,7 +10,7 @@ namespace Halodi.Physics
     /// <summary>
     /// This interface implements a minimal interface mimicking ArticulationBody to allow compilation for Unity version before 2020.
     /// </summary>
-    internal class ArticulationBody : MonoBehaviour
+    public class ArticulationBody : MonoBehaviour
     {
         internal bool useGravity;
         internal float linearDamping;
@@ -82,6 +82,8 @@ namespace Halodi.Physics
         internal float forceLimit;
         internal float lowerLimit;
         internal float upperLimit;
+        internal float target;
+        internal float targetVelocity;
     }
 
 }
