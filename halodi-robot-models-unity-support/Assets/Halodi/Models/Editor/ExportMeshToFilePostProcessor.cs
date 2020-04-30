@@ -68,6 +68,10 @@ namespace Halodi.Models.Editor
                 {
                     file.Delete();
                 }
+
+                File.WriteAllText(Path.Combine(info.FullName, ".gitkeep"), "Force git to checkin this directory. Avoid dangling meta files");
+
+
             }
             finally
             {
