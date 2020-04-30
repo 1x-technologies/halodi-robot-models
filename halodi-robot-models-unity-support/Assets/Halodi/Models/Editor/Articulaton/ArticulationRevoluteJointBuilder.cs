@@ -57,11 +57,11 @@ namespace Halodi.Models.Editor.Articulation
                 joint.continous = false;
             }
 
-            joint.angleLimitMin = lowerLimit;
-            joint.angleLimitMax = upperLimit;
+            joint.lowerLimit = lowerLimit;
+            joint.upperLimit = upperLimit;
 
 
-
+            joint.axis = hingeJoint.axis;
             joint.anchorPosition = hingeJoint.anchor;
             joint.anchorRotation = Quaternion.FromToRotation(Vector3.right, hingeJoint.axis.normalized);
             joint.UpdateParentAnchor();

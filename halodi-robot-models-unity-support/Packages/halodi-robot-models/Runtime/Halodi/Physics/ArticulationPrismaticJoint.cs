@@ -10,9 +10,6 @@ namespace Halodi.Physics
     {
         
 
-        public float positionLimitMin;
-        public float positionLimitMax;
-
         protected override void setPosition(float position)
         {
             // Prismatic joints always move in the X direction(!)
@@ -39,8 +36,8 @@ namespace Halodi.Physics
                 damping = 0.0f,
                 stiffness = 0.0f,
                 forceLimit = float.MaxValue,
-                lowerLimit = positionLimitMin,
-                upperLimit = positionLimitMax
+                lowerLimit = lowerLimit,
+                upperLimit = upperLimit
             };
 
             body.xDrive = xDrive;

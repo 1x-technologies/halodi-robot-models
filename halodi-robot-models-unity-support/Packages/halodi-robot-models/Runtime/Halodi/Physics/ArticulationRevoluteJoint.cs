@@ -9,8 +9,6 @@ namespace Halodi.Physics
     {
 
         public bool continous;
-        public float angleLimitMin;
-        public float angleLimitMax;
 
 
         protected override void setPosition(float angle)
@@ -44,8 +42,8 @@ namespace Halodi.Physics
             }
             else
             {
-                xDrive.lowerLimit = angleLimitMin;
-                xDrive.upperLimit = angleLimitMax;
+                xDrive.lowerLimit = lowerLimit;
+                xDrive.upperLimit = upperLimit;
                 articulationBody.twistLock = ArticulationDofLock.LimitedMotion;
                 
             }

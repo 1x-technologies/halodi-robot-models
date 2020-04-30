@@ -48,11 +48,11 @@ namespace Halodi.Models.Editor.Articulation
                 upperLimit = float.MaxValue;
             }
 
-            joint.positionLimitMin = lowerLimit;
-            joint.positionLimitMax = upperLimit;
+            joint.lowerLimit = lowerLimit;
+            joint.upperLimit = upperLimit;
 
 
-
+            joint.axis = configurableJoint.axis;
             joint.anchorPosition = configurableJoint.anchor;
             joint.anchorRotation = Quaternion.FromToRotation(Vector3.right, configurableJoint.axis.normalized);
             joint.UpdateParentAnchor();

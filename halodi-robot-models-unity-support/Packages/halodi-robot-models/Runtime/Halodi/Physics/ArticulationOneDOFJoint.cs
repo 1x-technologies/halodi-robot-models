@@ -8,6 +8,12 @@ namespace Halodi.Physics
     {
         public override bool isRoot => false;
 
+        public Vector3 axis;
+
+        public float lowerLimit;
+        public float upperLimit;
+        
+
         /// <summary>
         /// Joint position
         /// 
