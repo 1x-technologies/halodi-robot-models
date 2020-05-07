@@ -41,7 +41,7 @@ namespace Halodi.Physics
                 }
                 else
                 {
-                    Debug.LogError("Joint is dynamic. Cannot set position.");
+                    body.jointPosition = new ArticulationReducedSpace(value);
                 }
             }
         }
@@ -73,7 +73,7 @@ namespace Halodi.Physics
                 }
                 else
                 {
-                    Debug.LogError("Joint is dynamic. Cannot set velocity.");
+                    body.jointVelocity = new ArticulationReducedSpace(value);
                 }
             }
         }
@@ -105,7 +105,7 @@ namespace Halodi.Physics
                 }
                 else
                 {
-                    Debug.LogError("Joint is dynamic. Cannot set acceleration.");
+                    body.jointAcceleration = new ArticulationReducedSpace(value);
                 }
             }
         }
