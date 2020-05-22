@@ -30,11 +30,15 @@ Create a ROS2 workspace and place this repository in the `src` folder. Use `colc
 
 A Unity project with prefabs is available in the halodi-robot-models-unity-support folder. 
 
+For installation instructions, see [halodi-robot-models-unity-support/Packages/halodi-robot-models/](halodi-robot-models-unity-support/Packages/halodi-robot-models/).
+
+#### Regenerate Unity models
+
 After regenerting the models using `colcon build` in your ROS2 workspace, you need to reimport the models into the Unity project. Load the Unity project, and from the menu bar run [Halodi] -> [Reimport Halodi Robot Models].
 
 After importing, prefabs for the robot models can be found in `Runtime/halodi/models/`.
 
-The Unity project includes the halodi-unity-package-creator plugin to publish to our NPM server.
+The Unity project includes the halodi-unity-package-creator plugin to publish to a NPM server.
 
 ### IHMC Simulation Construction Set (Java)
 
