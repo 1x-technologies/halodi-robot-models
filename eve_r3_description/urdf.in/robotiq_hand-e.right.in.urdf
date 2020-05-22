@@ -79,14 +79,14 @@
     <origin xyz="0.013914 -0.00523 0.11505" />
     <parent link="rhand_base" />
     <child link="rhand_FingerA" />
-    <axis xyz="0 -1 0" />
+    <axis xyz="-1 0 0" />
     <limit lower="0.0" upper="0.025" effort="1000" velocity="1000" />
   </joint>
   <joint name="rhand_fingerB_joint" type="prismatic">
     <origin xyz="-0.013914 0.00523 0.11505" />
     <parent link="rhand_base" />
     <child link="rhand_FingerB" />
-    <axis xyz="0 -1 0" />
-    <limit lower="-0.025" upper="0.0" effort="1000" velocity="1000" />
+    <axis xyz="1 0 0" />
+    <limit lower="0.0" upper="0.025" effort="1000" velocity="1000" />
   </joint>
 </robot>

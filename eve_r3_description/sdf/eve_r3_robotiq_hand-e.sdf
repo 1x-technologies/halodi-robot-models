@@ -779,7 +779,7 @@
       <child>lhand_FingerA</child>
       <parent>l_palm</parent>
       <axis>
-        <xyz>0 0.999999 -0.001593</xyz>
+        <xyz>-1 0 0</xyz>
         <limit>
           <lower>0</lower>
           <upper>0.025</upper>
@@ -829,10 +829,10 @@
       <child>lhand_FingerB</child>
       <parent>l_palm</parent>
       <axis>
-        <xyz>0 0.999999 -0.001593</xyz>
+        <xyz>1 -0 -0</xyz>
         <limit>
-          <lower>-0.025</lower>
-          <upper>0</upper>
+          <lower>0</lower>
+          <upper>0.025</upper>
           <effort>1000</effort>
           <velocity>1000</velocity>
         </limit>
@@ -1268,7 +1268,7 @@
       <child>rhand_FingerA</child>
       <parent>r_palm</parent>
       <axis>
-        <xyz>-0 0.999999 -0.001593</xyz>
+        <xyz>-1 -0 0</xyz>
         <limit>
           <lower>0</lower>
           <upper>0.025</upper>
@@ -1318,10 +1318,10 @@
       <child>rhand_FingerB</child>
       <parent>r_palm</parent>
       <axis>
-        <xyz>-0 0.999999 -0.001593</xyz>
+        <xyz>1 0 -0</xyz>
         <limit>
-          <lower>-0.025</lower>
-          <upper>0</upper>
+          <lower>0</lower>
+          <upper>0.025</upper>
           <effort>1000</effort>
           <velocity>1000</velocity>
         </limit>
