@@ -11,7 +11,7 @@ namespace Halodi.Physics
         public bool continous;
 
 
-        protected override void setPosition(float angle)
+        public override void SetKinematicPosition(float angle)
         {
             Quaternion desiredRotation = Quaternion.Euler(Mathf.Rad2Deg * angle, 0.0f, 0.0f);
             

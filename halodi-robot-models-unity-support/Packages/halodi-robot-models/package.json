@@ -1,6 +1,6 @@
 {
   "name": "com.halodi.halodi-robot-models",
-  "version": "2.0.7",
+  "version": "2.0.8",
   "displayName": "Halodi Robot Models",
   "description": "Unity version of Halodi robot models",
   "unity": "2019.2",

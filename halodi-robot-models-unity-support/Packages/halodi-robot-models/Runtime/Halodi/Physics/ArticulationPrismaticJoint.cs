@@ -10,7 +10,7 @@ namespace Halodi.Physics
     {
         
 
-        protected override void setPosition(float position)
+        public override void SetKinematicPosition(float position)
         {
             // Prismatic joints always move in the X direction(!)
             Vector3 desiredPosition = new Vector3(position, 0.0f, 0.0f);

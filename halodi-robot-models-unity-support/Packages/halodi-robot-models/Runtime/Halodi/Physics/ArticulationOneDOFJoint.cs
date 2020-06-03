@@ -211,12 +211,12 @@ namespace Halodi.Physics
         {
             if(kinematic)
             {
-                setPosition(position);
+                SetKinematicPosition(position);
             }
             
         }
 
-        protected abstract void setPosition(float position);
+        public abstract void SetKinematicPosition(float position);
 
     }
 
