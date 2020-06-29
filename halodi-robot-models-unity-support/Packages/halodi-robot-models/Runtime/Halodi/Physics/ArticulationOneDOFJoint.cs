@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Halodi.Physics.Interfaces;
 using UnityEngine;
 
 namespace Halodi.Physics
 {
-    public abstract class ArticulationOneDOFJoint : ArticulationJoint
+    public abstract class ArticulationOneDOFJoint: ArticulationJoint
     {
         public override bool isRoot => false;
 
@@ -13,6 +14,10 @@ namespace Halodi.Physics
         public float lowerLimit;
         public float upperLimit;
         
+        public override IJointPhysics physics => oneDOFJointPhysics;
+
+
+        public IOneDOFJointPhysics oneDOFJointPhysics = null;
 
         /// <summary>
         /// Joint position
@@ -30,7 +35,7 @@ namespace Halodi.Physics
                 }
                 else
                 {
-                    return body.jointPosition[0];
+                    return oneDOFJointPhysics.jointPosition;// body.jointPosition[0];
                 }
             }
             set
@@ -41,7 +46,7 @@ namespace Halodi.Physics
                 }
                 else
                 {
-                    body.jointPosition = new ArticulationReducedSpace(value);
+                    oneDOFJointPhysics.jointPosition = value;// new ArticulationReducedSpace(value);
                 }
             }
         }
@@ -58,11 +63,11 @@ namespace Halodi.Physics
             {
                 if(kinematic)
                 {
-                    return kinematicVelocity;
+                    return  kinematicVelocity;
                 }
                 else
                 {
-                    return body.jointVelocity[0];
+                    return oneDOFJointPhysics.jointVelocity; 
                 }
             }
             set
@@ -73,7 +78,7 @@ namespace Halodi.Physics
                 }
                 else
                 {
-                    body.jointVelocity = new ArticulationReducedSpace(value);
+                    oneDOFJointPhysics.jointVelocity = value;
                 }
             }
         }
@@ -94,7 +99,7 @@ namespace Halodi.Physics
                 }
                 else
                 {
-                    return body.jointAcceleration[0];
+                    return oneDOFJointPhysics.jointAcceleration;
                 }
             }    
             set
@@ -105,7 +110,7 @@ namespace Halodi.Physics
                 }
                 else
                 {
-                    body.jointAcceleration = new ArticulationReducedSpace(value);
+                    oneDOFJointPhysics.jointAcceleration = value;
                 }
             }
         }
@@ -127,7 +132,7 @@ namespace Halodi.Physics
                 }
                 else
                 {
-                    return body.jointForce[0];
+                    return oneDOFJointPhysics.jointEffort;
                 }
             }
             set
@@ -138,7 +143,7 @@ namespace Halodi.Physics
                 }
                 else
                 {
-                    body.jointForce = new ArticulationReducedSpace(value);
+                  oneDOFJointPhysics.jointEffort = value;
                 }
             }
         }
@@ -149,9 +154,7 @@ namespace Halodi.Physics
             {
                 if(!kinematic)
                 {
-                    var xDrive = body.xDrive;
-                    xDrive.stiffness = value;
-                    body.xDrive = xDrive;
+                    oneDOFJointPhysics.stiffness = value;
                 }
             }
         }
@@ -162,9 +165,7 @@ namespace Halodi.Physics
             {
                 if(!kinematic)
                 {
-                    var xDrive = body.xDrive;
-                    xDrive.damping = value;
-                    body.xDrive = xDrive;
+                    oneDOFJointPhysics.damping = value;
                 }
             }
         }
@@ -175,9 +176,7 @@ namespace Halodi.Physics
             {
                 if(!kinematic)
                 {
-                    var xDrive = body.xDrive;
-                    xDrive.target = value;
-                    body.xDrive = xDrive;
+                    oneDOFJointPhysics.desiredPosition = value;
                 }
             }
         }
@@ -188,9 +187,7 @@ namespace Halodi.Physics
             {
                 if(!kinematic)
                 {
-                    var xDrive = body.xDrive;
-                    xDrive.targetVelocity = value;
-                    body.xDrive = xDrive;
+                    oneDOFJointPhysics.desiredVelocity = value;
                 }
             }
         }

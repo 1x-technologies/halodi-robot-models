@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Halodi.Physics.Interfaces;
 using UnityEngine;
 
 namespace Halodi.Physics
@@ -8,7 +9,6 @@ namespace Halodi.Physics
 
     public class ArticulationPrismaticJoint : ArticulationOneDOFJoint
     {
-        
 
         public override void SetKinematicPosition(float position)
         {
@@ -22,25 +22,9 @@ namespace Halodi.Physics
             transform.localPosition = newPosition;
         }
 
-        protected override void SetupJoint(ArticulationBody body)
+        protected override void SetPhysics(IPhysicsEngine physicsInterface)
         {
-            body.jointType = ArticulationJointType.PrismaticJoint;
-
-            body.linearLockX = ArticulationDofLock.LimitedMotion;
-            body.linearLockY = ArticulationDofLock.LockedMotion;
-            body.linearLockZ = ArticulationDofLock.LockedMotion;
-            body.twistLock = ArticulationDofLock.LockedMotion;
-        
-            ArticulationDrive xDrive = new ArticulationDrive
-            {
-                damping = 0.0f,
-                stiffness = 0.0f,
-                forceLimit = float.MaxValue,
-                lowerLimit = lowerLimit,
-                upperLimit = upperLimit
-            };
-
-            body.xDrive = xDrive;
+            oneDOFJointPhysics = physicsInterface.AddPrismaticJoint(this);            
         }
     }
 

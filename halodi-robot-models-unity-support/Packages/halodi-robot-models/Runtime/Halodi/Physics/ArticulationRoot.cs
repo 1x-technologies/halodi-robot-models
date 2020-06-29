@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Halodi.Physics.Interfaces;
 using UnityEditor;
 using UnityEngine;
 
@@ -13,15 +14,21 @@ namespace Halodi.Physics
     public class ArticulationRoot : MonoBehaviour
     {
 
-        public void SetKinematic(bool kinematic)
+        public void Awake()
         {
-            ArticulationFloatingJoint[] rootJoints = GetComponentsInChildren<ArticulationFloatingJoint>();
+            IPhysicsEngine physicsEngine = GetComponent<IPhysicsEngine>();
 
-            foreach (var rootJoint in rootJoints)
+            if (physicsEngine != null)
             {
-                rootJoint.kinematic = kinematic;               
+                ArticulationFloatingJoint[] rootJoints = GetComponentsInChildren<ArticulationFloatingJoint>();
+
+                foreach (var rootJoint in rootJoints)
+                {
+                    rootJoint.PhysicsEngine = physicsEngine;
+                }
             }
         }
+
 
         public ArticulationOneDOFJoint GetJointByName(string name)
         {
@@ -29,7 +36,7 @@ namespace Halodi.Physics
 
             foreach (var joint in joints)
             {
-                if(joint.JointName.Equals(name))
+                if (joint.JointName.Equals(name))
                 {
                     return joint;
                 }
