@@ -14,17 +14,18 @@ namespace Halodi.Physics
     public class ArticulationRoot : MonoBehaviour
     {
 
+        public IPhysicsEngine PhysicsEngine = null;
+
         public void Awake()
         {
-            IPhysicsEngine physicsEngine = GetComponent<IPhysicsEngine>();
 
-            if (physicsEngine != null)
+            if (PhysicsEngine != null)
             {
                 ArticulationFloatingJoint[] rootJoints = GetComponentsInChildren<ArticulationFloatingJoint>();
 
                 foreach (var rootJoint in rootJoints)
                 {
-                    rootJoint.PhysicsEngine = physicsEngine;
+                    rootJoint.PhysicsEngine = PhysicsEngine;
                 }
             }
         }
