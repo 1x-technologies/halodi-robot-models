@@ -12,9 +12,6 @@ namespace Halodi.Physics.Interfaces
         public abstract IFixedJointPhysics AddFixedJoint(ArticulationFixedJoint joint);
 
         public abstract IFloatingJointPhysics AddFloatingJoint(ArticulationFloatingJoint joint);
-
-
-        public abstract void Simulate(float step);
     }
 
 }
