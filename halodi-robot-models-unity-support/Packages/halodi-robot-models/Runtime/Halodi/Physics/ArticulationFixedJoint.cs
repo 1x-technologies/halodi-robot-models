@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Halodi.Physics.Interfaces;
 using UnityEngine;
 
 namespace Halodi.Physics
@@ -7,10 +8,15 @@ namespace Halodi.Physics
     public class ArticulationFixedJoint : ArticulationJoint
     {
         public override bool isRoot => false;
+
+        public override IJointPhysics physics => fixedJointPhysics;
+
+        public IFixedJointPhysics fixedJointPhysics = null;
+
        
-        protected override void SetupJoint(ArticulationBody articulationBody)
+        protected override void SetPhysics(IPhysicsEngine physicsInterface)
         {
-            articulationBody.jointType = ArticulationJointType.FixedJoint;
+            fixedJointPhysics = physicsInterface.AddFixedJoint(this);
         }
 
     }
