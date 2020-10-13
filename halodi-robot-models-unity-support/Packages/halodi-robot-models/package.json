@@ -1,6 +1,6 @@
 {
   "name": "com.halodi.halodi-robot-models",
-  "version": "2.3.0-alpha1",
+  "version": "2.3.0-alpha3",
   "displayName": "Halodi Robot Models",
   "description": "Unity version of Halodi robot models",
   "unity": "2019.2",
@@ -10,7 +10,7 @@
   },
   "license": "Apache-2.0",
   "author": {
-    "name": "Jesper Smith",
+    "name": "Halodi",
     "email": "jesper@halodi.com",
     "url": "http://www.halodi.com"
   },
