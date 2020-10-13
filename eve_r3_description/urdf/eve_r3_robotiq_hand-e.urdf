@@ -394,14 +394,14 @@ limitations under the License.
     </inertial>
     <visual name="Housing">
       <geometry>
-        <mesh filename="package://robotiq_hand-e/meshes/Housing.stl" scale="0.01 0.01 0.01"/>
+        <mesh filename="package://robotiq_hand-e/meshes/Housing.obj" scale="0.01 0.01 0.01"/>
       </geometry>
       <material name="rhand_rep_BlackMetal"/>
     </visual>
     <visual name="Bolts">
       <origin xyz="0 0 0.04595"/>
       <geometry>
-        <mesh filename="package://robotiq_hand-e/meshes/Bolts.stl" scale="0.01 0.01 0.01"/>
+        <mesh filename="package://robotiq_hand-e/meshes/Bolts.obj" scale="0.01 0.01 0.01"/>
       </geometry>
       <material name="rhand_rep_Chrome"/>
     </visual>
@@ -425,7 +425,7 @@ limitations under the License.
     </inertial>
     <visual name="FingerA_Visual">
       <geometry>
-        <mesh filename="package://robotiq_hand-e/meshes/FingerA.stl" scale="0.01 0.01 0.01"/>
+        <mesh filename="package://robotiq_hand-e/meshes/FingerA.obj" scale="0.01 0.01 0.01"/>
       </geometry>
       <material name="rhand_rep_Chrome"/>
     </visual>
@@ -444,7 +444,7 @@ limitations under the License.
     </inertial>
     <visual name="FingerB_Visual">
       <geometry>
-        <mesh filename="package://robotiq_hand-e/meshes/FingerB.stl" scale="0.01 0.01 0.01"/>
+        <mesh filename="package://robotiq_hand-e/meshes/FingerB.obj" scale="0.01 0.01 0.01"/>
       </geometry>
       <material name="rhand_rep_Chrome"/>
     </visual>
@@ -627,14 +627,14 @@ limitations under the License.
     </inertial>
     <visual name="Housing">
       <geometry>
-        <mesh filename="package://robotiq_hand-e/meshes/Housing.stl" scale="0.01 0.01 0.01"/>
+        <mesh filename="package://robotiq_hand-e/meshes/Housing.obj" scale="0.01 0.01 0.01"/>
       </geometry>
       <material name="lhand_rep_BlackMetal"/>
     </visual>
     <visual name="Bolts">
       <origin xyz="0 0 0.04595"/>
       <geometry>
-        <mesh filename="package://robotiq_hand-e/meshes/Bolts.stl" scale="0.01 0.01 0.01"/>
+        <mesh filename="package://robotiq_hand-e/meshes/Bolts.obj" scale="0.01 0.01 0.01"/>
       </geometry>
       <material name="lhand_rep_Chrome"/>
     </visual>
@@ -658,7 +658,7 @@ limitations under the License.
     </inertial>
     <visual name="FingerA_Visual">
       <geometry>
-        <mesh filename="package://robotiq_hand-e/meshes/FingerA.stl" scale="0.01 0.01 0.01"/>
+        <mesh filename="package://robotiq_hand-e/meshes/FingerA.obj" scale="0.01 0.01 0.01"/>
       </geometry>
       <material name="lhand_rep_Chrome"/>
     </visual>
@@ -677,7 +677,7 @@ limitations under the License.
     </inertial>
     <visual name="FingerB_Visual">
       <geometry>
-        <mesh filename="package://robotiq_hand-e/meshes/FingerB.stl" scale="0.01 0.01 0.01"/>
+        <mesh filename="package://robotiq_hand-e/meshes/FingerB.obj" scale="0.01 0.01 0.01"/>
       </geometry>
       <material name="lhand_rep_Chrome"/>
     </visual>
@@ -709,7 +709,7 @@ limitations under the License.
     <parent link="pelvis"/>
     <child link="head"/>
     <axis xyz="0.0 1.0 0.0"/>
-    <limit lower="-0.0872664626" upper="0.698132" effort="-1.0" velocity="-1.0"/>
+    <limit lower="-0.27925" upper="0.3228859" effort="-1.0" velocity="-1.0"/>
   </joint>
   <link name="head">
     <inertial>

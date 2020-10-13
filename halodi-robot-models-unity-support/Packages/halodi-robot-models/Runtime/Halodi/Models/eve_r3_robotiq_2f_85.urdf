@@ -398,7 +398,7 @@ limitations under the License.
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://robotiq_2f_85_gripper_visualization/meshes/collision/robotiq_arg2f_base_link.stl"/>
+        <mesh filename="package://robotiq_2f_85_gripper_visualization/meshes/collision/robotiq_arg2f_base_link.obj"/>
       </geometry>
     </collision>
   </link>
@@ -845,7 +845,7 @@ limitations under the License.
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
-        <mesh filename="package://robotiq_2f_85_gripper_visualization/meshes/collision/robotiq_arg2f_base_link.stl"/>
+        <mesh filename="package://robotiq_2f_85_gripper_visualization/meshes/collision/robotiq_arg2f_base_link.obj"/>
       </geometry>
     </collision>
   </link>
@@ -1137,7 +1137,7 @@ limitations under the License.
     <parent link="pelvis"/>
     <child link="head"/>
     <axis xyz="0.0 1.0 0.0"/>
-    <limit lower="-0.0872664626" upper="0.698132" effort="-1.0" velocity="-1.0"/>
+    <limit lower="-0.27925" upper="0.3228859" effort="-1.0" velocity="-1.0"/>
   </joint>
   <link name="head">
     <inertial>

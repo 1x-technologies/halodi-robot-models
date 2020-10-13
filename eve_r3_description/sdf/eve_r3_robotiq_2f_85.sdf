@@ -693,7 +693,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robotiq_2f_85_gripper_visualization/meshes/collision/robotiq_arg2f_base_link.stl</uri>
+            <uri>model://robotiq_2f_85_gripper_visualization/meshes/collision/robotiq_arg2f_base_link.obj</uri>
           </mesh>
         </geometry>
       </collision>
@@ -1190,8 +1190,8 @@
       <axis>
         <xyz>0 1 0</xyz>
         <limit>
-          <lower>-0.0872665</lower>
-          <upper>0.698132</upper>
+          <lower>-0.27925</lower>
+          <upper>0.322886</upper>
           <effort>-1</effort>
           <velocity>-1</velocity>
         </limit>
@@ -1473,7 +1473,7 @@
         <geometry>
           <mesh>
             <scale>1 1 1</scale>
-            <uri>model://robotiq_2f_85_gripper_visualization/meshes/collision/robotiq_arg2f_base_link.stl</uri>
+            <uri>model://robotiq_2f_85_gripper_visualization/meshes/collision/robotiq_arg2f_base_link.obj</uri>
           </mesh>
         </geometry>
       </collision>

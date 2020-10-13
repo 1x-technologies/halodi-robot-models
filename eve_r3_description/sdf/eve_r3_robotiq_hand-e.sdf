@@ -711,7 +711,7 @@
         <geometry>
           <mesh>
             <scale>0.01 0.01 0.01</scale>
-            <uri>model://robotiq_hand-e/meshes/Housing.stl</uri>
+            <uri>model://robotiq_hand-e/meshes/Housing.obj</uri>
           </mesh>
         </geometry>
       </visual>
@@ -720,7 +720,7 @@
         <geometry>
           <mesh>
             <scale>0.01 0.01 0.01</scale>
-            <uri>model://robotiq_hand-e/meshes/Bolts.stl</uri>
+            <uri>model://robotiq_hand-e/meshes/Bolts.obj</uri>
           </mesh>
         </geometry>
       </visual>
@@ -770,7 +770,7 @@
         <geometry>
           <mesh>
             <scale>0.01 0.01 0.01</scale>
-            <uri>model://robotiq_hand-e/meshes/FingerA.stl</uri>
+            <uri>model://robotiq_hand-e/meshes/FingerA.obj</uri>
           </mesh>
         </geometry>
       </visual>
@@ -820,7 +820,7 @@
         <geometry>
           <mesh>
             <scale>0.01 0.01 0.01</scale>
-            <uri>model://robotiq_hand-e/meshes/FingerB.stl</uri>
+            <uri>model://robotiq_hand-e/meshes/FingerB.obj</uri>
           </mesh>
         </geometry>
       </visual>
@@ -899,8 +899,8 @@
       <axis>
         <xyz>0 1 0</xyz>
         <limit>
-          <lower>-0.0872665</lower>
-          <upper>0.698132</upper>
+          <lower>-0.27925</lower>
+          <upper>0.322886</upper>
           <effort>-1</effort>
           <velocity>-1</velocity>
         </limit>
@@ -1200,7 +1200,7 @@
         <geometry>
           <mesh>
             <scale>0.01 0.01 0.01</scale>
-            <uri>model://robotiq_hand-e/meshes/Housing.stl</uri>
+            <uri>model://robotiq_hand-e/meshes/Housing.obj</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1209,7 +1209,7 @@
         <geometry>
           <mesh>
             <scale>0.01 0.01 0.01</scale>
-            <uri>model://robotiq_hand-e/meshes/Bolts.stl</uri>
+            <uri>model://robotiq_hand-e/meshes/Bolts.obj</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1259,7 +1259,7 @@
         <geometry>
           <mesh>
             <scale>0.01 0.01 0.01</scale>
-            <uri>model://robotiq_hand-e/meshes/FingerA.stl</uri>
+            <uri>model://robotiq_hand-e/meshes/FingerA.obj</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1309,7 +1309,7 @@
         <geometry>
           <mesh>
             <scale>0.01 0.01 0.01</scale>
-            <uri>model://robotiq_hand-e/meshes/FingerB.stl</uri>
+            <uri>model://robotiq_hand-e/meshes/FingerB.obj</uri>
           </mesh>
         </geometry>
       </visual>
