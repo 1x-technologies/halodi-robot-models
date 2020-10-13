@@ -380,30 +380,6 @@ limitations under the License.
   </link>
 
 
-  <material name="qbhand_right/optional">
-    <color rgba="0.0 0.5 0.8 1.0"/>
-  </material>
-  <material name="qbhand_right/base">
-    <color rgba="0.35 0.35 0.35 1.0"/>
-  </material>
-  <material name="qbhand_right/palm">
-    <color rgba="0.35 0.35 0.35 1.0"/>
-  </material>
-  <material name="qbhand_right/knuckle">
-    <color rgba="0.35 0.35 0.35 1.0"/>
-  </material>
-  <material name="qbhand_right/proximal">
-    <color rgba="0.35 0.35 0.35 1.0"/>
-  </material>
-  <material name="qbhand_right/middle">
-    <color rgba="0.35 0.35 0.35 1.0"/>
-  </material>
-  <material name="qbhand_right/distal">
-    <color rgba="0.35 0.35 0.35 1.0"/>
-  </material>
-  <material name="qbhand_right/default">
-    <color rgba="0.35 0.35 0.35 1.0"/>
-  </material>
   <joint name="qbhand_right_base_fixed_joint" type="fixed">
     <origin rpy="3.14 0 3.14" xyz="0 0 -0.06"/>
     <parent link="r_palm"/>
@@ -420,7 +396,6 @@ limitations under the License.
       <geometry>
         <mesh filename="package://qb_hand_description/meshes/flange_iso_04.obj" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="qbhand_right/base"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -445,7 +420,6 @@ limitations under the License.
       <geometry>
         <mesh filename="package://qb_hand_description/meshes/palm_pinch_r.obj" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="qbhand_right/palm"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -489,7 +463,6 @@ limitations under the License.
       <geometry>
         <mesh filename="package://qb_hand_description/meshes/ph_thumb_r.obj" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="qbhand_right/knuckle"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -534,7 +507,6 @@ limitations under the License.
       <geometry>
         <mesh filename="package://qb_hand_description/meshes/ph_small.obj" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="qbhand_right/proximal"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -579,7 +551,6 @@ limitations under the License.
       <geometry>
         <mesh filename="package://qb_hand_description/meshes/ph_distal.obj" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="qbhand_right/distal"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -608,7 +579,6 @@ limitations under the License.
       <geometry>
         <mesh filename="package://qb_hand_description/meshes/ph_knuckle.obj" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="qbhand_right/knuckle"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -653,7 +623,6 @@ limitations under the License.
       <geometry>
         <mesh filename="package://qb_hand_description/meshes/ph_medium.obj" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="qbhand_right/proximal"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -698,7 +667,6 @@ limitations under the License.
       <geometry>
         <mesh filename="package://qb_hand_description/meshes/ph_small.obj" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="qbhand_right/middle"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -743,7 +711,6 @@ limitations under the License.
       <geometry>
         <mesh filename="package://qb_hand_description/meshes/ph_distal.obj" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="qbhand_right/distal"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -772,7 +739,6 @@ limitations under the License.
       <geometry>
         <mesh filename="package://qb_hand_description/meshes/ph_knuckle.obj" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="qbhand_right/knuckle"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -817,7 +783,6 @@ limitations under the License.
       <geometry>
         <mesh filename="package://qb_hand_description/meshes/ph_medium.obj" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="qbhand_right/proximal"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -862,7 +827,6 @@ limitations under the License.
       <geometry>
         <mesh filename="package://qb_hand_description/meshes/ph_small.obj" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="qbhand_right/middle"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -907,7 +871,6 @@ limitations under the License.
       <geometry>
         <mesh filename="package://qb_hand_description/meshes/ph_distal.obj" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="qbhand_right/distal"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -936,7 +899,6 @@ limitations under the License.
       <geometry>
         <mesh filename="package://qb_hand_description/meshes/ph_knuckle.obj" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="qbhand_right/knuckle"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -981,7 +943,6 @@ limitations under the License.
       <geometry>
         <mesh filename="package://qb_hand_description/meshes/ph_medium.obj" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="qbhand_right/proximal"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -1026,7 +987,6 @@ limitations under the License.
       <geometry>
         <mesh filename="package://qb_hand_description/meshes/ph_small.obj" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="qbhand_right/middle"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -1071,7 +1031,6 @@ limitations under the License.
       <geometry>
         <mesh filename="package://qb_hand_description/meshes/ph_distal.obj" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="qbhand_right/distal"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -1100,7 +1059,6 @@ limitations under the License.
       <geometry>
         <mesh filename="package://qb_hand_description/meshes/ph_knuckle.obj" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="qbhand_right/knuckle"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -1145,7 +1103,6 @@ limitations under the License.
       <geometry>
         <mesh filename="package://qb_hand_description/meshes/ph_small.obj" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="qbhand_right/proximal"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -1190,7 +1147,6 @@ limitations under the License.
       <geometry>
         <mesh filename="package://qb_hand_description/meshes/ph_small.obj" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="qbhand_right/middle"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -1235,7 +1191,6 @@ limitations under the License.
       <geometry>
         <mesh filename="package://qb_hand_description/meshes/ph_distal.obj" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="qbhand_right/distal"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -1388,30 +1343,6 @@ limitations under the License.
   </link>
 
 
-  <material name="qbhand_left/optional">
-    <color rgba="0.0 0.5 0.8 1.0"/>
-  </material>
-  <material name="qbhand_left/base">
-    <color rgba="0.35 0.35 0.35 1.0"/>
-  </material>
-  <material name="qbhand_left/palm">
-    <color rgba="0.35 0.35 0.35 1.0"/>
-  </material>
-  <material name="qbhand_left/knuckle">
-    <color rgba="0.35 0.35 0.35 1.0"/>
-  </material>
-  <material name="qbhand_left/proximal">
-    <color rgba="0.35 0.35 0.35 1.0"/>
-  </material>
-  <material name="qbhand_left/middle">
-    <color rgba="0.35 0.35 0.35 1.0"/>
-  </material>
-  <material name="qbhand_left/distal">
-    <color rgba="0.35 0.35 0.35 1.0"/>
-  </material>
-  <material name="qbhand_left/default">
-    <color rgba="0.35 0.35 0.35 1.0"/>
-  </material>
   <joint name="qbhand_left_base_fixed_joint" type="fixed">
     <origin rpy="3.14 0 0.0" xyz="0 0 -0.06"/>
     <parent link="l_palm"/>
@@ -1428,7 +1359,6 @@ limitations under the License.
       <geometry>
         <mesh filename="package://qb_hand_description/meshes/flange_iso_04.obj" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="qbhand_left/base"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -1453,7 +1383,6 @@ limitations under the License.
       <geometry>
         <mesh filename="package://qb_hand_description/meshes/palm_pinch_l.obj" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="qbhand_left/palm"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -1497,7 +1426,6 @@ limitations under the License.
       <geometry>
         <mesh filename="package://qb_hand_description/meshes/ph_thumb_l.obj" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="qbhand_left/knuckle"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -1542,7 +1470,6 @@ limitations under the License.
       <geometry>
         <mesh filename="package://qb_hand_description/meshes/ph_small.obj" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="qbhand_left/proximal"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -1587,7 +1514,6 @@ limitations under the License.
       <geometry>
         <mesh filename="package://qb_hand_description/meshes/ph_distal.obj" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="qbhand_left/distal"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -1616,7 +1542,6 @@ limitations under the License.
       <geometry>
         <mesh filename="package://qb_hand_description/meshes/ph_knuckle.obj" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="qbhand_left/knuckle"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -1661,7 +1586,6 @@ limitations under the License.
       <geometry>
         <mesh filename="package://qb_hand_description/meshes/ph_medium.obj" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="qbhand_left/proximal"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -1706,7 +1630,6 @@ limitations under the License.
       <geometry>
         <mesh filename="package://qb_hand_description/meshes/ph_small.obj" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="qbhand_left/middle"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -1751,7 +1674,6 @@ limitations under the License.
       <geometry>
         <mesh filename="package://qb_hand_description/meshes/ph_distal.obj" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="qbhand_left/distal"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -1780,7 +1702,6 @@ limitations under the License.
       <geometry>
         <mesh filename="package://qb_hand_description/meshes/ph_knuckle.obj" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="qbhand_left/knuckle"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -1825,7 +1746,6 @@ limitations under the License.
       <geometry>
         <mesh filename="package://qb_hand_description/meshes/ph_medium.obj" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="qbhand_left/proximal"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -1870,7 +1790,6 @@ limitations under the License.
       <geometry>
         <mesh filename="package://qb_hand_description/meshes/ph_small.obj" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="qbhand_left/middle"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -1915,7 +1834,6 @@ limitations under the License.
       <geometry>
         <mesh filename="package://qb_hand_description/meshes/ph_distal.obj" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="qbhand_left/distal"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -1944,7 +1862,6 @@ limitations under the License.
       <geometry>
         <mesh filename="package://qb_hand_description/meshes/ph_knuckle.obj" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="qbhand_left/knuckle"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -1989,7 +1906,6 @@ limitations under the License.
       <geometry>
         <mesh filename="package://qb_hand_description/meshes/ph_medium.obj" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="qbhand_left/proximal"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -2034,7 +1950,6 @@ limitations under the License.
       <geometry>
         <mesh filename="package://qb_hand_description/meshes/ph_small.obj" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="qbhand_left/middle"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -2079,7 +1994,6 @@ limitations under the License.
       <geometry>
         <mesh filename="package://qb_hand_description/meshes/ph_distal.obj" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="qbhand_left/distal"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -2108,7 +2022,6 @@ limitations under the License.
       <geometry>
         <mesh filename="package://qb_hand_description/meshes/ph_knuckle.obj" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="qbhand_left/knuckle"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -2153,7 +2066,6 @@ limitations under the License.
       <geometry>
         <mesh filename="package://qb_hand_description/meshes/ph_small.obj" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="qbhand_left/proximal"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -2198,7 +2110,6 @@ limitations under the License.
       <geometry>
         <mesh filename="package://qb_hand_description/meshes/ph_small.obj" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="qbhand_left/middle"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -2243,7 +2154,6 @@ limitations under the License.
       <geometry>
         <mesh filename="package://qb_hand_description/meshes/ph_distal.obj" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="qbhand_left/distal"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0"/>

@@ -1,11 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <robot name="robotiq_hand-e">
-  <material name="rep_BlackMetal">
-    <color rgba="0.0634 0.0634 0.0634 1" />
-  </material>
-  <material name="rep_Chrome">
-    <color rgba="0.5 0.5 0.5 1" />
-  </material>
   <link name="base">
     <inertial>
       <origin rpy="0 0 0" xyz="0 0 0.050025" />
@@ -16,14 +10,12 @@
       <geometry>
         <mesh filename="package://robotiq_hand-e/meshes/Housing.obj" scale="0.01 0.01 0.01" />
       </geometry>
-      <material name="rep_BlackMetal" />
     </visual>
     <visual name="Bolts">
       <origin xyz="0 0 0.04595" />
       <geometry>
         <mesh filename="package://robotiq_hand-e/meshes/Bolts.obj" scale="0.01 0.01 0.01" />
       </geometry>
-      <material name="rep_Chrome" />
     </visual>
     <collision name="Housing_Collision_1">
       <origin xyz="0 0 0.050025" />
@@ -42,7 +34,6 @@
       <geometry>
         <mesh filename="package://robotiq_hand-e/meshes/FingerA.obj" scale="0.01 0.01 0.01" />
       </geometry>
-      <material name="rep_Chrome" />
     </visual>
     <collision name="FingerA_col_1">
       <origin xyz="0.0141 0.0051 0.0129" />
@@ -61,7 +52,6 @@
       <geometry>
         <mesh filename="package://robotiq_hand-e/meshes/FingerB.obj" scale="0.01 0.01 0.01" />
       </geometry>
-      <material name="rep_Chrome" />
     </visual>
     <collision name="FingerB_col_1">
       <origin xyz="-0.0141 -0.0051 0.0129" />
