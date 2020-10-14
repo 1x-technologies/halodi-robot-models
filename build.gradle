@@ -20,7 +20,7 @@ apply plugin: 'maven-publish'
 
 def vcsurl = 'https://github.com/halodi/halodi-robot-models'
 group = "com.halodi"
-version = "0.2.3"
+version = "2.3.1"
 
 def excludedFiles = [ '**/build', '**/cmake', '**/CMakeLists.txt', '**/package.xml', '**/model.config', '**/urdf.in', 'unity' ]
 
