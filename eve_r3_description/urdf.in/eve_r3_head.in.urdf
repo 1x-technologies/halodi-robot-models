@@ -5,7 +5,7 @@
         <parent link="pelvis"/>
         <child link="head"/>
         <axis xyz="0.0 1.0 0.0"/>
-        <limit lower="-0.3054" upper="0.480" effort="-1.0" velocity="-1.0"/>
+        <limit lower="-0.335" upper="0.506" effort="-1.0" velocity="-1.0"/>
     </joint>
     <link name="head">
         <inertial>
