@@ -380,12 +380,6 @@ limitations under the License.
   </link>
 
 
-  <material name="rhand_rep_BlackMetal">
-    <color rgba="0.0634 0.0634 0.0634 1"/>
-  </material>
-  <material name="rhand_rep_Chrome">
-    <color rgba="0.5 0.5 0.5 1"/>
-  </material>
   <link name="rhand_base">
     <inertial>
       <origin rpy="0 0 0" xyz="0 0 0.050025"/>
@@ -394,16 +388,14 @@ limitations under the License.
     </inertial>
     <visual name="Housing">
       <geometry>
-        <mesh filename="package://robotiq_hand-e/meshes/Housing.stl" scale="0.01 0.01 0.01"/>
+        <mesh filename="package://robotiq_hand-e/meshes/Housing.obj" scale="0.01 0.01 0.01"/>
       </geometry>
-      <material name="rhand_rep_BlackMetal"/>
     </visual>
     <visual name="Bolts">
       <origin xyz="0 0 0.04595"/>
       <geometry>
-        <mesh filename="package://robotiq_hand-e/meshes/Bolts.stl" scale="0.01 0.01 0.01"/>
+        <mesh filename="package://robotiq_hand-e/meshes/Bolts.obj" scale="0.01 0.01 0.01"/>
       </geometry>
-      <material name="rhand_rep_Chrome"/>
     </visual>
     <collision name="Housing_Collision_1">
       <origin xyz="0 0 0.050025"/>
@@ -425,9 +417,8 @@ limitations under the License.
     </inertial>
     <visual name="FingerA_Visual">
       <geometry>
-        <mesh filename="package://robotiq_hand-e/meshes/FingerA.stl" scale="0.01 0.01 0.01"/>
+        <mesh filename="package://robotiq_hand-e/meshes/FingerA.obj" scale="0.01 0.01 0.01"/>
       </geometry>
-      <material name="rhand_rep_Chrome"/>
     </visual>
     <collision name="FingerA_col_1">
       <origin xyz="0.0141 0.0051 0.0129"/>
@@ -444,9 +435,8 @@ limitations under the License.
     </inertial>
     <visual name="FingerB_Visual">
       <geometry>
-        <mesh filename="package://robotiq_hand-e/meshes/FingerB.stl" scale="0.01 0.01 0.01"/>
+        <mesh filename="package://robotiq_hand-e/meshes/FingerB.obj" scale="0.01 0.01 0.01"/>
       </geometry>
-      <material name="rhand_rep_Chrome"/>
     </visual>
     <collision name="FingerB_col_1">
       <origin xyz="-0.0141 -0.0051 0.0129"/>
@@ -613,12 +603,6 @@ limitations under the License.
   </link>
 
 
-  <material name="lhand_rep_BlackMetal">
-    <color rgba="0.0634 0.0634 0.0634 1"/>
-  </material>
-  <material name="lhand_rep_Chrome">
-    <color rgba="0.5 0.5 0.5 1"/>
-  </material>
   <link name="lhand_base">
     <inertial>
       <origin rpy="0 0 0" xyz="0 0 0.050025"/>
@@ -627,16 +611,14 @@ limitations under the License.
     </inertial>
     <visual name="Housing">
       <geometry>
-        <mesh filename="package://robotiq_hand-e/meshes/Housing.stl" scale="0.01 0.01 0.01"/>
+        <mesh filename="package://robotiq_hand-e/meshes/Housing.obj" scale="0.01 0.01 0.01"/>
       </geometry>
-      <material name="lhand_rep_BlackMetal"/>
     </visual>
     <visual name="Bolts">
       <origin xyz="0 0 0.04595"/>
       <geometry>
-        <mesh filename="package://robotiq_hand-e/meshes/Bolts.stl" scale="0.01 0.01 0.01"/>
+        <mesh filename="package://robotiq_hand-e/meshes/Bolts.obj" scale="0.01 0.01 0.01"/>
       </geometry>
-      <material name="lhand_rep_Chrome"/>
     </visual>
     <collision name="Housing_Collision_1">
       <origin xyz="0 0 0.050025"/>
@@ -658,9 +640,8 @@ limitations under the License.
     </inertial>
     <visual name="FingerA_Visual">
       <geometry>
-        <mesh filename="package://robotiq_hand-e/meshes/FingerA.stl" scale="0.01 0.01 0.01"/>
+        <mesh filename="package://robotiq_hand-e/meshes/FingerA.obj" scale="0.01 0.01 0.01"/>
       </geometry>
-      <material name="lhand_rep_Chrome"/>
     </visual>
     <collision name="FingerA_col_1">
       <origin xyz="0.0141 0.0051 0.0129"/>
@@ -677,9 +658,8 @@ limitations under the License.
     </inertial>
     <visual name="FingerB_Visual">
       <geometry>
-        <mesh filename="package://robotiq_hand-e/meshes/FingerB.stl" scale="0.01 0.01 0.01"/>
+        <mesh filename="package://robotiq_hand-e/meshes/FingerB.obj" scale="0.01 0.01 0.01"/>
       </geometry>
-      <material name="lhand_rep_Chrome"/>
     </visual>
     <collision name="FingerB_col_1">
       <origin xyz="-0.0141 -0.0051 0.0129"/>
@@ -709,7 +689,7 @@ limitations under the License.
     <parent link="pelvis"/>
     <child link="head"/>
     <axis xyz="0.0 1.0 0.0"/>
-    <limit lower="-0.0872664626" upper="0.698132" effort="-1.0" velocity="-1.0"/>
+    <limit lower="-0.335" upper="0.506" effort="-1.0" velocity="-1.0"/>
   </joint>
   <link name="head">
     <inertial>

@@ -338,7 +338,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/flange_iso_04.stl</uri>
+            <uri>model://qb_hand_description/meshes/flange_iso_04.obj</uri>
           </mesh>
         </geometry>
       </collision>
@@ -347,7 +347,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/palm_pinch_l.stl</uri>
+            <uri>model://qb_hand_description/meshes/palm_pinch_l.obj</uri>
           </mesh>
         </geometry>
       </collision>
@@ -356,7 +356,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_knuckle.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_knuckle.obj</uri>
           </mesh>
         </geometry>
       </collision>
@@ -365,7 +365,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_medium.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_medium.obj</uri>
           </mesh>
         </geometry>
       </collision>
@@ -374,7 +374,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_small.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_small.obj</uri>
           </mesh>
         </geometry>
       </collision>
@@ -383,7 +383,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_distal.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_distal.obj</uri>
           </mesh>
         </geometry>
       </collision>
@@ -392,7 +392,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_knuckle.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_knuckle.obj</uri>
           </mesh>
         </geometry>
       </collision>
@@ -401,7 +401,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_small.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_small.obj</uri>
           </mesh>
         </geometry>
       </collision>
@@ -410,7 +410,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_small.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_small.obj</uri>
           </mesh>
         </geometry>
       </collision>
@@ -419,7 +419,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_distal.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_distal.obj</uri>
           </mesh>
         </geometry>
       </collision>
@@ -428,7 +428,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_knuckle.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_knuckle.obj</uri>
           </mesh>
         </geometry>
       </collision>
@@ -437,7 +437,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_medium.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_medium.obj</uri>
           </mesh>
         </geometry>
       </collision>
@@ -446,7 +446,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_small.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_small.obj</uri>
           </mesh>
         </geometry>
       </collision>
@@ -455,7 +455,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_distal.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_distal.obj</uri>
           </mesh>
         </geometry>
       </collision>
@@ -464,7 +464,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_knuckle.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_knuckle.obj</uri>
           </mesh>
         </geometry>
       </collision>
@@ -473,7 +473,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_medium.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_medium.obj</uri>
           </mesh>
         </geometry>
       </collision>
@@ -482,7 +482,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_small.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_small.obj</uri>
           </mesh>
         </geometry>
       </collision>
@@ -491,7 +491,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_distal.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_distal.obj</uri>
           </mesh>
         </geometry>
       </collision>
@@ -500,7 +500,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_thumb_l.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_thumb_l.obj</uri>
           </mesh>
         </geometry>
       </collision>
@@ -509,7 +509,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_small.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_small.obj</uri>
           </mesh>
         </geometry>
       </collision>
@@ -518,7 +518,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_distal.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_distal.obj</uri>
           </mesh>
         </geometry>
       </collision>
@@ -536,7 +536,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/flange_iso_04.stl</uri>
+            <uri>model://qb_hand_description/meshes/flange_iso_04.obj</uri>
           </mesh>
         </geometry>
       </visual>
@@ -545,7 +545,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/palm_pinch_l.stl</uri>
+            <uri>model://qb_hand_description/meshes/palm_pinch_l.obj</uri>
           </mesh>
         </geometry>
       </visual>
@@ -554,7 +554,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_knuckle.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_knuckle.obj</uri>
           </mesh>
         </geometry>
       </visual>
@@ -563,7 +563,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_medium.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_medium.obj</uri>
           </mesh>
         </geometry>
       </visual>
@@ -572,7 +572,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_small.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_small.obj</uri>
           </mesh>
         </geometry>
       </visual>
@@ -581,7 +581,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_distal.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_distal.obj</uri>
           </mesh>
         </geometry>
       </visual>
@@ -590,7 +590,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_knuckle.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_knuckle.obj</uri>
           </mesh>
         </geometry>
       </visual>
@@ -599,7 +599,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_small.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_small.obj</uri>
           </mesh>
         </geometry>
       </visual>
@@ -608,7 +608,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_small.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_small.obj</uri>
           </mesh>
         </geometry>
       </visual>
@@ -617,7 +617,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_distal.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_distal.obj</uri>
           </mesh>
         </geometry>
       </visual>
@@ -626,7 +626,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_knuckle.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_knuckle.obj</uri>
           </mesh>
         </geometry>
       </visual>
@@ -635,7 +635,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_medium.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_medium.obj</uri>
           </mesh>
         </geometry>
       </visual>
@@ -644,7 +644,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_small.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_small.obj</uri>
           </mesh>
         </geometry>
       </visual>
@@ -653,7 +653,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_distal.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_distal.obj</uri>
           </mesh>
         </geometry>
       </visual>
@@ -662,7 +662,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_knuckle.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_knuckle.obj</uri>
           </mesh>
         </geometry>
       </visual>
@@ -671,7 +671,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_medium.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_medium.obj</uri>
           </mesh>
         </geometry>
       </visual>
@@ -680,7 +680,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_small.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_small.obj</uri>
           </mesh>
         </geometry>
       </visual>
@@ -689,7 +689,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_distal.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_distal.obj</uri>
           </mesh>
         </geometry>
       </visual>
@@ -698,7 +698,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_thumb_l.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_thumb_l.obj</uri>
           </mesh>
         </geometry>
       </visual>
@@ -707,7 +707,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_small.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_small.obj</uri>
           </mesh>
         </geometry>
       </visual>
@@ -716,7 +716,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_distal.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_distal.obj</uri>
           </mesh>
         </geometry>
       </visual>
@@ -795,8 +795,8 @@
       <axis>
         <xyz>0 1 0</xyz>
         <limit>
-          <lower>-0.0872665</lower>
-          <upper>0.698132</upper>
+          <lower>-0.3054</lower>
+          <upper>0.48</upper>
           <effort>-1</effort>
           <velocity>-1</velocity>
         </limit>
@@ -1078,7 +1078,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/flange_iso_04.stl</uri>
+            <uri>model://qb_hand_description/meshes/flange_iso_04.obj</uri>
           </mesh>
         </geometry>
       </collision>
@@ -1087,7 +1087,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/palm_pinch_r.stl</uri>
+            <uri>model://qb_hand_description/meshes/palm_pinch_r.obj</uri>
           </mesh>
         </geometry>
       </collision>
@@ -1096,7 +1096,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_knuckle.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_knuckle.obj</uri>
           </mesh>
         </geometry>
       </collision>
@@ -1105,7 +1105,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_medium.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_medium.obj</uri>
           </mesh>
         </geometry>
       </collision>
@@ -1114,7 +1114,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_small.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_small.obj</uri>
           </mesh>
         </geometry>
       </collision>
@@ -1123,7 +1123,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_distal.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_distal.obj</uri>
           </mesh>
         </geometry>
       </collision>
@@ -1132,7 +1132,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_knuckle.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_knuckle.obj</uri>
           </mesh>
         </geometry>
       </collision>
@@ -1141,7 +1141,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_small.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_small.obj</uri>
           </mesh>
         </geometry>
       </collision>
@@ -1150,7 +1150,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_small.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_small.obj</uri>
           </mesh>
         </geometry>
       </collision>
@@ -1159,7 +1159,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_distal.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_distal.obj</uri>
           </mesh>
         </geometry>
       </collision>
@@ -1168,7 +1168,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_knuckle.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_knuckle.obj</uri>
           </mesh>
         </geometry>
       </collision>
@@ -1177,7 +1177,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_medium.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_medium.obj</uri>
           </mesh>
         </geometry>
       </collision>
@@ -1186,7 +1186,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_small.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_small.obj</uri>
           </mesh>
         </geometry>
       </collision>
@@ -1195,7 +1195,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_distal.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_distal.obj</uri>
           </mesh>
         </geometry>
       </collision>
@@ -1204,7 +1204,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_knuckle.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_knuckle.obj</uri>
           </mesh>
         </geometry>
       </collision>
@@ -1213,7 +1213,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_medium.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_medium.obj</uri>
           </mesh>
         </geometry>
       </collision>
@@ -1222,7 +1222,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_small.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_small.obj</uri>
           </mesh>
         </geometry>
       </collision>
@@ -1231,7 +1231,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_distal.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_distal.obj</uri>
           </mesh>
         </geometry>
       </collision>
@@ -1240,7 +1240,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_thumb_r.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_thumb_r.obj</uri>
           </mesh>
         </geometry>
       </collision>
@@ -1249,7 +1249,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_small.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_small.obj</uri>
           </mesh>
         </geometry>
       </collision>
@@ -1258,7 +1258,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_distal.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_distal.obj</uri>
           </mesh>
         </geometry>
       </collision>
@@ -1276,7 +1276,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/flange_iso_04.stl</uri>
+            <uri>model://qb_hand_description/meshes/flange_iso_04.obj</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1285,7 +1285,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/palm_pinch_r.stl</uri>
+            <uri>model://qb_hand_description/meshes/palm_pinch_r.obj</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1294,7 +1294,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_knuckle.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_knuckle.obj</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1303,7 +1303,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_medium.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_medium.obj</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1312,7 +1312,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_small.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_small.obj</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1321,7 +1321,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_distal.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_distal.obj</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1330,7 +1330,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_knuckle.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_knuckle.obj</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1339,7 +1339,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_small.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_small.obj</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1348,7 +1348,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_small.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_small.obj</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1357,7 +1357,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_distal.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_distal.obj</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1366,7 +1366,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_knuckle.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_knuckle.obj</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1375,7 +1375,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_medium.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_medium.obj</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1384,7 +1384,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_small.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_small.obj</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1393,7 +1393,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_distal.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_distal.obj</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1402,7 +1402,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_knuckle.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_knuckle.obj</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1411,7 +1411,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_medium.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_medium.obj</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1420,7 +1420,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_small.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_small.obj</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1429,7 +1429,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_distal.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_distal.obj</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1438,7 +1438,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_thumb_r.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_thumb_r.obj</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1447,7 +1447,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_small.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_small.obj</uri>
           </mesh>
         </geometry>
       </visual>
@@ -1456,7 +1456,7 @@
         <geometry>
           <mesh>
             <scale>0.001 0.001 0.001</scale>
-            <uri>model://qb_hand_description/meshes/ph_distal.stl</uri>
+            <uri>model://qb_hand_description/meshes/ph_distal.obj</uri>
           </mesh>
         </geometry>
       </visual>
