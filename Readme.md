@@ -71,12 +71,10 @@ To compile and publishing to your local maven repository, run
 gradle publishToMavenLocal
 ```
 
-To upload to bintray, set bintrayUsername and bintrayApiKey in ~/.gradle/gradle.properties and run
-
+To upload to artifacts.halodi.com
 ```
-gradle bintrayUpload
+ARTIFACTS_USERNAME=[username] ARTIFACTS_PASSWORD=[password] gradle publish
 ```
-
 
 ## Folder structure
 
