@@ -1,26 +1,28 @@
 buildscript {
    repositories {
       mavenCentral()
+      maven { url "https://plugins.gradle.org/m2/" }
       mavenLocal()
       jcenter()
    }
-   
-   dependencies {
-      classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.+'
-   }
-   
 
+   dependencies {
+      classpath 'net.saliman:gradle-properties-plugin:1.5.1'
+   }
 }
 
 apply plugin: 'java'
-apply plugin: 'com.jfrog.bintray'
 apply plugin: 'maven'
 apply plugin: 'maven-publish'
+apply plugin: 'net.saliman.properties'
 
 
 def vcsurl = 'https://github.com/halodi/halodi-robot-models'
 group = "com.halodi"
-version = "2.3.3"
+def inputVersion= project.hasProperty("artifactVersion") ? 
+                project.getProperty("artifactVersion"): System.getenv('ARTIFACT_VERSION')
+version = "$inputVersion$versionAppendix"
+def repoUrl = "https://artifacts.halodi.com/repository"
 
 def excludedFiles = [ '**/build', '**/cmake', '**/CMakeLists.txt', '**/package.xml', '**/model.config', '**/urdf.in', 'unity' ]
 
@@ -91,16 +93,18 @@ publishing {
 }
 
 
-
-bintray {   
-    user = project.hasProperty('bintrayUsername') ? project.property('bintrayUsername') : System.getenv('BINTRAY_USER')
-    key = project.hasProperty('bintrayApiKey') ? project.property('bintrayApiKey') : System.getenv('BINTRAY_API_KEY')
-    pkg {
-        repo = 'maven-release'
-        name = project.name
-        userOrg = 'halodirobotics'
-        licenses = ['Apache-2.0']
-        vcsUrl = vcsurl
+publishing {
+    repositories {
+        maven {
+            def inputUsername = project.hasProperty("artifactUsername") ? 
+                project.getProperty("artifactUsername"): System.getenv('ARTIFACT_USERNAME')
+            def inputPassword = project.hasProperty("artifactPassword") ? 
+                project.getProperty("artifactPassword"): System.getenv('ARTIFACT_PASSWORD')
+            credentials {
+                username inputUsername
+                password inputPassword
+            }
+            url "$repoUrl$repository"
+        }
     }
-    publications = ['JavaPublication'] 
 }
