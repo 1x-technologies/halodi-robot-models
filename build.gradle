@@ -1,19 +1,27 @@
 buildscript {
    repositories {
       mavenCentral()
+      maven { url "https://plugins.gradle.org/m2/" }
       mavenLocal()
       jcenter()
-   } 
+   }
+
+   dependencies {
+      classpath 'net.saliman:gradle-properties-plugin:1.5.1'
+   }
 }
 
 apply plugin: 'java'
 apply plugin: 'maven'
 apply plugin: 'maven-publish'
+apply plugin: 'net.saliman.properties'
 
 
 def vcsurl = 'https://github.com/halodi/halodi-robot-models'
 group = "com.halodi"
-version = "2.3.3"
+def inputVersion= project.hasProperty("artifactVersion") ? 
+                project.getProperty("artifactVersion"): System.getenv('ARTIFACT_VERSION')
+version = "$inputVersion$versionAppendix"
 def repoUrl = "https://artifacts.halodi.com/repository"
 
 def excludedFiles = [ '**/build', '**/cmake', '**/CMakeLists.txt', '**/package.xml', '**/model.config', '**/urdf.in', 'unity' ]
@@ -88,11 +96,15 @@ publishing {
 publishing {
     repositories {
         maven {
+            def inputUsername = project.hasProperty("artifactUsername") ? 
+                project.getProperty("artifactUsername"): System.getenv('ARTIFACT_USERNAME')
+            def inputPassword = project.hasProperty("artifactPassword") ? 
+                project.getProperty("artifactPassword"): System.getenv('ARTIFACT_PASSWORD')
             credentials {
-                username System.getenv('ARTIFACTS_USERNAME')
-                password System.getenv('ARTIFACTS_PASSWORD')
+                username inputUsername
+                password inputPassword
             }
-            url "${repoUrl}/maven-incoming"
+            url "$repoUrl$repository"
         }
     }
 }

@@ -71,9 +71,14 @@ To compile and publishing to your local maven repository, run
 gradle publishToMavenLocal
 ```
 
-To upload to artifacts.halodi.com
+To upload snapshot to artifacts.halodi.com:
 ```
-ARTIFACTS_USERNAME=[username] ARTIFACTS_PASSWORD=[password] gradle publish
+ARTIFACT_USERNAME=[username] ARTIFACT_PASSWORD=[password] ARTIFACT_VERSION=[version] gradle publish
+```
+
+To upload release to artifacts.halodi.com:
+```
+ARTIFACT_USERNAME=[username] ARTIFACT_PASSWORD=[password] ARTIFACT_VERSION=[version] gradle publish -PenvironmentName=release
 ```
 
 ## Folder structure
