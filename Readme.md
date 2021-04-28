@@ -51,13 +51,13 @@ To add this as a dependency to your Java project, add the following to your buil
 ```
 repositories {
     mavenCentral()
-    maven { url "http://dl.bintray.com/halodirobotics/maven-release" }
+    maven { url "https://artifacts.halodi.com/repository/maven-open-source-group" }
     mavenLocal()
 }
 ```
 ```
 dependencies {
-    compile group: "com.halodi", name: "halodi-robot-models", version: "0.1.0"
+    compile group: "com.halodi", name: "halodi-robot-models", version: "2.3.4"
 }
 
 ```
