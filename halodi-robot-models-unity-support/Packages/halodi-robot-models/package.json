@@ -15,7 +15,7 @@
     "url": "http://www.halodi.com"
   },
   "publishConfig": {
-    "registry": "https://api.bintray.com/npm/halodirobotics/unity"
+    "registry": "https://artifacts.halodi.com/repository/upm-open-source-production/"
   },
   "keywords": [],
   "hideInEditor": false,

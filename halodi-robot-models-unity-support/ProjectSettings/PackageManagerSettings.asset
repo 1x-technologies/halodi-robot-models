@@ -26,7 +26,7 @@ MonoBehaviour:
     m_Capabilities: 7
   - m_Id: scoped:Halodi Open Source
     m_Name: Halodi Open Source
-    m_Url: https://api.bintray.com/npm/halodirobotics/unity
+    m_Url: https://artifacts.halodi.com/repository/upm-open-source-group
     m_Scopes:
     - com.halodi
     m_IsDefault: 0
@@ -38,14 +38,14 @@ MonoBehaviour:
     m_Original:
       m_Id: scoped:Halodi Open Source
       m_Name: Halodi Open Source
-      m_Url: https://api.bintray.com/npm/halodirobotics/unity
+      m_Url: https://artifacts.halodi.com/repository/upm-open-source-group
       m_Scopes:
       - com.halodi
       m_IsDefault: 0
       m_Capabilities: 0
     m_Modified: 0
     m_Name: Halodi Open Source
-    m_Url: https://api.bintray.com/npm/halodirobotics/unity
+    m_Url: https://artifacts.halodi.com/repository/upm-open-source-group
     m_Scopes:
     - com.halodi
     m_SelectedScopeIndex: 0
