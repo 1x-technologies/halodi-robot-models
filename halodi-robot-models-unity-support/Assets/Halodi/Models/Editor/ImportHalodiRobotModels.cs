@@ -37,7 +37,7 @@ namespace Halodi.Models.Editor
 
         internal static readonly string AssetDatabaseRoot = new DirectoryInfo(Application.dataPath).Parent.FullName;
 
-        internal static readonly string[] IgnoredFiles = { "build", "cmake", "CMakeLists.txt", "package.xml", "model.config", "dummy.urdf", "urdf.in", "urdf", "sdf" };
+        internal static readonly string[] IgnoredFiles = { "build", "cmake", "CMakeLists.txt", "package.xml", "model.config", "dummy.urdf", "urdf.in", "urdf" };
 
         internal static readonly string InputURDFExtension = ".in.urdf";
 
