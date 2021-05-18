@@ -4,7 +4,9 @@
       "version": "file:halodi-robot-models",
       "depth": 0,
       "source": "embedded",
-      "dependencies": {}
+      "dependencies": {
+        "com.halodi.robot-physics": "0.0.2"
+      }
     },
     "com.halodi.halodi-unity-package-creator": {
       "version": "1.0.0-semversupport1",
@@ -26,7 +28,7 @@
       "hash": "2fbfd2d15bdb15164d29a8557f274cdf607ee798"
     },
     "com.halodi.robot-physics": {
-      "version": "0.0.1",
+      "version": "0.0.2",
       "depth": 1,
       "source": "registry",
       "dependencies": {},
@@ -37,7 +39,7 @@
       "depth": 0,
       "source": "embedded",
       "dependencies": {
-        "com.halodi.robot-physics": "0.0.1"
+        "com.halodi.robot-physics": "0.0.2"
       }
     },
     "com.unity.collab-proxy": {
