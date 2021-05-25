@@ -20,6 +20,6 @@
   "hideInEditor": false,
   "type": "template",
   "dependencies": {
-    "com.halodi.robot-physics": "0.0.2"
+    "com.halodi.robot-physics": "1.0.0"
   }
 }
