@@ -9,7 +9,7 @@
     }
   ],
   "dependencies": {
-    "com.halodi.halodi-robot-models": "2.3.4-pre6",
+    "com.halodi.halodi-robot-models": "2.3.4",
     "com.halodi.halodi-unity-package-creator": "1.0.0",
     "com.halodi.halodi-unity-package-registry-manager": "https://github.com/Halodi/halodi-unity-package-registry-manager.git",
     "com.halodi.robot-physics": "1.0.0",
