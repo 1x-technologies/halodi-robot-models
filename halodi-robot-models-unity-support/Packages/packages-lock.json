@@ -9,7 +9,7 @@
       }
     },
     "com.halodi.halodi-unity-package-creator": {
-      "version": "1.0.0-importpackage1",
+      "version": "1.0.0",
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -25,7 +25,7 @@
         "com.unity.nuget.newtonsoft-json": "2.0.0",
         "com.unity.sharp-zip-lib": "1.2.2-preview.1"
       },
-      "hash": "2fbfd2d15bdb15164d29a8557f274cdf607ee798"
+      "hash": "9c7065480b3d5d828545e7a7c9ff242ae23acd45"
     },
     "com.halodi.robot-physics": {
       "version": "file:robot-physics",
