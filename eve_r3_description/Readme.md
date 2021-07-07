@@ -40,7 +40,7 @@ sudo apt install ros-foxy-joint-state-publisher-gui ros-foxy-xacro
 ### Build
 
 ```bash
-mkdir -p test1_ws/src
+mkdir -p test_ws/src
 cd test_ws/src
 
 # Clone this repo
@@ -48,7 +48,7 @@ cd test_ws/src
 git clone git@gitlab.com:halodi/controls/halodi-robot-models.git
 
 ## Building
-cd test_ws
+cd ..
 source /opt/ros/foxy/setup.bash
 colcon build --symlink-install
 ```
