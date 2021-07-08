@@ -1,6 +1,10 @@
 # Halodi Robot Models
 
-This repository contains the open source robot models from Halodi. 
+This repository contains the open source robot models from Halodi.
+
+# Build Instructions
+
+[Build Instructions can be found here](eve_r3_description/Readme.md)
 
 ## Available models
 
