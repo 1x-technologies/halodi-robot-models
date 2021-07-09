@@ -16,6 +16,35 @@ CMake is used to generate the final urdf and sdf versions of the models. These a
 sudo apt install gazebo9  libxml2-utils xsltproc
 ```
 
+### JVM depenancies
+
+Download https://cdn.azul.com/zulu/bin/zulu8.54.0.21-ca-fx-jdk8.0.292-linux_x64.tar.gz 
+
+extract it to $HOME/bin/java-8/
+
+```
+JVERELEASE=zulu8.54.0.21-ca-fx-jdk8.0.292-linux_x64
+JVMDIR=$HOME/bin/java-8/
+mkdir -p $JVMDIR
+wget https://cdn.azul.com/zulu/bin/$JVERELEASE.tar.gz -O $JVMDIR/$JVERELEASE.tar.gz
+tar -xzf $JVMDIR/$JVERELEASE.tar.gz -C $JVMDIR
+mv $JVMDIR/$JVERELEASE/* $JVMDIR/
+rmdir $JVMDIR/$JVERELEASE/
+
+```
+
+When set up correctly verify that the extraction is in the correct place:
+
+```
+$ ls ~/bin/java-8/
+ASSEMBLY_EXCEPTION        DISCLAIMER  LICENSE          OPENJFX_THIRD_PARTY_README  src.zip
+bin                       include     man              readme.txt                  THIRD_PARTY_README
+CLASSPATH_EXCEPTION_NOTE  jre         OPENJFX_LICENSE  release                     Welcome.html
+demo                      lib         openjfx-src.zip  sample                      zulu8.54.0.21-ca-fx-jdk8.0.292-linux_x64.tar.gz
+```
+
+
+
 ### Building models without ROS
 
 ```bash
