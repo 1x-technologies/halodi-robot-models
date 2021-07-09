@@ -10,6 +10,23 @@ Models use Xinclude (https://www.w3.org/TR/xinclude/) to include submodels. We a
 
 CMake is used to generate the final urdf and sdf versions of the models. These are generated in the source directory and should be published to git to allow easy use of the models.
 
+### OS requirements 
+
+You should be running Ubuntu 20.04 to get the correct ROS version
+
+To check run
+
+```
+lsb_release -d
+```
+
+and look for "20.04" in the result
+
+```
+Description:	Ubuntu 20.04.5 LTS
+````
+
+
 ### Installing requirements
 
 ```bash
@@ -36,15 +53,36 @@ rmdir $JVMDIR/$JVERELEASE/
 When set up correctly verify that the extraction is in the correct place:
 
 ```
-$ ls ~/bin/java-8/
+# ls $HOME/bin/java-8/
 ASSEMBLY_EXCEPTION        DISCLAIMER  LICENSE          OPENJFX_THIRD_PARTY_README  src.zip
 bin                       include     man              readme.txt                  THIRD_PARTY_README
 CLASSPATH_EXCEPTION_NOTE  jre         OPENJFX_LICENSE  release                     Welcome.html
 demo                      lib         openjfx-src.zip  sample                      zulu8.54.0.21-ca-fx-jdk8.0.292-linux_x64.tar.gz
+
+```
+If the file structure looks good, make sure the Java version is running ok
+
+```
+# $HOME/bin/java-8/bin/java -version
+
+openjdk version "1.8.0_292"
+OpenJDK Runtime Environment (Zulu 8.54.0.21-CA-linux64) (build 1.8.0_292-b10)
+OpenJDK 64-Bit Server VM (Zulu 8.54.0.21-CA-linux64) (build 25.292-b10, mixed mode)
+
 ```
 
+### Set up an SSH key with GitLab
 
+[Follow these instructions](https://docs.gitlab.com/ee/ssh/)
 
+### Clone the source code
+
+```
+ROBOTSLUG=halodi-robot-models
+ROBOTSURL=git@gitlab.com:halodi/controls/$ROBOTSLUG.git
+mkdir $HOME/git
+git clone $ROBOTSURL
+```
 ### Building models without ROS
 
 ```bash
