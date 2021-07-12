@@ -29,8 +29,8 @@ Description:	Ubuntu 20.04.5 LTS
 
 ### Installing requirements
 
-```bash
-sudo apt install gazebo9  libxml2-utils xsltproc
+```
+sudo apt install gazebo9  libxml2-utils xsltpro make cmakec
 ```
 
 ### JVM depenancies
@@ -43,7 +43,7 @@ extract it to $HOME/bin/java-8/
 JVERELEASE=zulu8.54.0.21-ca-fx-jdk8.0.292-linux_x64
 JVMDIR=$HOME/bin/java-8/
 mkdir -p $JVMDIR
-wget https://cdn.azul.com/zulu/bin/$JVERELEASE.tar.gz -O $JVMDIR/$JVERELEASE.tar.gz
+wget https://cdn.azul.com/zulu/bin/$JVERELEASE.tar.gz -O $JVMDIR/$JVERELEASE
 tar -xzf $JVMDIR/$JVERELEASE.tar.gz -C $JVMDIR
 mv $JVMDIR/$JVERELEASE/* $JVMDIR/
 rmdir $JVMDIR/$JVERELEASE/
