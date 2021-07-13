@@ -79,7 +79,13 @@ if(ament_cmake_FOUND)
     install(FILES model.config
     DESTINATION share/${PROJECT_NAME}/models/${PROJECT_NAME}
     )
-
+    install(DIRECTORY launch rviz
+    DESTINATION share/${PROJECT_NAME}
+    )
+    # for compatibility with reading the mesh path from the urdf
+    install(DIRECTORY meshes
+    DESTINATION share/${PROJECT_NAME}
+    )
 
     ament_export_dependencies(urdf)
     ament_package()
