@@ -1,4 +1,37 @@
-# Eve model
+# Easy Mode
+
+### Set up an SSH key with GitLab
+
+[Follow these instructions](https://docs.gitlab.com/ee/ssh/)
+
+### Get the setup script
+
+```
+git clone git@gitlab.com:halodi/tooling/halodi-developer-fresh-install.git
+cd halodi-developer-fresh-install
+git checkout CTRL-68 
+bash setup.sh
+```
+
+This will run for a bit and when its done Eclipse will be installed, all the code will be checked out.
+
+### Import the code into Eclipse with Buildship
+
+File -> Import -> Gradle -> Existing gradle project
+
+Select the folder `$HOME/git/repository-group`
+
+Select use the Gradle Wrapper
+
+for Java Home select `$HOME/bin/java-8`
+
+Hit Finish and wait.
+
+You should be all set!
+
+# Hard Mode
+
+This set of instructions is Optional, it is here to describe what the Easy Mode script is doing. 
 
 ## Description
 
