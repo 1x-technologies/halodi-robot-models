@@ -27,6 +27,20 @@ for Java Home select `$HOME/bin/java-8`
 
 Hit Finish and wait.
 
+### Run the Eve Simulation
+
+Select the project 
+
+```
+halodi->eve-simulation
+```
+
+run the simulation class Main in:
+
+```
+src/main/java/com/halodi/eve/simulation/SCSEveSimulation.java
+```
+
 You should be all set!
 
 # Hard Mode
