@@ -6,6 +6,14 @@
 
 [Follow these instructions for github](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
 
+### Get Access to the Halodi Source code projects
+
+Ask you manager to give you access to:
+
+```
+gitlab.com:halodi/controls/
+```
+
 ### Get the setup script
 
 ```
