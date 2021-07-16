@@ -1,4 +1,5 @@
-# Easy Mode
+# Prerequisites
+
 
 ### Set up an SSH key with GitLab and Github
 
@@ -13,6 +14,11 @@ Ask you manager to give you access to:
 ```
 gitlab.com:halodi/controls/
 ```
+
+
+# Easy Mode
+
+The easy mode will set up a fresh install with one script instead of an hour's worth of steps.
 
 ### Get the setup script
 
@@ -57,15 +63,6 @@ You should be all set!
 
 This set of instructions is Optional, it is here to describe what the Easy Mode script is doing. 
 
-## Description
-
-The Eve model is built from input files in the ```urdf.in``` folder. 
-
-Models use Xinclude (https://www.w3.org/TR/xinclude/) to include submodels. We are currently using Xinclude instead of xacro because it'll run on every Linux system (even without ROS) and ROS2 does not include xacro yet.
-
-## Building models
-
-CMake is used to generate the final urdf and sdf versions of the models. These are generated in the source directory and should be published to git to allow easy use of the models.
 
 ### OS requirements 
 
@@ -128,26 +125,117 @@ OpenJDK 64-Bit Server VM (Zulu 8.54.0.21-CA-linux64) (build 25.292-b10, mixed mo
 
 ```
 
-### Set up an SSH key with GitLab
-
-[Follow these instructions](https://docs.gitlab.com/ee/ssh/)
 
 ### Clone the source code
 
 ```
-ROBOTSLUG=halodi-robot-models
-ROBOTSURL=git@gitlab.com:halodi/controls/$ROBOTSLUG.git
-mkdir $HOME/git
-git clone $ROBOTSURL
-```
-### Building models without ROS
+mkdir ~/git
+cd ~/git
+git clone git@github.com:ihmcrobotics/repository-group.git
+cd repository-group
+git clone git@github.com:ihmcrobotics/ihmc-open-robotics-software.git
 
-```bash
-mkdir build
-cd build
-cmake ..
-make
+git clone git@gitlab.com:halodi/controls/wbc/halodi-whole-body-controller.git halodi
+git clone git@gitlab.com:halodi/controls/wbc/ros2-websocket-bridge.git
+git clone git@gitlab.com:halodi/controls/wbc/halodi-controller-build-system.git
+gradle wrapper --gradle-version 6.8.1 --distribution-type all
+
 ```
+
+### Install Eclipse
+
+Download Eclipse
+
+```
+ECLIPSE_RELEASE=2020-12
+ECLIPSE_ARTIFACT=eclipse-java-$ECLIPSE_RELEASE-R-linux-gtk-x86_64.tar.gz
+ECLIPSE_URL=http://www.mirrorservice.org/sites/download.eclipse.org/eclipseMirror/technology/epp/downloads/release-$ECLIPSE_RELEASE/R/$ECLIPSE_ARTIFACT
+wget $ECLIPSE_URL -O $HOME/bin/$ECLIPSE_ARTIFACT
+tar -xzf $HOME/bin/$ECLIPSE_ARTIFACT -C $HOME/bin/
+mv $HOME/bin/eclipse $HOME/bin/eclipse-halodi
+```
+
+### Set Up Eclipse
+
+Run Eclipse. 
+
+Open
+
+```
+Window->Preferences->Java->Installed JREs 
+```
+
+Select Add
+
+Select the folder 
+
+```
+$HOME/bin/java-8/
+```
+
+Remove the other JRE.
+
+
+
+
+Get the Halodi formatter from
+
+```
+wget https://bitbucket.ihmc.us/projects/LIBS/repos/ihmc-open-robotics-software/raw/ihmc-java-toolkit/CodeFormatTemplates/IHMCEclipseFormatter.xml
+```
+
+Open the Eclipse menu
+
+```
+Window > Preferences > Java ->Code Style -> Formatter
+
+```
+
+Select import and select the file you downloaded above. 
+
+Change the depricated API warning
+
+
+```
+Window > Preferences > Java ->Compiler Error/Warnings -> Depricated and Restricted API ->Forbidded References (access rules)
+
+```
+
+And switch from `Error` to `Ignore`
+
+
+Set the content assists
+
+```
+Window > Preferences > Java ->Editor -> Content Assist -> Favorites
+
+```
+Click "New Type..." and add `org.junit.jupiter.api.Assertions`
+
+
+
+### Import code into Eclipse with Buildship
+
+```
+File -> import -> Gradle -> Existing Gradle Project
+```
+
+Select the folder at
+
+```
+$HOME/git/repository-group
+```
+
+Select Gragle Wrapper
+
+Select the java home:
+
+```
+$HOME/bin/java-8/
+```
+
+Finish. 
+
 
 ## Visualizing the EveR3 URDF
 
