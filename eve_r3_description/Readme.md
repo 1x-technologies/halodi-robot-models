@@ -1,8 +1,10 @@
 # Easy Mode
 
-### Set up an SSH key with GitLab
+### Set up an SSH key with GitLab and Github
 
-[Follow these instructions](https://docs.gitlab.com/ee/ssh/)
+[Follow these instructions for gitlab](https://docs.gitlab.com/ee/ssh/)
+
+[Follow these instructions for github](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
 
 ### Get the setup script
 
