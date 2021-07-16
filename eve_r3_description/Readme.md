@@ -237,6 +237,21 @@ $HOME/bin/java-8/
 Finish. 
 
 
+### Run the Eve Simulation
+
+Select the project 
+
+```
+halodi->eve-simulation
+```
+
+run the simulation class Main in:
+
+```
+src/main/java/com/halodi/eve/simulation/SCSEveSimulation.java
+```
+
+
 ## Visualizing the EveR3 URDF
 
 ### Dependencies
