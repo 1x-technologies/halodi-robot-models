@@ -4,3 +4,5 @@
 **/cbuild
 **/.gradle
 /.project
+/.classpath
+.settings
