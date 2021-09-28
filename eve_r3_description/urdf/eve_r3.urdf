@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <!--
 Copyright 2019 Halodi Robotics AS
-Author Jesper Smith (jesper@halodi.com)
+Author: Jesper Smith (jesper@halodi.com)
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
@@ -209,7 +209,7 @@ limitations under the License.
     </collision>
   </link>
   <gazebo reference="pelvis">
-    <sensor name="imu_sensor" type="imu">
+    <sensor name="pelvis_imu_sensor" type="imu">
       <always_on>1</always_on>
       <update_rate>1000</update_rate>
       <imu>
@@ -233,7 +233,7 @@ limitations under the License.
     </sensor>
   </gazebo>
   <gazebo reference="base">
-    <sensor name="imu_left" type="imu">
+    <sensor name="base_imu_left" type="imu">
       <always_on>1</always_on>
       <update_rate>1000</update_rate>
       <imu>
