@@ -1,0 +1,832 @@
+Panels:
+  - Class: rviz_common/Displays
+    Help Height: 78
+    Name: Displays
+    Property Tree Widget:
+      Expanded:
+        - /Global Options1
+        - /Status1
+        - /RobotModel1
+        - /RobotModel1/Description Topic1
+        - /TF1
+      Splitter Ratio: 0.5
+    Tree Height: 1147
+Visualization Manager:
+  Class: ""
+  Displays:
+    - Alpha: 0.5
+      Cell Size: 1
+      Class: rviz_default_plugins/Grid
+      Color: 160; 160; 164
+      Enabled: true
+      Line Style:
+        Line Width: 0.029999999329447746
+        Value: Lines
+      Name: Grid
+      Normal Cell Count: 0
+      Offset:
+        X: 0
+        Y: 0
+        Z: 0
+      Plane: XY
+      Plane Cell Count: 10
+      Reference Frame: <Fixed Frame>
+      Value: true
+    - Alpha: 0.800000011920929
+      Class: rviz_default_plugins/RobotModel
+      Collision Enabled: false
+      Description File: ""
+      Description Source: Topic
+      Description Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /robot_description
+      Enabled: true
+      Links:
+        All Links Enabled: true
+        Expand Joint Details: false
+        Expand Link Details: false
+        Expand Tree: false
+        Link Tree Style: Links in Alphabetic Order
+        abdomen:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        ankle_y_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        base:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        head:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        hip_x_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        l_elbow:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        l_lower_arm:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        l_palm:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        l_scapula:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        l_shoulder:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        l_upper_arm:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        l_wheel:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        l_wrist:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        pelvis:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        qbhand_left_base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_left_index_distal_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_left_index_distal_virtual_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_left_index_knuckle_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_left_index_middle_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_left_index_middle_virtual_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_left_index_proximal_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_left_index_proximal_virtual_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_left_little_distal_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_left_little_distal_virtual_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_left_little_knuckle_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_left_little_middle_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_left_little_middle_virtual_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_left_little_proximal_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_left_little_proximal_virtual_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_left_middle_distal_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_left_middle_distal_virtual_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_left_middle_knuckle_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_left_middle_middle_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_left_middle_middle_virtual_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_left_middle_proximal_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_left_middle_proximal_virtual_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_left_palm_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_left_ring_distal_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_left_ring_distal_virtual_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_left_ring_knuckle_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_left_ring_middle_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_left_ring_middle_virtual_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_left_ring_proximal_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_left_ring_proximal_virtual_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_left_tendon_virtual_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_left_thumb_distal_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_left_thumb_distal_virtual_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_left_thumb_knuckle_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_left_thumb_proximal_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_left_thumb_proximal_virtual_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_right_base_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_right_index_distal_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_right_index_distal_virtual_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_right_index_knuckle_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_right_index_middle_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_right_index_middle_virtual_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_right_index_proximal_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_right_index_proximal_virtual_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_right_little_distal_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_right_little_distal_virtual_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_right_little_knuckle_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_right_little_middle_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_right_little_middle_virtual_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_right_little_proximal_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_right_little_proximal_virtual_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_right_middle_distal_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_right_middle_distal_virtual_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_right_middle_knuckle_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_right_middle_middle_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_right_middle_middle_virtual_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_right_middle_proximal_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_right_middle_proximal_virtual_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_right_palm_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_right_ring_distal_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_right_ring_distal_virtual_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_right_ring_knuckle_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_right_ring_middle_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_right_ring_middle_virtual_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_right_ring_proximal_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_right_ring_proximal_virtual_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_right_tendon_virtual_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_right_thumb_distal_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_right_thumb_distal_virtual_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_right_thumb_knuckle_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_right_thumb_proximal_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        qbhand_right_thumb_proximal_virtual_link:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+        r_elbow:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        r_lower_arm:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        r_palm:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        r_scapula:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        r_shoulder:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        r_upper_arm:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        r_wheel:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        r_wrist:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        shin:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        thigh:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+      Name: RobotModel
+      TF Prefix: ""
+      Update Interval: 0
+      Value: true
+      Visual Enabled: true
+    - Class: rviz_default_plugins/TF
+      Enabled: true
+      Frame Timeout: 15
+      Frames:
+        All Enabled: true
+        abdomen:
+          Value: true
+        ankle_y_link:
+          Value: true
+        base:
+          Value: true
+        head:
+          Value: true
+        hip_x_link:
+          Value: true
+        l_elbow:
+          Value: true
+        l_lower_arm:
+          Value: true
+        l_palm:
+          Value: true
+        l_scapula:
+          Value: true
+        l_shoulder:
+          Value: true
+        l_upper_arm:
+          Value: true
+        l_wheel:
+          Value: true
+        l_wrist:
+          Value: true
+        pelvis:
+          Value: true
+        qbhand_left_base_link:
+          Value: true
+        qbhand_left_index_distal_link:
+          Value: true
+        qbhand_left_index_distal_virtual_link:
+          Value: true
+        qbhand_left_index_knuckle_link:
+          Value: true
+        qbhand_left_index_middle_link:
+          Value: true
+        qbhand_left_index_middle_virtual_link:
+          Value: true
+        qbhand_left_index_proximal_link:
+          Value: true
+        qbhand_left_index_proximal_virtual_link:
+          Value: true
+        qbhand_left_little_distal_link:
+          Value: true
+        qbhand_left_little_distal_virtual_link:
+          Value: true
+        qbhand_left_little_knuckle_link:
+          Value: true
+        qbhand_left_little_middle_link:
+          Value: true
+        qbhand_left_little_middle_virtual_link:
+          Value: true
+        qbhand_left_little_proximal_link:
+          Value: true
+        qbhand_left_little_proximal_virtual_link:
+          Value: true
+        qbhand_left_middle_distal_link:
+          Value: true
+        qbhand_left_middle_distal_virtual_link:
+          Value: true
+        qbhand_left_middle_knuckle_link:
+          Value: true
+        qbhand_left_middle_middle_link:
+          Value: true
+        qbhand_left_middle_middle_virtual_link:
+          Value: true
+        qbhand_left_middle_proximal_link:
+          Value: true
+        qbhand_left_middle_proximal_virtual_link:
+          Value: true
+        qbhand_left_palm_link:
+          Value: true
+        qbhand_left_ring_distal_link:
+          Value: true
+        qbhand_left_ring_distal_virtual_link:
+          Value: true
+        qbhand_left_ring_knuckle_link:
+          Value: true
+        qbhand_left_ring_middle_link:
+          Value: true
+        qbhand_left_ring_middle_virtual_link:
+          Value: true
+        qbhand_left_ring_proximal_link:
+          Value: true
+        qbhand_left_ring_proximal_virtual_link:
+          Value: true
+        qbhand_left_tendon_virtual_link:
+          Value: true
+        qbhand_left_thumb_distal_link:
+          Value: true
+        qbhand_left_thumb_distal_virtual_link:
+          Value: true
+        qbhand_left_thumb_knuckle_link:
+          Value: true
+        qbhand_left_thumb_proximal_link:
+          Value: true
+        qbhand_left_thumb_proximal_virtual_link:
+          Value: true
+        qbhand_right_base_link:
+          Value: true
+        qbhand_right_index_distal_link:
+          Value: true
+        qbhand_right_index_distal_virtual_link:
+          Value: true
+        qbhand_right_index_knuckle_link:
+          Value: true
+        qbhand_right_index_middle_link:
+          Value: true
+        qbhand_right_index_middle_virtual_link:
+          Value: true
+        qbhand_right_index_proximal_link:
+          Value: true
+        qbhand_right_index_proximal_virtual_link:
+          Value: true
+        qbhand_right_little_distal_link:
+          Value: true
+        qbhand_right_little_distal_virtual_link:
+          Value: true
+        qbhand_right_little_knuckle_link:
+          Value: true
+        qbhand_right_little_middle_link:
+          Value: true
+        qbhand_right_little_middle_virtual_link:
+          Value: true
+        qbhand_right_little_proximal_link:
+          Value: true
+        qbhand_right_little_proximal_virtual_link:
+          Value: true
+        qbhand_right_middle_distal_link:
+          Value: true
+        qbhand_right_middle_distal_virtual_link:
+          Value: true
+        qbhand_right_middle_knuckle_link:
+          Value: true
+        qbhand_right_middle_middle_link:
+          Value: true
+        qbhand_right_middle_middle_virtual_link:
+          Value: true
+        qbhand_right_middle_proximal_link:
+          Value: true
+        qbhand_right_middle_proximal_virtual_link:
+          Value: true
+        qbhand_right_palm_link:
+          Value: true
+        qbhand_right_ring_distal_link:
+          Value: true
+        qbhand_right_ring_distal_virtual_link:
+          Value: true
+        qbhand_right_ring_knuckle_link:
+          Value: true
+        qbhand_right_ring_middle_link:
+          Value: true
+        qbhand_right_ring_middle_virtual_link:
+          Value: true
+        qbhand_right_ring_proximal_link:
+          Value: true
+        qbhand_right_ring_proximal_virtual_link:
+          Value: true
+        qbhand_right_tendon_virtual_link:
+          Value: true
+        qbhand_right_thumb_distal_link:
+          Value: true
+        qbhand_right_thumb_distal_virtual_link:
+          Value: true
+        qbhand_right_thumb_knuckle_link:
+          Value: true
+        qbhand_right_thumb_proximal_link:
+          Value: true
+        qbhand_right_thumb_proximal_virtual_link:
+          Value: true
+        r_elbow:
+          Value: true
+        r_lower_arm:
+          Value: true
+        r_palm:
+          Value: true
+        r_scapula:
+          Value: true
+        r_shoulder:
+          Value: true
+        r_upper_arm:
+          Value: true
+        r_wheel:
+          Value: true
+        r_wrist:
+          Value: true
+        shin:
+          Value: true
+        thigh:
+          Value: true
+      Marker Scale: 0.30000001192092896
+      Name: TF
+      Show Arrows: true
+      Show Axes: false
+      Show Names: false
+      Tree:
+        pelvis:
+          abdomen:
+            hip_x_link:
+              thigh:
+                shin:
+                  ankle_y_link:
+                    base:
+                      l_wheel:
+                        {}
+                      r_wheel:
+                        {}
+          head:
+            {}
+          l_scapula:
+            l_shoulder:
+              l_upper_arm:
+                l_elbow:
+                  l_lower_arm:
+                    l_wrist:
+                      l_palm:
+                        qbhand_left_base_link:
+                          qbhand_left_palm_link:
+                            qbhand_left_index_knuckle_link:
+                              qbhand_left_index_proximal_virtual_link:
+                                qbhand_left_index_proximal_link:
+                                  qbhand_left_index_middle_virtual_link:
+                                    qbhand_left_index_middle_link:
+                                      qbhand_left_index_distal_virtual_link:
+                                        qbhand_left_index_distal_link:
+                                          {}
+                            qbhand_left_little_knuckle_link:
+                              qbhand_left_little_proximal_virtual_link:
+                                qbhand_left_little_proximal_link:
+                                  qbhand_left_little_middle_virtual_link:
+                                    qbhand_left_little_middle_link:
+                                      qbhand_left_little_distal_virtual_link:
+                                        qbhand_left_little_distal_link:
+                                          {}
+                            qbhand_left_middle_knuckle_link:
+                              qbhand_left_middle_proximal_virtual_link:
+                                qbhand_left_middle_proximal_link:
+                                  qbhand_left_middle_middle_virtual_link:
+                                    qbhand_left_middle_middle_link:
+                                      qbhand_left_middle_distal_virtual_link:
+                                        qbhand_left_middle_distal_link:
+                                          {}
+                            qbhand_left_ring_knuckle_link:
+                              qbhand_left_ring_proximal_virtual_link:
+                                qbhand_left_ring_proximal_link:
+                                  qbhand_left_ring_middle_virtual_link:
+                                    qbhand_left_ring_middle_link:
+                                      qbhand_left_ring_distal_virtual_link:
+                                        qbhand_left_ring_distal_link:
+                                          {}
+                            qbhand_left_tendon_virtual_link:
+                              {}
+                            qbhand_left_thumb_knuckle_link:
+                              qbhand_left_thumb_proximal_virtual_link:
+                                qbhand_left_thumb_proximal_link:
+                                  qbhand_left_thumb_distal_virtual_link:
+                                    qbhand_left_thumb_distal_link:
+                                      {}
+          r_scapula:
+            r_shoulder:
+              r_upper_arm:
+                r_elbow:
+                  r_lower_arm:
+                    r_wrist:
+                      r_palm:
+                        qbhand_right_base_link:
+                          qbhand_right_palm_link:
+                            qbhand_right_index_knuckle_link:
+                              qbhand_right_index_proximal_virtual_link:
+                                qbhand_right_index_proximal_link:
+                                  qbhand_right_index_middle_virtual_link:
+                                    qbhand_right_index_middle_link:
+                                      qbhand_right_index_distal_virtual_link:
+                                        qbhand_right_index_distal_link:
+                                          {}
+                            qbhand_right_little_knuckle_link:
+                              qbhand_right_little_proximal_virtual_link:
+                                qbhand_right_little_proximal_link:
+                                  qbhand_right_little_middle_virtual_link:
+                                    qbhand_right_little_middle_link:
+                                      qbhand_right_little_distal_virtual_link:
+                                        qbhand_right_little_distal_link:
+                                          {}
+                            qbhand_right_middle_knuckle_link:
+                              qbhand_right_middle_proximal_virtual_link:
+                                qbhand_right_middle_proximal_link:
+                                  qbhand_right_middle_middle_virtual_link:
+                                    qbhand_right_middle_middle_link:
+                                      qbhand_right_middle_distal_virtual_link:
+                                        qbhand_right_middle_distal_link:
+                                          {}
+                            qbhand_right_ring_knuckle_link:
+                              qbhand_right_ring_proximal_virtual_link:
+                                qbhand_right_ring_proximal_link:
+                                  qbhand_right_ring_middle_virtual_link:
+                                    qbhand_right_ring_middle_link:
+                                      qbhand_right_ring_distal_virtual_link:
+                                        qbhand_right_ring_distal_link:
+                                          {}
+                            qbhand_right_tendon_virtual_link:
+                              {}
+                            qbhand_right_thumb_knuckle_link:
+                              qbhand_right_thumb_proximal_virtual_link:
+                                qbhand_right_thumb_proximal_link:
+                                  qbhand_right_thumb_distal_virtual_link:
+                                    qbhand_right_thumb_distal_link:
+                                      {}
+      Update Interval: 0
+      Value: true
+  Enabled: true
+  Global Options:
+    Background Color: 255; 255; 255
+    Fixed Frame: pelvis
+    Frame Rate: 30
+  Name: root
+  Tools:
+    - Class: rviz_default_plugins/Interact
+      Hide Inactive Objects: true
+    - Class: rviz_default_plugins/MoveCamera
+    - Class: rviz_default_plugins/Select
+    - Class: rviz_default_plugins/FocusCamera
+    - Class: rviz_default_plugins/Measure
+      Line color: 128; 128; 0
+  Transformation:
+    Current:
+      Class: rviz_default_plugins/TF
+  Value: true
+  Views:
+    Current:
+      Class: rviz_default_plugins/Orbit
+      Distance: 5.922983646392822
+      Enable Stereo Rendering:
+        Stereo Eye Separation: 0.05999999865889549
+        Stereo Focal Distance: 1
+        Swap Stereo Eyes: false
+        Value: false
+      Focal Point:
+        X: -0.19625499844551086
+        Y: -0.06369984894990921
+        Z: -0.18222449719905853
+      Focal Shape Fixed Size: true
+      Focal Shape Size: 0.05000000074505806
+      Invert Z Axis: false
+      Name: Current View
+      Near Clip Distance: 0.009999999776482582
+      Pitch: 0.3653979003429413
+      Target Frame: <Fixed Frame>
+      Value: Orbit (rviz)
+      Yaw: 0.5054040551185608
+    Saved: ~
+Window Geometry:
+  Displays:
+    collapsed: false
+  Height: 1376
+  Hide Left Dock: false
+  Hide Right Dock: false
+  QMainWindow State: 000000ff00000000fd00000001000000000000030000000506fc0200000001fb000000100044006900730070006c006100790073010000003d00000506000000c900ffffff000006fa0000050600000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  Width: 2560
+  X: 2560
+  Y: 27
