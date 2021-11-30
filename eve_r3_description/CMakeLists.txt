@@ -76,6 +76,10 @@ if(ament_cmake_FOUND)
     install(DIRECTORY meshes urdf sdf 
     DESTINATION share/${PROJECT_NAME}/models/${PROJECT_NAME}
     )
+
+    install(DIRECTORY meshes 
+    DESTINATION share/${PROJECT_NAME}
+    )
     install(FILES model.config
     DESTINATION share/${PROJECT_NAME}/models/${PROJECT_NAME}
     )
