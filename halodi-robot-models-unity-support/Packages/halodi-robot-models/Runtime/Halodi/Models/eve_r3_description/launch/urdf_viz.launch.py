@@ -1,7 +1,8 @@
-import launch
-from launch.substitutions import Command, LaunchConfiguration
-import launch_ros
 import os
+
+import launch
+import launch_ros
+from launch.substitutions import Command, LaunchConfiguration
 
 PACKAGE_NAME = "eve_r3_description"
 
