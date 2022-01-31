@@ -8,8 +8,6 @@ from launch.actions import DeclareLaunchArgument
 from launch.conditions import IfCondition, UnlessCondition
 from launch.substitutions import LaunchConfiguration
 
-PACKAGE_NAME = "eve_r3_description"
-
 
 def generate_launch_description():
     this_pkg = get_package_share_directory("eve_r3_description")
