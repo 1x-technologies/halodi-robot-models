@@ -3,3 +3,6 @@
 **/build
 **/cbuild
 **/.gradle
+/.project
+/.classpath
+.settings
