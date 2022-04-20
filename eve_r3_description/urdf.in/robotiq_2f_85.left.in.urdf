@@ -189,21 +189,21 @@
       </geometry>
     </collision>
   </link>
-  <joint name="lhand_finger_joint" type="revolute">
+  <joint name="lhand_finger_joint" type="fixed">
     <origin rpy="0 0 3.141592653589793" xyz="0 -0.0306011 0.054904"/>
     <parent link="lhand_robotiq_arg2f_base_link"/>
     <child link="lhand_left_outer_knuckle"/>
     <axis xyz="1 0 0"/>
     <limit effort="1000" lower="0" upper="0.8" velocity="2.0"/>
   </joint>
-  <joint name="lhand_left_outer_finger_joint" type="revolute">
+  <joint name="lhand_left_outer_finger_joint" type="fixed">
     <origin rpy="0 0 0" xyz="0 0.0315 -0.0041"/>
     <parent link="lhand_left_outer_knuckle"/>
     <child link="lhand_left_outer_finger"/>
     <axis xyz="1 0 0"/>
     <limit effort="1000" lower="-3.14" upper="0" velocity="2.0"/>
   </joint>
-  <joint name="lhand_left_inner_knuckle_joint" type="revolute">
+  <joint name="lhand_left_inner_knuckle_joint" type="fixed">
     <!-- <origin xyz="0 ${reflect * -0.0127} 0.06142" rpy="${pi / 2 + .725} 0 ${(reflect - 1) * pi / 2}" /> -->
     <origin rpy="0 0 3.141592653589793" xyz="0 -0.0127 0.06142"/>
     <parent link="lhand_robotiq_arg2f_base_link"/>
@@ -226,7 +226,7 @@
     <child link="lhand_left_inner_finger_pad"/>
     <axis xyz="0 0 1"/>
   </joint>
-  <joint name="lhand_right_outer_knuckle_joint" type="revolute">
+  <joint name="lhand_right_outer_knuckle_joint" type="fixed">
     <origin rpy="0 0 0" xyz="0 0.0306011 0.054904"/>
     <parent link="lhand_robotiq_arg2f_base_link"/>
     <child link="lhand_right_outer_knuckle"/>
@@ -234,14 +234,14 @@
     <limit effort="1000" lower="0" upper="0.81" velocity="2.0"/>
     <mimic joint="finger_joint" multiplier="1" offset="0"/>
   </joint>
-  <joint name="lhand_right_outer_finger_joint" type="revolute">
+  <joint name="lhand_right_outer_finger_joint" type="fixed">
     <origin rpy="0 0 0" xyz="0 0.0315 -0.0041"/>
     <parent link="lhand_right_outer_knuckle"/>
     <child link="lhand_right_outer_finger"/>
     <axis xyz="1 0 0"/>
     <limit effort="1000" lower="-3.14" upper="0" velocity="2.0"/>
   </joint>
-  <joint name="lhand_right_inner_knuckle_joint" type="revolute">
+  <joint name="lhand_right_inner_knuckle_joint" type="fixed">
     <!-- <origin xyz="0 ${reflect * -0.0127} 0.06142" rpy="${pi / 2 + .725} 0 ${(reflect - 1) * pi / 2}" /> -->
     <origin rpy="0 0 0.0" xyz="0 0.0127 0.06142"/>
     <parent link="lhand_robotiq_arg2f_base_link"/>
@@ -274,4 +274,3 @@
     </actuator>
   </transmission>
 </robot>
-

@@ -469,14 +469,14 @@ limitations under the License.
       </geometry>
     </collision>
   </link>
-  <joint name="rhand_fingerA_joint" type="prismatic">
+  <joint name="rhand_fingerA_joint" type="fixed">
     <origin xyz="0.013914 -0.00523 0.11505"/>
     <parent link="rhand_base"/>
     <child link="rhand_FingerA"/>
     <axis xyz="-1 0 0"/>
     <limit lower="0.0" upper="0.025" effort="1000" velocity="1000"/>
   </joint>
-  <joint name="rhand_fingerB_joint" type="prismatic">
+  <joint name="rhand_fingerB_joint" type="fixed">
     <origin xyz="-0.013914 0.00523 0.11505"/>
     <parent link="rhand_base"/>
     <child link="rhand_FingerB"/>
@@ -692,14 +692,14 @@ limitations under the License.
       </geometry>
     </collision>
   </link>
-  <joint name="lhand_fingerA_joint" type="prismatic">
+  <joint name="lhand_fingerA_joint" type="fixed">
     <origin xyz="0.013914 -0.00523 0.11505"/>
     <parent link="lhand_base"/>
     <child link="lhand_FingerA"/>
     <axis xyz="-1 0 0"/>
     <limit lower="0.0" upper="0.025" effort="1000" velocity="1000"/>
   </joint>
-  <joint name="lhand_fingerB_joint" type="prismatic">
+  <joint name="lhand_fingerB_joint" type="fixed">
     <origin xyz="-0.013914 0.00523 0.11505"/>
     <parent link="lhand_base"/>
     <child link="lhand_FingerB"/>
