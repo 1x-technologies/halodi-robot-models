@@ -700,15 +700,15 @@
     <link name="l_palm">
       <pose frame="">0.01041 0.20675 -0.0596 0 0 -0</pose>
       <inertial>
-        <pose frame="">-0.0007 0.000319 -0.095997 0 -0 0</pose>
-        <mass>1.22529</mass>
+        <pose frame="">-0.000652 0.000284 -0.102289 0 -0 0</pose>
+        <mass>1.31529</mass>
         <inertia>
-          <ixx>0.00249598</ixx>
-          <ixy>9.58801e-07</ixy>
-          <ixz>8.42128e-05</ixz>
-          <iyy>0.00266506</iyy>
-          <iyz>-3.48033e-05</iyz>
-          <izz>0.000977864</izz>
+          <ixx>0.00321794</ixx>
+          <ixy>6.61732e-07</ixy>
+          <ixz>8.96076e-05</ixz>
+          <iyy>0.00345463</iyy>
+          <iyz>-3.88473e-05</iyz>
+          <izz>0.00105214</izz>
         </inertia>
       </inertial>
       <collision name="l_palm_fixed_joint_lump__Housing_Collision_1_collision">
@@ -718,6 +718,22 @@
             <length>0.10005</length>
             <radius>0.0375</radius>
           </cylinder>
+        </geometry>
+      </collision>
+      <collision name="l_palm_fixed_joint_lump__FingerA_col_1_collision_1">
+        <pose frame="">0.028014 -7.4e-05 -0.18795 3.14 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.006 0.021 0.036</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="l_palm_fixed_joint_lump__FingerB_col_1_collision_2">
+        <pose frame="">-0.028014 -0.000334 -0.18795 3.14 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.006 0.021 0.036</size>
+          </box>
         </geometry>
       </collision>
       <visual name="l_palm_visual">
@@ -747,6 +763,24 @@
           </mesh>
         </geometry>
       </visual>
+      <visual name="l_palm_fixed_joint_lump__FingerA_Visual_visual_3">
+        <pose frame="">0.013914 0.005047 -0.175058 3.14 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>model://robotiq_hand-e/meshes/FingerA.obj</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="l_palm_fixed_joint_lump__FingerB_Visual_visual_4">
+        <pose frame="">-0.013914 -0.005413 -0.175042 3.14 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>model://robotiq_hand-e/meshes/FingerB.obj</uri>
+          </mesh>
+        </geometry>
+      </visual>
     </link>
     <joint name="j_l_wrist_x" type="revolute">
       <child>l_palm</child>
@@ -758,106 +792,6 @@
           <upper>0.523599</upper>
           <effort>-1</effort>
           <velocity>-1</velocity>
-        </limit>
-        <dynamics>
-          <spring_reference>0</spring_reference>
-          <spring_stiffness>0</spring_stiffness>
-        </dynamics>
-        <use_parent_model_frame>1</use_parent_model_frame>
-      </axis>
-    </joint>
-    <link name="lhand_FingerA">
-      <pose frame="">0.024324 0.211797 -0.234658 3.14 0 -0</pose>
-      <inertial>
-        <pose frame="">0.0141 0.0051 0.0129 0 -0 0</pose>
-        <mass>0.045</mass>
-        <inertia>
-          <ixx>6.51375e-06</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>4.995e-06</iyy>
-          <iyz>0</iyz>
-          <izz>1.78875e-06</izz>
-        </inertia>
-      </inertial>
-      <collision name="lhand_FingerA_fixed_joint_lump__FingerA_col_1_collision">
-        <pose frame="">0.0141 0.0051 0.0129 0 -0 0</pose>
-        <geometry>
-          <box>
-            <size>0.006 0.021 0.036</size>
-          </box>
-        </geometry>
-      </collision>
-      <visual name="lhand_FingerA_fixed_joint_lump__FingerA_Visual_visual">
-        <pose frame="">0 0 0 0 -0 0</pose>
-        <geometry>
-          <mesh>
-            <scale>0.01 0.01 0.01</scale>
-            <uri>model://robotiq_hand-e/meshes/FingerA.obj</uri>
-          </mesh>
-        </geometry>
-      </visual>
-    </link>
-    <joint name="lhand_fingerA_joint" type="prismatic">
-      <child>lhand_FingerA</child>
-      <parent>l_palm</parent>
-      <axis>
-        <xyz>-1 0 0</xyz>
-        <limit>
-          <lower>0</lower>
-          <upper>0.025</upper>
-          <effort>1000</effort>
-          <velocity>1000</velocity>
-        </limit>
-        <dynamics>
-          <spring_reference>0</spring_reference>
-          <spring_stiffness>0</spring_stiffness>
-        </dynamics>
-        <use_parent_model_frame>1</use_parent_model_frame>
-      </axis>
-    </joint>
-    <link name="lhand_FingerB">
-      <pose frame="">-0.003504 0.201337 -0.234642 3.14 0 -0</pose>
-      <inertial>
-        <pose frame="">-0.0141 -0.0051 0.0129 0 -0 0</pose>
-        <mass>0.045</mass>
-        <inertia>
-          <ixx>6.51375e-06</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>4.995e-06</iyy>
-          <iyz>0</iyz>
-          <izz>1.78875e-06</izz>
-        </inertia>
-      </inertial>
-      <collision name="lhand_FingerB_fixed_joint_lump__FingerB_col_1_collision">
-        <pose frame="">-0.0141 -0.0051 0.0129 0 -0 0</pose>
-        <geometry>
-          <box>
-            <size>0.006 0.021 0.036</size>
-          </box>
-        </geometry>
-      </collision>
-      <visual name="lhand_FingerB_fixed_joint_lump__FingerB_Visual_visual">
-        <pose frame="">0 0 0 0 -0 0</pose>
-        <geometry>
-          <mesh>
-            <scale>0.01 0.01 0.01</scale>
-            <uri>model://robotiq_hand-e/meshes/FingerB.obj</uri>
-          </mesh>
-        </geometry>
-      </visual>
-    </link>
-    <joint name="lhand_fingerB_joint" type="prismatic">
-      <child>lhand_FingerB</child>
-      <parent>l_palm</parent>
-      <axis>
-        <xyz>1 -0 -0</xyz>
-        <limit>
-          <lower>0</lower>
-          <upper>0.025</upper>
-          <effort>1000</effort>
-          <velocity>1000</velocity>
         </limit>
         <dynamics>
           <spring_reference>0</spring_reference>
@@ -1189,15 +1123,15 @@
     <link name="r_palm">
       <pose frame="">0.01041 -0.20675 -0.0596 -0 0 0</pose>
       <inertial>
-        <pose frame="">0.0007 -0.000449 -0.095997 0 -0 0</pose>
-        <mass>1.22529</mass>
+        <pose frame="">0.000652 -0.000433 -0.102289 0 -0 0</pose>
+        <mass>1.31529</mass>
         <inertia>
-          <ixx>0.00249586</ixx>
-          <ixy>8.47309e-07</ixy>
-          <ixz>-8.42128e-05</ixz>
-          <iyy>0.00266506</iyy>
-          <iyz>3.10225e-05</iyz>
-          <izz>0.000977741</izz>
+          <ixx>0.0032178</ixx>
+          <ixy>5.3396e-07</ixy>
+          <ixz>-8.96065e-05</ixz>
+          <iyy>0.00345463</iyy>
+          <iyz>3.29066e-05</iyz>
+          <izz>0.001052</izz>
         </inertia>
       </inertial>
       <collision name="r_palm_fixed_joint_lump__Housing_Collision_1_collision">
@@ -1207,6 +1141,22 @@
             <length>0.10005</length>
             <radius>0.0375</radius>
           </cylinder>
+        </geometry>
+      </collision>
+      <collision name="r_palm_fixed_joint_lump__FingerA_col_1_collision_1">
+        <pose frame="">0.028014 -7.4e-05 -0.18795 3.14 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.006 0.021 0.036</size>
+          </box>
+        </geometry>
+      </collision>
+      <collision name="r_palm_fixed_joint_lump__FingerB_col_1_collision_2">
+        <pose frame="">-0.028014 -0.000334 -0.18795 3.14 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.006 0.021 0.036</size>
+          </box>
         </geometry>
       </collision>
       <visual name="r_palm_visual">
@@ -1236,6 +1186,24 @@
           </mesh>
         </geometry>
       </visual>
+      <visual name="r_palm_fixed_joint_lump__FingerA_Visual_visual_3">
+        <pose frame="">0.013914 0.005047 -0.175058 3.14 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>model://robotiq_hand-e/meshes/FingerA.obj</uri>
+          </mesh>
+        </geometry>
+      </visual>
+      <visual name="r_palm_fixed_joint_lump__FingerB_Visual_visual_4">
+        <pose frame="">-0.013914 -0.005413 -0.175042 3.14 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>0.01 0.01 0.01</scale>
+            <uri>model://robotiq_hand-e/meshes/FingerB.obj</uri>
+          </mesh>
+        </geometry>
+      </visual>
     </link>
     <joint name="j_r_wrist_x" type="revolute">
       <child>r_palm</child>
@@ -1247,106 +1215,6 @@
           <upper>1.5708</upper>
           <effort>-1</effort>
           <velocity>-1</velocity>
-        </limit>
-        <dynamics>
-          <spring_reference>0</spring_reference>
-          <spring_stiffness>0</spring_stiffness>
-        </dynamics>
-        <use_parent_model_frame>1</use_parent_model_frame>
-      </axis>
-    </joint>
-    <link name="rhand_FingerA">
-      <pose frame="">0.024324 -0.201703 -0.234658 3.14 0 0</pose>
-      <inertial>
-        <pose frame="">0.0141 0.0051 0.0129 0 -0 0</pose>
-        <mass>0.045</mass>
-        <inertia>
-          <ixx>6.51375e-06</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>4.995e-06</iyy>
-          <iyz>0</iyz>
-          <izz>1.78875e-06</izz>
-        </inertia>
-      </inertial>
-      <collision name="rhand_FingerA_fixed_joint_lump__FingerA_col_1_collision">
-        <pose frame="">0.0141 0.0051 0.0129 0 -0 0</pose>
-        <geometry>
-          <box>
-            <size>0.006 0.021 0.036</size>
-          </box>
-        </geometry>
-      </collision>
-      <visual name="rhand_FingerA_fixed_joint_lump__FingerA_Visual_visual">
-        <pose frame="">0 0 0 0 -0 0</pose>
-        <geometry>
-          <mesh>
-            <scale>0.01 0.01 0.01</scale>
-            <uri>model://robotiq_hand-e/meshes/FingerA.obj</uri>
-          </mesh>
-        </geometry>
-      </visual>
-    </link>
-    <joint name="rhand_fingerA_joint" type="prismatic">
-      <child>rhand_FingerA</child>
-      <parent>r_palm</parent>
-      <axis>
-        <xyz>-1 -0 0</xyz>
-        <limit>
-          <lower>0</lower>
-          <upper>0.025</upper>
-          <effort>1000</effort>
-          <velocity>1000</velocity>
-        </limit>
-        <dynamics>
-          <spring_reference>0</spring_reference>
-          <spring_stiffness>0</spring_stiffness>
-        </dynamics>
-        <use_parent_model_frame>1</use_parent_model_frame>
-      </axis>
-    </joint>
-    <link name="rhand_FingerB">
-      <pose frame="">-0.003504 -0.212163 -0.234642 3.14 0 0</pose>
-      <inertial>
-        <pose frame="">-0.0141 -0.0051 0.0129 0 -0 0</pose>
-        <mass>0.045</mass>
-        <inertia>
-          <ixx>6.51375e-06</ixx>
-          <ixy>0</ixy>
-          <ixz>0</ixz>
-          <iyy>4.995e-06</iyy>
-          <iyz>0</iyz>
-          <izz>1.78875e-06</izz>
-        </inertia>
-      </inertial>
-      <collision name="rhand_FingerB_fixed_joint_lump__FingerB_col_1_collision">
-        <pose frame="">-0.0141 -0.0051 0.0129 0 -0 0</pose>
-        <geometry>
-          <box>
-            <size>0.006 0.021 0.036</size>
-          </box>
-        </geometry>
-      </collision>
-      <visual name="rhand_FingerB_fixed_joint_lump__FingerB_Visual_visual">
-        <pose frame="">0 0 0 0 -0 0</pose>
-        <geometry>
-          <mesh>
-            <scale>0.01 0.01 0.01</scale>
-            <uri>model://robotiq_hand-e/meshes/FingerB.obj</uri>
-          </mesh>
-        </geometry>
-      </visual>
-    </link>
-    <joint name="rhand_fingerB_joint" type="prismatic">
-      <child>rhand_FingerB</child>
-      <parent>r_palm</parent>
-      <axis>
-        <xyz>1 0 -0</xyz>
-        <limit>
-          <lower>0</lower>
-          <upper>0.025</upper>
-          <effort>1000</effort>
-          <velocity>1000</velocity>
         </limit>
         <dynamics>
           <spring_reference>0</spring_reference>
