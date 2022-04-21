@@ -219,7 +219,7 @@
     <limit effort="1000" lower="0" upper="0.8757" velocity="2.0"/>
     <mimic joint="finger_joint" multiplier="1" offset="0"/>
   </joint>
-  <joint name="rhand_left_inner_finger_joint" type="continuous">
+  <joint name="rhand_left_inner_finger_joint" type="fixed">
     <origin rpy="0 0 0" xyz="0 0.0061 0.0471"/>
     <parent link="rhand_left_outer_finger"/>
     <child link="rhand_left_inner_finger"/>
@@ -257,7 +257,7 @@
     <limit effort="1000" lower="0" upper="0.8757" velocity="2.0"/>
     <mimic joint="finger_joint" multiplier="1" offset="0"/>
   </joint>
-  <joint name="rhand_right_inner_finger_joint" type="continuous">
+  <joint name="rhand_right_inner_finger_joint" type="fixed">
     <origin rpy="0 0 0" xyz="0 0.0061 0.0471"/>
     <parent link="rhand_right_outer_finger"/>
     <child link="rhand_right_inner_finger"/>
