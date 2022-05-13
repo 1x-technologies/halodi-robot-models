@@ -20,6 +20,14 @@ The Halodi Robot Models are licensed under the Apache License, Version 2.0.
 
 ## Usage
 
+### Regenerating URDFs
+
+```
+cd eve_r3_description
+mkdir build && cd build
+cmake ..
+```
+
 ### ROS2
 
 Create a ROS2 workspace and place this repository in the `src` folder. Use `colcon build` to generate the models and install them into your workspace.
