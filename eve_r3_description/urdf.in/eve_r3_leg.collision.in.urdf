@@ -156,9 +156,9 @@
             </geometry>
         </visual>
         <collision>
-            <origin xyz="-0.284 0.0 0.019000" rpy="0.0 0.0 0.0" />
+            <origin xyz="-0.284 0.0 -0.0334" rpy="0.0 0.0 0.0" />
             <geometry>
-                <sphere radius="0.1524" />
+                <sphere radius="0.1" />
             </geometry>
         </collision>
     </link>

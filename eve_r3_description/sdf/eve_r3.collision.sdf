@@ -349,10 +349,10 @@
         </inertia>
       </inertial>
       <collision name="base_collision">
-        <pose frame="">-0.284 0 0.019 0 -0 0</pose>
+        <pose frame="">-0.284 0 -0.0334 0 -0 0</pose>
         <geometry>
           <sphere>
-            <radius>0.1524</radius>
+            <radius>0.1</radius>
           </sphere>
         </geometry>
         <surface>

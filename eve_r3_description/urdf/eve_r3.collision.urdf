@@ -190,9 +190,9 @@ limitations under the License.
       </geometry>
     </visual>
     <collision>
-      <origin rpy="0.0 0.0 0.0" xyz="-0.284 0.0 0.019000"/>
+      <origin rpy="0.0 0.0 0.0" xyz="-0.284 0.0 -0.0334"/>
       <geometry>
-        <sphere radius="0.1524"/>
+        <sphere radius="0.1"/>
       </geometry>
     </collision>
   </link>
